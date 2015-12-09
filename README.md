@@ -5,3 +5,6 @@ generic reference implementation for opencosent best practices
   Star MassachusettsLegalHackers.github.io/orgsetup/
 
 http://massachusettslegalhackers.github.io/orgsetup/
+
+
+http://openconsent.github.io/consentreceipt/
