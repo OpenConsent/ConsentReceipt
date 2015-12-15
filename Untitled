@@ -1,0 +1,6 @@
+Notes
+70-193 added
+
+In this version of the MVCR, there is also some experimental components. The first is the information sharing section, which is as yet, un­specified, along with a temporary set of PI attributes and purposes, which can be used to test the receipt, found in the appendix of the specification. Any implementation at this time should use their own purpose, but may find these references handy. Note: these are in no means definitive for the specification.
+Current work effort status, we are developing some legal profiles, work­shopping purpose and attributes. we will also be having a receipt design session researching design requirements, with the ideas that purpose(s) can be represented by icons and the like.
+Yet, the sepecification and its use to provide consent receipts make current adhesive consent practices more adhesive.
