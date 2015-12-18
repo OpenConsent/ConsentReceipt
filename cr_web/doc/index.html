@@ -29,7 +29,7 @@
       <script src="../js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
       <script src="../js/vendor/jsrsasign.js"></script>
 
-     
+
   </head>
   <body>
 
@@ -58,7 +58,7 @@
       <div class="container">
         <h1>Consent Receipt API</h1>
         <p>This server provides a consent receipt generation API. The API consists of a single endpoint:</p>
-        <p><code>http://www.consentreceipt.org/mvcr/api</code></p>
+        <p><code>http://mvcr.herokuapp.com/api</code></p>
         <p>This endpoint accepts HTTP <code>POST</code> requests with <a href="#input-object">input</a> in the form of JSON (<code>application/json</code>) documents and <a href="#output-fields">output</a> in the form of a <a href="#signature">signed</a> JSON Web Token (<code>application/jwt</code>).</p>
       </div>
     </div>
@@ -138,9 +138,9 @@
 nominated to be data controller on behalf of org</p>
       <div class="well">
           <p>The object contains information of the data controller in the following fields:</p>
-      
+
                         <table class="table table-condensed table-hover">
-                    
+
                     <thead>
                       <tr>
                       <th>Field Name</th>
@@ -150,7 +150,7 @@ nominated to be data controller on behalf of org</p>
                         <th>Required</th>
                       </tr>
                     </thead>
-                    
+
                     <tbody>
                       <tr>
                         <td><code>on_behalf</code></td>
@@ -347,7 +347,7 @@ set of registry values?</td>
 
 <p><pre>
 {
- 
+
  	"jurisdiction" : "US",
  	"sub" : "sarah@example.com" ,
  	"svc" : ["amazon","amazon express"] ,
@@ -368,7 +368,7 @@ set of registry values?</td>
 <p>This produces output like the following signed JWT:</p>
 
 <p><code style="word-wrap: break-word; overflow-wrap: break-word;">
-eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdXJpc2RpY3Rpb24iOiJVUyIsInN1YiI6InNhcmFoQGV4YW1wbGUuY29tIiwic3ZjIjpbImFtYXpvbiIsImFtYXpvbiBleHByZXNzIl0sIm5vdGljZSI6Imh0dHA6Ly9leGFtcGxlLmNvbS9ub3RpY2UiLCJwb2xpY3lfdXJpIjoiaHR0cDovL2V4YW1wbGUuY29tL3BvbGljeSIsImRhdGFfY29udHJvbGxlciI6eyJvbl9iZWhhbGYiOnRydWUsImNvbnRhY3QiOiJEYXZlIENvbnRyb2xsZXIiLCJjb21wYW55IjoiRGF0YSBDb250cm9sbGVyIEluYy4iLCJhZGRyZXNzIjoiMTIzIFN0LiwgUGxhY2UiLCJlbWFpbCI6ImRhdmVAZGF0YWNvbnRyb2xsZXIuY29tIiwicGhvbmUiOiIwMC0xMjMtMzQxLTIzNTEifSwiY29uc2VudF9wYXlsb2FkIjp7InByaXZhY3kgcG9saWN5IjoiYWdyZWUiLCJUb1MiOiJhZ3JlZSJ9LCJwdXJwb3NlIjpbIm1hcmtldGluZyIsInJlc2VhcmNoIl0sInBpaV9jb2xsZWN0ZWQiOnsibmFtZSI6IlNhcmFoIFNxdWlyZSIsImVtYWlsIjoic2FyYWhAZW5nYWdlaWRlbnRpdHkuY29tIn0sInNlbnNpdGl2ZSI6WyJodHRwOi8vZXhhbXBsZS5jb20vbWVkaWNhbCIsImh0dHA6Ly9leGFtcGxlLmNvbS9maW5hbmNpYWwiXSwic2hhcmluZyI6WyJjb250YWN0IGluZm9ybWF0aW9uIiwiZGVtb2dyYXBoaWMgaW5mb3JtYXRpb24iXSwiY29udGV4dCI6WyJhY3RpdmUgcHJpdmFjeSBwb2xpY3kgY29uc2VudCIsInBhc3NpdmUgdGVybXMgb2Ygc2VydmljZSBjb25zZW50Il0sImF1ZCI6Imh0dHA6Ly9lbmdhZ2VpZGVudGl0eS5jb20vcHJvdGVjdGVkIiwic2NvcGVzIjoicmVhZCB1cGRhdGUiLCJqdGkiOiI5OGI1Yzg5OTVkMzExNjI0ZGI0M2U0Zjk2OGJkYmYyZWMzYTIxNDFhNDU4NTM0ODJiMGNiMTFjOGRmMWZjNzkzMDkyYjExOTJjYzRlZmE4ZmRlZjFkMGNlZTA4ZGFhMDkwMTlkMTkxYjlmYzY2NGFiOTg3OWQwYWE4OGVlNGNmNCIsImlhdCI6MTQzNTg1NTI0MzQ3MSwiaXNzIjoiaHR0cDovL3d3dy5jb25zZW50cmVjZWlwdC5vcmcifQ.MFXoyWoFD-UQRhErGBteXRLHgdB2Rp-EABXIb3gLGU0lv_U-B87ks4GaJd4jLmsMpTvLRKaPlE81xDVirtw9DTFQ79UMKZKyKMMpJSltLXVgWzoEmt_7cxeQPV0ISO1djemYmkENO3tN-zhJbYlWeHl3iamFAsXXZZ4rkfRX9i2LTYpIGA5ecdQpqLQ7YimaRta7hTnCNXZs_x57s7uYCLwu--Q1EQKhAgpft4GYI9ziAiTn5KYJdyC6Rdcba5N2NnQzffl0_RhAiCuo9pvcInL3IK6Xf3c-R9XLW_QdZj0SLBk0_Gn2S6t6BAKhAYWJL687KZ_ESXziPXi7TIf_nA	
+eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdXJpc2RpY3Rpb24iOiJVUyIsInN1YiI6InNhcmFoQGV4YW1wbGUuY29tIiwic3ZjIjpbImFtYXpvbiIsImFtYXpvbiBleHByZXNzIl0sIm5vdGljZSI6Imh0dHA6Ly9leGFtcGxlLmNvbS9ub3RpY2UiLCJwb2xpY3lfdXJpIjoiaHR0cDovL2V4YW1wbGUuY29tL3BvbGljeSIsImRhdGFfY29udHJvbGxlciI6eyJvbl9iZWhhbGYiOnRydWUsImNvbnRhY3QiOiJEYXZlIENvbnRyb2xsZXIiLCJjb21wYW55IjoiRGF0YSBDb250cm9sbGVyIEluYy4iLCJhZGRyZXNzIjoiMTIzIFN0LiwgUGxhY2UiLCJlbWFpbCI6ImRhdmVAZGF0YWNvbnRyb2xsZXIuY29tIiwicGhvbmUiOiIwMC0xMjMtMzQxLTIzNTEifSwiY29uc2VudF9wYXlsb2FkIjp7InByaXZhY3kgcG9saWN5IjoiYWdyZWUiLCJUb1MiOiJhZ3JlZSJ9LCJwdXJwb3NlIjpbIm1hcmtldGluZyIsInJlc2VhcmNoIl0sInBpaV9jb2xsZWN0ZWQiOnsibmFtZSI6IlNhcmFoIFNxdWlyZSIsImVtYWlsIjoic2FyYWhAZW5nYWdlaWRlbnRpdHkuY29tIn0sInNlbnNpdGl2ZSI6WyJodHRwOi8vZXhhbXBsZS5jb20vbWVkaWNhbCIsImh0dHA6Ly9leGFtcGxlLmNvbS9maW5hbmNpYWwiXSwic2hhcmluZyI6WyJjb250YWN0IGluZm9ybWF0aW9uIiwiZGVtb2dyYXBoaWMgaW5mb3JtYXRpb24iXSwiY29udGV4dCI6WyJhY3RpdmUgcHJpdmFjeSBwb2xpY3kgY29uc2VudCIsInBhc3NpdmUgdGVybXMgb2Ygc2VydmljZSBjb25zZW50Il0sImF1ZCI6Imh0dHA6Ly9lbmdhZ2VpZGVudGl0eS5jb20vcHJvdGVjdGVkIiwic2NvcGVzIjoicmVhZCB1cGRhdGUiLCJqdGkiOiI5OGI1Yzg5OTVkMzExNjI0ZGI0M2U0Zjk2OGJkYmYyZWMzYTIxNDFhNDU4NTM0ODJiMGNiMTFjOGRmMWZjNzkzMDkyYjExOTJjYzRlZmE4ZmRlZjFkMGNlZTA4ZGFhMDkwMTlkMTkxYjlmYzY2NGFiOTg3OWQwYWE4OGVlNGNmNCIsImlhdCI6MTQzNTg1NTI0MzQ3MSwiaXNzIjoiaHR0cDovL3d3dy5jb25zZW50cmVjZWlwdC5vcmcifQ.MFXoyWoFD-UQRhErGBteXRLHgdB2Rp-EABXIb3gLGU0lv_U-B87ks4GaJd4jLmsMpTvLRKaPlE81xDVirtw9DTFQ79UMKZKyKMMpJSltLXVgWzoEmt_7cxeQPV0ISO1djemYmkENO3tN-zhJbYlWeHl3iamFAsXXZZ4rkfRX9i2LTYpIGA5ecdQpqLQ7YimaRta7hTnCNXZs_x57s7uYCLwu--Q1EQKhAgpft4GYI9ziAiTn5KYJdyC6Rdcba5N2NnQzffl0_RhAiCuo9pvcInL3IK6Xf3c-R9XLW_QdZj0SLBk0_Gn2S6t6BAKhAYWJL687KZ_ESXziPXi7TIf_nA
 </code></p>
 
 <p>The header portion of the JWT contains:</p>
@@ -429,7 +429,7 @@ eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdXJpc2RpY3Rpb24iOiJVUyIsInN1YiI6InNhcmF
   "jti": "98b5c8995d311624db43e4f968bdbf2ec3a2141a45853482b0cb11c8df1fc793092b1192cc4efa8fdef1d0cee08daa09019d191b9fc664ab9879d0aa88ee4cf4",
   "iat": 1435855243471,
   "iss": "http://www.consentreceipt.org"
-}	
+}
 </pre></p>
 
 </div>
@@ -438,11 +438,11 @@ eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdXJpc2RpY3Rpb24iOiJVUyIsInN1YiI6InNhcmF
 </div>
 
 
-  </div> <!-- /container -->  
+  </div> <!-- /container -->
 
       <footer>
-		  
-	        <div class="col-md-1"> 
+
+	        <div class="col-md-1">
 	          <a href="https://kantarainitiative.org/confluence/display/infosharing/Home"><img id="cis" src="../img/cis.png" /></a>
 	        </div>
 	        <div class="col-md-9">
@@ -451,7 +451,7 @@ eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdXJpc2RpY3Rpb24iOiJVUyIsInN1YiI6InNhcmF
 			<div class="col-md-2">
 				<a href="http://kantarainitiative.org/"><img id="kantara" src="../img/kantara.png" /></a>
 			</div>
-        
+
     </footer>
 
       <script>window.jQuery || document.write('<script src="../js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
@@ -461,5 +461,3 @@ eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdXJpc2RpY3Rpb24iOiJVUyIsInN1YiI6InNhcmF
       <script src="../js/main.js"></script>
   </body>
 </html>
-
-
