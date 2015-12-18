@@ -1,6 +1,6 @@
 
 $(document).ready(function() {
-	var HOST = "https://still-caverns-2170.herokuapp.com";
+	var HOST = "https://thawing-lake-3741.herokuapp.com/api;
 //	var HOST = "http://api.consentreceipt.org/api";
 
 	$.fn.serializeObject = function()
