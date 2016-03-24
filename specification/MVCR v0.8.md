@@ -14,13 +14,13 @@
 
 # Abstract
 
-The Consent & Information Sharing Working Group (CISWG) is specifying a set of requirements to create a minimum viable consent receipt that can be used to document consent transactions for an open ended set of consent contexts. This specification identifies the common consent requirements to record a personal data transaction and provides a reference for conformance to various uses of the MVCR specification.  
+The Consent & Information Sharing Working Group (CISWG) has specified a set of requirements to create a Minimum Viable Consent Receipt (MVCR) that can be used to document consent transactions for an open ended set of consent contexts. This specification identifies the common consent requirements to record a personal data transaction and provides a reference for conformance to various uses of the MVCR specification.  
 
-The objective is to address existing closed consent architecture with a consent record standard which provides a foundation for an open consent architecture.  Addressing multiple privacy principle requirements and providing a by doing so providing a framework for operationally addressing multiple Fair Information Practice Principles and likewise ISO 29100 principles.
-(editors note: reference FIPP properly )
+The objective is to address existing closed consent architecture with a consent record standard which provides a foundation for an open consent architecture.  Addressing multiple privacy principle requirements providing a framework for operationally addressing multiple Fair Information Practice Principles and likewise ISO 29100 principles.
+(editors note: reference FIPP properly - ask Scott D )
 
 In addition to (ISO Principles - "Openness, transparency, notice") and Consent (ISO Principle 1 - "Consent and Choice") are fundamental privacy principles, addressed with this specification.
-
+(editors note: reference ISO principles properly  )
 
 # Status of this document
 
