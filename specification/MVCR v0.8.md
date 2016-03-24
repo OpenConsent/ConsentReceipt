@@ -23,24 +23,22 @@ In addition to (ISO Principles - "Openness, transparency, notice") and Consent (
 (editors note: reference ISO principles properly  )
 
 # Status of this document
-
 The v0.8 draft is a specification candidate - this draft version is for peer review and not meant for distribution.
 
 ## Copyright Notice
-
 Copyright (c) 2016 Kantara and the persons identified as the document authors. All rights reserved.
 
 This document is subject to the [Kantara IPR Policy - Option Patent & Copyright: Reciprocal Royalty Free with Opt-Out to Reasonable and Non-discriminatory (RAND)](https://kantarainitiative.org/confluence/download/attachments/2293776/Kantara%20Initiative%20IPR%20Policies%20_V1.1_.pdf?version=1&modificationDate=1244488630000&api=v2)[HTML version](https://kantarainitiative.org/confluence/pages/viewpage.action?pageId=41025689)
 
 ## 1.	Introduction
-The Minimum Viable Consent Receipt (MVCR) is a specification for describing common requirements for consent in and across jurisdictions for a variety of consent contexts.
+The Minimum Viable Consent Receipt (MVCR) is a specification for describing common requirements for consent in and across jurisdictions for a variety of consent contexts, starting with Open Consent.
 
 ### 1.2 Scope
-This Minimum Viable Consent Receipt  specification has the scope of specifying a receipt for recording the provision of consent. This scope includes how a consent record is provided, how to present the record, the timing of the record, the format and order of fields and what data should be in the fields, linking the records of the fields to policy documents, icons, along with guidance for adding additional elements.
+This Minimum Viable Consent Receipt specification has the scope of specifying a receipt for recording the provision of consent. This scope includes how a consent record is provided, how to present the record fields, the timing of the record, the format and order of fields, linking fields to external information.
 
 ### 1.3 Scope definition
 The term 'minimum' in the MVCR refers to the least amount of information to make a consent receipt viable for a number of different context that is defined by the Data Controller (or grantor).  From the minimum open consent record with the least amount of fields possible for the record to be independently usable by both parties, for a consent record for non explicit consent, for an explicit machine readable consent receipt, to an explicit machine readable consent with explicitly specifying sharing of consent.  
- Viable, in this scope, means a record of consent that can be retained and used separately by both issuer (grantor) and recipient (grantee).
+ Viable, in this scope, means a record of consent that can be retained and used separately by both issuer (grantor) and recipient (grantee) as proof of consent.
 
  ** omit? ** The consent receipt (SHOULD/MUST) in all contexts involve the minimal set of notice requirements for the company or organization issuing the receipt to provide proof of consent. **
 
