@@ -14,13 +14,13 @@
 
 # Abstract
 
-The Consent & Information Sharing Working Group (CISWG) has specified a set of requirements to create a Minimum Viable Consent Receipt (MVCR) that can be used to document consent transactions for an open ended set of consent contexts. This specification identifies the common consent requirements to record a personal data transaction and provides a reference for conformance to various uses of the MVCR specification.  
+The Consent & Information Sharing Working Group (CISWG) has specified a set of requirements to create a Minimum Viable Consent Receipt (MVCR) that can be used to document, for the consent grantee, a consent transactions for an open ended set of consent to share contexts. This specification identifies the common consent requirements to record a personal information sharing transaction and provides a reference for conformance to various uses of the MVCR specification.  Including MVCR Lite, explicit consent compliance, sharing, and explict data sharing. 
 
-The objective is to address existing closed consent architecture with a consent record standard which provides a foundation for an open consent architecture.  Addressing multiple privacy principle requirements providing a framework for operationally addressing multiple Fair Information Practice Principles and likewise ISO 29100 principles.
-(editors note: reference FIPP properly - ask Scott D )
+The MVCR is designed to address existing closed consent architecture (ref whitepare) with a consent record standard which enables a open consent  architecture.  Open Consent, addresses multiple privacy principle and privacy legal requirements by providing a framework for operationally addressing multiple Fair Information Practice Principles and likewise ISO 29100 privacy principles. 
+(ref- FIPPs and  (ISO Principles - "Openness, transparency, notice") and Consent (ISO Principle 1 - "Consent and Choice") are fundamental privacy principles, addressed with this specification.
+(editors note:  - how should this be referenced and linked? )
 
-In addition to (ISO Principles - "Openness, transparency, notice") and Consent (ISO Principle 1 - "Consent and Choice") are fundamental privacy principles, addressed with this specification.
-(editors note: reference ISO principles properly  )
+
 
 # Status of this document
 The v0.8 draft is a specification candidate - this draft version is for peer review and not meant for distribution.
@@ -30,19 +30,20 @@ Copyright (c) 2016 Kantara and the persons identified as the document authors. A
 
 This document is subject to the [Kantara IPR Policy - Option Patent & Copyright: Reciprocal Royalty Free with Opt-Out to Reasonable and Non-discriminatory (RAND)](https://kantarainitiative.org/confluence/download/attachments/2293776/Kantara%20Initiative%20IPR%20Policies%20_V1.1_.pdf?version=1&modificationDate=1244488630000&api=v2)[HTML version](https://kantarainitiative.org/confluence/pages/viewpage.action?pageId=41025689)
 
-## 1.	Introduction
-The Minimum Viable Consent Receipt (MVCR) is a specification for describing common requirements for consent in and across jurisdictions for a variety of consent contexts, starting with Open Consent.
+## 1.	Objective
+The Minimum Viable Consent Receipt (MVCR) is a specification to provide the minimum viable fields for a consent record to be independantly usable for managing information sharing. 
 
 ### 1.2 Scope
-This Minimum Viable Consent Receipt specification has the scope of specifying a receipt for recording the provision of consent. This scope includes how a consent record is provided, how to present the record fields, the timing of the record, the format and order of fields, linking fields to external information.
+This Minimum Viable Consent Receipt specification has the scope of specifying a receipt for recording the provision of consent. This scope includes how a consent record is provided, how to present the record fields, the timing of the record, the format and order of fields, linking fields to external information, as well as the provisioning of the receipt at the point in time when the consent is provided.
 
-### 1.3 Scope definition
-The term 'minimum' in the MVCR refers to the least amount of information to make a consent receipt viable for a number of different context that is defined by the Data Controller (or grantor).  From the minimum open consent record with the least amount of fields possible for the record to be independently usable by both parties, for a consent record for non explicit consent, for an explicit machine readable consent receipt, to an explicit machine readable consent with explicitly specifying sharing of consent.  
- Viable, in this scope, means a record of consent that can be retained and used separately by both issuer (grantor) and recipient (grantee) as proof of consent.
+Viable, in this scope, means a record of consent that can be retained and used separately by both issuer (grantor) and recipient (grantee) as proof of consent.
 
- ** omit? ** The consent receipt (SHOULD/MUST) in all contexts involve the minimal set of notice requirements for the company or organization issuing the receipt to provide proof of consent. **
+Open 
+### 1.3 Scope: modes of consent 
 
-The receipt has two modes explicit consent or non-explicit consent specified with a yes/no flag, for numerous reasons. The primary reason of these modes is to facilitate high level of interoperability/extensibility with various; a) consent contexts across different mediums, b) simple legacy consent requirements to complex privacy compliance requirements, c) for adoption with or without legal liability,  d) so that the receipt is a consent record that is machine readable. e) Explicit consent is defined by regulation and up for little or no interpretation.
+The term 'minimum' in the MVCR refers to the least amount of information to make an  open, compliant, and explicit consent record  viable for a number of different contexts, defined by the Data Controller (or grantor).  From the minimum viable open consent record with the least amount of fields possible and extended to the maximum viable consent receipt  for the record to be independently usable by both parties, to be open compliant and explict for personal. informaton sharing.  consent record for non explicit consent, for an explicit machine readable consent receipt, to an explicit machine readable consent with explicitly specifying sharing of consent.   Explicit consent are the fields in the consent receipt that can be mapped with this specification to explict regulation,  principles, standards, and best practicesa and extended  referenced.  ISO Privacy Framework, and best practices  .  as to warrant the use of the consent receipt as a specification standard. 
+
+The receipt has two modes which further defines the scope: explicit consent mode or non-explicit consent mode, both are specified with a yes/no flag. The modes of consent are to facilate high level of interoperability/extensibility with; a) various consent contexts across different mediums, b) simple legacy consent requirements to complex privacy compliance requirements, c) for adoption with or without legal liability,  
 
 * Yes, indicating the receipt shows compliance and conformance for explicit consent.
 * No, indicating the receipt has demonstrated conformance with the MVCR and demonstrates, but is a limited to, conformance and makes no legal compliance claims.   
@@ -55,10 +56,12 @@ Both operational modes demonstrate at a minimum, open consent conformance to the
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this
 document are to be interpreted as described in [RFC 2119](http://www.rfc-editor.org/info/rfc2119).
 
- [RFC7159](https://docs.kantarainitiative.org/uma/rec-uma-core.html#RFC7159) data structures defined by this specification MAY contain extension properties that are not defined in this specification. Any entity receiving or retrieving a JSON data structure SHOULD ignore extension properties it is unable to understand. Extension names that are unprotected from collisions are outside the scope of this specification.
+ [RFC7159](https://docs.kantarainitiative.org/uma/rec-uma-core.html#RFC7159)
+ 
+(Note for Justin -- should we reference -->  JSON RFC7159 here? )  
 
 ### 1.5 Terminology ###
-
+(note: in progress) 
 Much of the basic terminology herein is from [ISO/IEC 29100:2011 "Information Technology -- Security techniques -- Privacy Framework"](http://standards.iso.org/ittf/PubliclyAvailableStandards/c045123_ISO_IEC_29100_2011.zip).
 
 >> ISO/IEC 29100:2011 ...provides a privacy framework which
@@ -72,22 +75,20 @@ ISO/IEC 29100:2011 is applicable to natural persons and organizations involved i
 
 The following are terms that are not referenced in 29100 and are used or referenced in this standard:
 
-
-* **Consent & Information Sharing Work Group (CISWG)**
-	The [Kantara Initiative](https://kantarainitiative.org/) Work Group responsible for this standard.
-
-(note: we need to include the terms we use in the spec, not just reference them)
-
 * **Consent Receipt (CR)**
 	A record of a personal information consent transaction.
-
-* **Consent Receipt Generator (CRG)**
-	A demonstration API that instantiates the MVCR.
 
 * **Data Subject (DS)**
 	See PII Subject in in ISO/IEC 29100:2011
 
-  **Explicit Consent**
+* **Explicit Consent**
+	also referred to as express consent, refers to the legal requirements for explicit and unambiguous consent as stated in notice and consent requiremens detailed by regulations. 
+	
+* **Grantee**
+	also referred to as the data subject for compliance conformance, the Grantee refers to the individual, or person acting on behalf of the grantor, who is provisioning consent. 
+
+* **Grantor** 
+	also referred to as the Data Controller for complaince conformance, the Grantor is referred to the parting that is requesting consent be granted. 
 
 * **Individual**
 	see PII Subject in ISO/IEC 29100:2011.
@@ -98,43 +99,53 @@ The following are terms that are not referenced in 29100 and are used or referen
 * **Minimum Viable Consent Receipt (MVCR)**
 	This standard
 
-  **Notice**
+  **Consent Notice**
+ 	refers to a notice that is required before consent so that a consent can be possible, the quality and usability of the consent notice is what is often used to classify if a consent is legally informed or not, but this varies by jurisdidction context and interpretation.  Consent notices can vary from icons, short notices, direct communication, visceral notice and the like.
 
 * **Personal Information (PI)**
 	See Personally Identifiable Information (PII) in ISO/IEC 29100:2011
+
+* **Personally Identifiable Information**
+
 
 * **Purpose Specification**
 	A statement or series of statements that set out the purpose(s) for which PII has been collected.
 
 * **Sensitive Personal Information Categories**
-	All sensitive categories require explicit consent.
-  Some jurisdictions call out categories of PII that, by virtue of their sensitivity, require higher levels of protection. The particular categories vary by jurisdiction but will typically include health data (or personal health information - PHI), financial data, political affiliations and similar categories.
+	All sensitive infomration categories require explicit consent and is subject to legislation and often industry specific regulation and best pracitce.  Some jurisdictions call out categories of PII specifically, that, by virtue of their sensitivity, require higher levels of protection. The particular categories vary by jurisdiction but will typically include health data (or personal health information - PHI), financial data, political affiliations, sexual orientation, family and personal relationships as defined in law.  In this specification, this field is accompanies by an 'other' feild for free text and the grantor can define or suggest what is sensitive enabling competition and diversity which cannot be specified here.  
 
 ## 2. Core MVCR Profile
+
 The MVCR is broken down into 5 sections for usability and to aid in understanding the core function. The 5 sections are:
 
 1.	Header
-2.	PII Controller, Contact & Policy
-3.	Purpose(s)
+2.	Data Controller, Contact & Policy
+3.	Purpose Specification
 4.	Personally Identifiable Information
 5.	Information Sharing
 
+
+Global Guidance 
 The order is specific and is part of the specification.
+Timing of providing a receipt - needs to be provided at the point in time in which the consent is provided. 
+The ability for the grantee to get a copy of the consent receipt is requiement a requiement  
+
+
 
 ### 2.1 Header
 
 The purpose of this section is to set out the meta-data for the consent transaction. This section will contain the following fields:
 
-| Receipt Field Label | Receipt Field Format | Data Field Name | Data Type | Receipt Field Description | Purpose of Field  |
+| Receipt Field Label | Receipt Field Format | Data Field Name | Data Type | Example Data Input | Receipt Field Description | Purpose of Field  | Linked |
 | --- | --- | --- | --- |
-| Explicit Consent (y/n)  | Yes or No | explicit_consent |
-| Jurisdiction | The legal jurisdiction that the PII controller will apply to this collection of PII | Required | Typically should be an ISO two letter country code |
-| Consent Time Stamp | The time and date that the consent receipt was issued | Required | Date and time including time zone, or in UTC |
-| Consent Type | Implied or Expressed Consent (or N/A in the case where collection is a legal requirement) | Required | **Note 1:** If collection is required by law, consent should not be sought except for other purposes, since consent is only meaningful if the PII Subject may say no. **Note 2:** If the PII is sensitive (below) and consent is required for collection, expressed consent will be required in many jurisdictions |
-| Collection Method | A description of how the consent was collected | Optional | Describe the type and method collection method such as "Implied by completion of web form" or "Expressed with opt-in check box". |
-| Collection Site | Identify the location where the collection occurred | Required | Typically a URI such as http://www.consentreceipt.org for web transactions. |
-| Consent ID | A unique identifier for the consent receipt | Required | A globally unique ID (GUID) |
-| PII Subject | An identifier or token for the natural person whose information has been collected and who has given consent | Required | John Doe |
+
+| Jurisdiction | Country and if state/prov if applcable | jurisdiction | string. | US  | ISO two-letter country code if applicable, otherwise free text  | to facilitate compliance requirements |  Not Linked |
+| Consent Time Stamp | military time | iat | number. Integer number of seconds since 1970-01-01 00:00:00 GMT | The time and date that the consent receipt was issued | 1435367226 | Date and time including time zone, or in UTC | for operational use |  Not Linked |
+| Explicit Consent (y/n)  | Yes or No | explicit_consent | ? (Justin) | yes | is used to specify if receipt is explicit or not | compliance,  operational scope for implied or other types of consent  | Link not required |
+| Collection Method | short 2-3 word desription | moc | Method of collection | web form | A description of medium in which the consent was collected | compliance, context of consent | Linked to  location/description of consent  |
+| Consent ID |  A unique identifier for the consent receipt | Required | A globally unique ID (GUID) |
+| Grantee Identifier | email address, picture, device id,  | sub | string | alice@domain.com | Subject provided identifier, email address - or Claim, defined/namespaced | required for proof of consent claim |
+
 
 #### Header Example
 
@@ -142,14 +153,16 @@ The purpose of this section is to set out the meta-data for the consent transact
 | ------:	| ------	|
 | __Jurisdiction:__ | CA |
 | __Consent Time Stamp:__ | 2016/02/08 12:20:34 EST |
-| __Consent Type:__ | Expressed |
-| __Collection Method:__ | Opt-In checkbox on a web form |
-| __Collection Site:__ | [http://www.consentreceipt.org](http://www.consentreceipt.org) |
+| _Explicit Consent:__ | Yes |
+| __Collection Method:__ | web form | [http://www.consentreceipt.org](http://www.consentreceipt.org) |
 | __Consent ID:__ | C159A448-A69B-44BF-BFCE-6403FB5D06EE |
-| __PII Subject_Identifier:__ | [roadrunner@fictional.url](mailto:roadrunner@fictional.url) |
+| __Grantee_Identifier:__ | [roadrunner@fictional.url](mailto:roadrunner@fictional.url) |
 
+Guideance
+Conformane Guidance for Explicit Consent Compliance: 
+the CR purpose is to provide a specific set of requiremetns for explicit consent, which can be mapped to legislation and regulation  to indicate compliance. The legislation notice requirements for auditing the explicit compliance of a consent receipt can be determined by looking at the jurisidiction and header of the receipt, and to use the purpose, data type and sharing to decipher the type of legislation, the  can be added to the A project kit for a method to map compliance to specific legilsation i    
 
-### 2.2 PII Controller, Contact & Policy
+### 2.2 PI Controller, Contact & Policy
 
 The purpose of this section is to identify the entity that is accountable for data protection and the privacy policy tp which the consent is bound.
 
@@ -161,10 +174,13 @@ The purpose of this section is to identify the entity that is accountable for da
 | Contact Address | Physical Address | Required | |
 | Contact Email | Email Address | Required | |
 | Contact Phone | Phone Number | Required | |
-| Privacy Policy | URL of the privacy policy as at the time of the receipt | Required | Note that this means that the entity needs to retain copies of prior privacy policies |
-| Privacy Label | URL of the short privacy notice, if one exists for the entity | Optional | This field is still only tentatively part of the standard |
+| Privacy Policy | URL of the privacy policy as at the time of the receipt | Required | Note that this means that the entity needs to retain copies of prior privacy policies |  |
 
-#### PII Controller, Contact and Policy Example ####
+Guidance
+privacy policy link
+Note that this means that the entity needs to retain copies of prior privacy policies 
+
+#### PI Controller, Contact and Policy Example ####
 
 | Field | Contents|
 | ------:	| ------	|
@@ -252,21 +268,43 @@ The following example is from an online financial institution
 | __Financial__ | Tax Authority  | Required by Law Enforcement or Government | Financial institution required to disclose personal financial information for tax purposes |
 | __Contact__ | Advertising Network| Marketing Third Parties | Ad supported web site |
 
-# 3. Fields in Review v0.8:
+# 3. Conformance Table
 
-In order to create v0.7 much has been cut to the minimum, this includes some feild that are in review, these are
+| Field # | Field Name | MVCR Lite | Explicit Consent | Legal Compliance UK |
+| ------ | ------ | -----| :------: | :------: |
+| 1 | Jurisdiction | MAY | MUST | MUST - Machine Readable |
+| 2 | Consent Time Stamp | MAY | |  MUST - Machine Readable|
+| 3 | Explicit Consent (y/n)  | MAY | MUST | MUST | 
+| 4 | Collection Method |  | MAY
+| 5 | Consent ID | 
+| 6 | Grantee Identifier | 
 
- * Review consent transaction data
- * Review consent context
- * Review consent payload
- * Review Resource Server Identifier
- * Review OAuth Scopes
- * Review and what is —> Audience URI
- * Consent Location
+
+# 3.1. Guidance 
+# 3.1.1 MVCR Lite : Openning consent by:
+* The grantee (or data subject) obtains a record of the consent at point in time consent is provided so as to be contextually #usable
+* The grantee (or data subject) and the grantor (Data Controller) can use the receipt to communicate about the consent and its management
+* The consent receipt can be used by the grantee (data subject) and the grantor (Data Controller) to prove consent post the point in time the consent is provided
+
+ a contact data is needed 
+# 3.2 Explicit Consent
+* All Core Fields are required, some 
+* All the requirements of the previous + plus additional fields for the receipt to be usable for scale and compliance
+
+# 3.3 Legal compliance UK (example of compliance requirements) 
+* All previous requirements + explict references to requirements and its satisfaction (presented as a X (or UK) profile for compliance) 
+* Note compliant with current legislation (not GDPR)
+* Machine readable is a requirement in order to automate the validation of wether or not a receipt is compliant. 
+
+
 
 # 4. Appendices
 
-## 4.1. Appendix A: JSON example
+## 4.1. All Fields
+
+
+
+## 4.2. Appendix A: JSON example
 
 A demonstration version of the MVCR can be found on the [Example Consent Receipt Generator (CRG)](https://mvcr.herokuapp.com/) page. The example site also contains [API documentation](https://mvcr.herokuapp.com/doc/). This server contains a consent receipt generation API. The API consists of a single endpoint at [http://www.consentreceipt.org/mvcr/api](http://www.consentreceipt.org/mvcr/api). This endpoint accepts HTTP POST requests with input in the form of JSON (application/json) documents and returns output in the form of a signed JSON Web Token (application/jwt). The example site consists of two pages:
 
