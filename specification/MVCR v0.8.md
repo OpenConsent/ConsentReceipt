@@ -137,7 +137,7 @@ The ability for the grantee to get a copy of the consent receipt is requiement a
 The purpose of this section is to set out the meta-data for the consent transaction. This section will contain the following fields:
 
 | Receipt Field Label | Receipt Field Format | Data Field Name | Data Type | Example Data Input | Receipt Field Description | Purpose of Field  | Linked |
-| --- | --- | --- | --- |
+| --- | --- | --- | --- | --- | --- | --- | --- |
 
 | Jurisdiction | Country and if state/prov if applcable | jurisdiction | string. | US  | ISO two-letter country code if applicable, otherwise free text  | to facilitate compliance requirements |  Not Linked |
 | Consent Time Stamp | military time | iat | number. Integer number of seconds since 1970-01-01 00:00:00 GMT | The time and date that the consent receipt was issued | 1435367226 | Date and time including time zone, or in UTC | for operational use |  Not Linked |
@@ -274,10 +274,10 @@ The following example is from an online financial institution
 | ------ | ------ | -----| :------: | :------: |
 | 1 | Jurisdiction | MAY | MUST | MUST - Machine Readable |
 | 2 | Consent Time Stamp | MAY | |  MUST - Machine Readable|
-| 3 | Explicit Consent (y/n)  | MAY | MUST | MUST | 
-| 4 | Collection Method |  | MAY
-| 5 | Consent ID | 
-| 6 | Grantee Identifier | 
+| 3 | Explicit Consent (y/n)  | MAY | MUST | MUST - referened and satisfied | 
+| 4 | Collection Method |  | MAY | | |
+| 5 | Consent ID | |  | | |
+| 6 | Grantee Identifier | |  | | |
 
 
 # 3.1. Guidance 
