@@ -143,7 +143,7 @@ The purpose of this section is to set out the meta-data for the consent transact
 | Consent Time Stamp | military time | iat | number. Integer number of seconds since 1970-01-01 00:00:00 GMT | 1435367226 | Date and time including time zone, or in UTC that consent was granted  for operational use |  Not Linked |
 | Explicit Consent (y/n)  | Yes or No | explicit_consent | ? (Justin) | yes | is used to specify if receipt is explicit or not | compliance,  operational scope for implied or other types of consent  | Link not required |
 | Collection Method | short 2-3 word desription | moc | Method of collection | web form | A description of medium in which the consent was collected | compliance, context of consent | Linked to  location/description of consent  |
-| Consent ID |  A unique identifier for the consent receipt | Required | A globally unique ID (GUID) |
+| Consent ID | # |  jti |  A unique identifier for the consent receipt | C159A448-A69B-44BF-BFCE-6403FB5D06EE |  A globally unique ID (GUID) | for proof of consent authentication | Not Linked | 
 | Grantee Identifier | email address, picture, device id,  | sub | string | alice@domain.com | Subject provided identifier, email address - or Claim, defined/namespaced | required for proof of consent claim |
 
 
