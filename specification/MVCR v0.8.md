@@ -140,7 +140,7 @@ The purpose of this section is to set out the meta-data for the consent transact
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 | Jurisdiction | Country and if state/prov if applcable | jurisdiction | string. | US  | ISO two-letter country code if applicable, otherwise free text  | to facilitate compliance requirements |  Not Linked |
-| Consent Time Stamp | military time | iat | number. Integer number of seconds since 1970-01-01 00:00:00 GMT | 1435367226 | Date and time including time zone, or in UTC that consent was granted  for operational use |  Not Linked |
+| Consent Time Stamp | military time | iat | number. Integer number of seconds since 1970-01-01 00:00:00 GMT | 1435367226 | Date and time including time zone, or in UTC that consent was granted  for operational use | for logging consent record | Not Linked |
 | Explicit Consent (y/n)  | Yes or No | explicit_consent | ? (Justin) | yes | is used to specify if receipt is explicit or not | compliance,  operational scope for implied or other types of consent  | Link not required |
 | Collection Method | short 2-3 word desription | moc | Method of collection | web form | A description of medium in which the consent was collected | compliance, context of consent | Linked to  location/description of consent  |
 | Consent ID | # |  jti |  A unique identifier for the consent receipt | C159A448-A69B-44BF-BFCE-6403FB5D06EE |  A globally unique ID (GUID) | for proof of consent authentication | Not Linked | 
@@ -159,8 +159,7 @@ The purpose of this section is to set out the meta-data for the consent transact
 | __Grantee_Identifier:__ | [roadrunner@fictional.url](mailto:roadrunner@fictional.url) |
 
 Guideance
-Conformane Guidance for Explicit Consent Compliance: 
-the CR purpose is to provide a specific set of requiremetns for explicit consent, which can be mapped to legislation and regulation  to indicate compliance. The legislation notice requirements for auditing the explicit compliance of a consent receipt can be determined by looking at the jurisidiction and header of the receipt, and to use the purpose, data type and sharing to decipher the type of legislation, the  can be added to the A project kit for a method to map compliance to specific legilsation i    
+ 
 
 ### 2.2 PI Controller, Contact & Policy
 
@@ -280,21 +279,23 @@ The following example is from an online financial institution
 | 6 | Grantee Identifier | |  | | |
 
 
-# 3.1. Guidance 
-# 3.1.1 MVCR Lite : Openning consent by:
+## 3.1. Guidance 
+### 3.1.1 MVCR Lite : Openning consent by:
 * The grantee (or data subject) obtains a record of the consent at point in time consent is provided so as to be contextually #usable
 * The grantee (or data subject) and the grantor (Data Controller) can use the receipt to communicate about the consent and its management
 * The consent receipt can be used by the grantee (data subject) and the grantor (Data Controller) to prove consent post the point in time the consent is provided
 
  a contact data is needed 
-# 3.2 Explicit Consent
+## 3.2 Explicit Consent
 * All Core Fields are required, some 
 * All the requirements of the previous + plus additional fields for the receipt to be usable for scale and compliance
 
-# 3.3 Legal compliance UK (example of compliance requirements) 
+## 3.3 Legal compliance UK (example of compliance requirements) 
 * All previous requirements + explict references to requirements and its satisfaction (presented as a X (or UK) profile for compliance) 
 * Note compliant with current legislation (not GDPR)
 * Machine readable is a requirement in order to automate the validation of wether or not a receipt is compliant. 
+* Conformane Guidance for Explicit Consent Compliance: 
+the CR purpose is to provide a specific set of requiremetns for explicit consent, which can be mapped to legislation and regulation  to indicate compliance. The legislation notice requirements for auditing the explicit compliance of a consent receipt can be determined by looking at the jurisidiction and header of the receipt, and to use the purpose, data type and sharing to decipher the type of legislation, the  can be added to the A project kit for a method to map compliance to specific legilsation i   
 
 
 
