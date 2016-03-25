@@ -140,7 +140,7 @@ The purpose of this section is to set out the meta-data for the consent transact
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 | Jurisdiction | Country and if state/prov if applcable | jurisdiction | string. | US  | ISO two-letter country code if applicable, otherwise free text  | to facilitate compliance requirements |  Not Linked |
-| Consent Time Stamp | military time | iat | number. Integer number of seconds since 1970-01-01 00:00:00 GMT | 1435367226 | Date and time including time zone, or in UTC that consent was granted  | for operational use |  Not Linked |
+| Consent Time Stamp | military time | iat | number. Integer number of seconds since 1970-01-01 00:00:00 GMT | 1435367226 | Date and time including time zone, or in UTC that consent was granted  for operational use |  Not Linked |
 | Explicit Consent (y/n)  | Yes or No | explicit_consent | ? (Justin) | yes | is used to specify if receipt is explicit or not | compliance,  operational scope for implied or other types of consent  | Link not required |
 | Collection Method | short 2-3 word desription | moc | Method of collection | web form | A description of medium in which the consent was collected | compliance, context of consent | Linked to  location/description of consent  |
 | Consent ID |  A unique identifier for the consent receipt | Required | A globally unique ID (GUID) |
