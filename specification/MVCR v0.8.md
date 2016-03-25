@@ -138,7 +138,6 @@ The purpose of this section is to set out the meta-data for the consent transact
 
 | Receipt Field Label | Receipt Field Format | Data Field Name | Data Type | Example Data Input | Receipt Field Description | Purpose of Field  | Linked |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-
 | Jurisdiction | Country and if state/prov if applcable | jurisdiction | string. | US  | ISO two-letter country code if applicable, otherwise free text  | to facilitate compliance requirements |  Not Linked |
 | Consent Time Stamp | military time | iat | number. Integer number of seconds since 1970-01-01 00:00:00 GMT | 1435367226 | Date and time including time zone, or in UTC that consent was granted  for operational use | for logging consent record | Not Linked |
 | Explicit Consent (y/n)  | Yes or No | explicit_consent | ? (Justin) | yes | is used to specify if receipt is explicit or not | compliance,  operational scope for implied or other types of consent  | Link not required |
