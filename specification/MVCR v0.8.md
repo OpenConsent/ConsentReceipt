@@ -31,27 +31,31 @@ Copyright (c) 2016 Kantara and the persons identified as the document authors. A
 This document is subject to the [Kantara IPR Policy - Option Patent & Copyright: Reciprocal Royalty Free with Opt-Out to Reasonable and Non-discriminatory (RAND)](https://kantarainitiative.org/confluence/download/attachments/2293776/Kantara%20Initiative%20IPR%20Policies%20_V1.1_.pdf?version=1&modificationDate=1244488630000&api=v2)[HTML version](https://kantarainitiative.org/confluence/pages/viewpage.action?pageId=41025689)
 
 ## 1.	Objective
-The Minimum Viable Consent Receipt (MVCR) is a specification for common set of minimum viable fields for a consent record to be provided as a consent receipt, independantly usable for managing information sharing. 
+The Minimum Viable Consent Receipt (MVCR) is a specification for common set of minimum viable fields for a consent record to be provided as an independant consent receipt for information sharing.  
 
 ### 1.2 Scope
-This Minimum Viable Consent Receipt specification has the scope of specifying a receipt for recording the provision of consent. This scope includes how a consent record is provided, how to present the record fields, the format and order of fields, linking fields to external information, as well as the provisioning of the receipt at the point in time when the consent is provided.
+This Minimum Viable Consent Receipt specification has the scope of specifying a receipt for the policy recording the provision of consent for perosnal information. (purpose, types of personal information collected for  this purpose, and the sharing of this data with a 3rd party.)
+
+For authoritiative referencing of policy (principle and best practices), technical scopes. In addition to the physcial provison of the reciept which includes how a consent record is provided, how to present the record fields, the format and order of fields, linking fields to external information, as well as the provisioning of the receipt at the point in time when the consent is provided. 
 
 Viable, in this scope, means a record of consent that can be retained and used separately by both issuer (grantor) and recipient (grantee) as proof of consent.
 
-Open 
-### 1.3 Scope: modes of consent 
+ 
+### 1.3 Scope Defined: 3 models of consent specification layered onto
 
-The term 'minimum' in the MVCR refers to the least amount of data required to make an  open, compliant, and explicit consent record  viable for a number of different contexts, defined by the Data Controller (or grantor).  From the minimum viable open consent record with the least amount of fields possible and extended to the maximum viable consent receipt  for the record to be independently usable by both parties, to be open compliant and explict for personal. informaton sharing.  
+The term 'minimum' in the MVCR refers to the least amount of data required to make an open, compliant, and explicit consent record  viable for a number of different contexts, defined by 
+* A) the Data Controller (or grantor), self-asserted
+* B) and/or defined by authoritiative policy i.e. regulation, 
+* C) and/or defined by technical scope, i.e. UMA/Oauthor  
 
-Explicit consent is comprised of the fields in a machine readable consent receipt that is  referenced to specification regulation,  principles, standards, and best practicesa and extended  referenced.  ISO Privacy Framework, and best practices  .  So as to indicate it these fields can be specified expliity for  policy, law and technical scopes (for authorisation), to be mapped into a open consent framework. 
+Explicit consent is comprised of the fields in a machine readable consent record, which is further extended by reference, typcially to authoritiative; regulation,  principles, standards, best practices.  For example: ISO Privacy Framework, which informs this specification as a privacy framework.  So as to indicate if these fields can be specified expliity for policy, law and technical scopes (for authorisation), to be mapped into a open consent record.  (editors: requires a ISO conformance table and reference in appendix)
 
-The receipt has two modes which further defines the scope: explicit consent mode or non-explicit consent mode, both are specified with a yes/no flag. The modes of consent are to facilate high level of interoperability/extensibility with; a) various consent contexts across different mediums, b) simple legacy consent requirements to complex privacy compliance requirements, c) for adoption with or without legal liability,  
+The receipt has consent type to defines the scope as explicit or else non-explicit in regards to referencing the above scopes. The modes of consent are to facilate high level of interoperability/extensibility with; a) various consent contexts across different mediums, b) simple legacy non-digital consent requirements to complex and specific operational privacy compliance requirements, c) for adoption of non-explicit consent with or without legal liability,  
 
-* Yes, indicating the receipt shows compliance and conformance for explicit consent.
-* No, indicating the receipt has demonstrated conformance with the MVCR and demonstrates, but is a limited to, conformance and makes no legal compliance claims.   
+* Explicit, indicating the receipt shows compliance and conformance for explicit consent.
+* Non-Explicit (or defined consent type), indicating the receipt has demonstrated conformance with the MVCR and demonstrates, but is limited to, conformance and makes no legal compliance claims.   
 
-Both operational modes demonstrate at a minimum, open consent conformance to the MVCR.  Providing flexibility for implementation and adoption without the burden of legal compliance obligations for the implementor. (see conformance table)
-
+Both operational modes demonstrate at a minimum, MVCR open consent conformance.  Providing flexibility for implementation and adoption without the burden of legal compliance obligations for the implementor. (see conformance table)
 
 ### 1.4 Notational Conventions for Conformance
 
@@ -60,12 +64,13 @@ document are to be interpreted as described in [RFC 2119](http://www.rfc-editor.
 
  [RFC7159](https://docs.kantarainitiative.org/uma/rec-uma-core.html#RFC7159)
  
-(Note for Justin -- should we reference -->  JSON RFC7159 here? )  
+(Editorss Note: how do we nreference -->  JSON RFC7159 here? JWT - for tehcnically dynamic use of the receipt)  
 
 ### 1.5 Terminology ###
 (note: in progress) 
 Much of the basic terminology herein is from [ISO/IEC 29100:2011 "Information Technology -- Security techniques -- Privacy Framework"](http://standards.iso.org/ittf/PubliclyAvailableStandards/c045123_ISO_IEC_29100_2011.zip).
 
+(editors note: Push this  ISO reference into Apendix or ISO conformance profile maping to explicit requirements in ISO)
 >> ISO/IEC 29100:2011 ...provides a privacy framework which
 >>
 >> * specifies a common privacy terminology;
@@ -133,7 +138,6 @@ Timing of providing a receipt - needs to be provided at the point in time in whi
 The ability for the grantee to get a copy of the consent receipt is requiement a requiement  
 
 
-
 ### 2.1 Header
 
 The purpose of this section is to set out the meta-data for the consent transaction. This section will contain the following fields:
@@ -142,7 +146,6 @@ The purpose of this section is to set out the meta-data for the consent transact
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | Jurisdiction | Country and if state/prov if applcable | jurisdiction | string. | US  | ISO two-letter country code if applicable, otherwise free text  | to facilitate compliance requirements |  Not Linked |
 | Consent Time Stamp | military time | iat | number. Integer number of seconds since 1970-01-01 00:00:00 GMT | 1435367226 | Date and time including time zone, or in UTC that consent was granted  for operational use | for logging consent record | Not Linked |
-| Explicit Consent (y/n)  | Yes or No | explicit_consent | ? (string) | yes | is used to specify if receipt is explicit or not | compliance,  operational scope for implied or other types of consent  | Link not required |
 | Consent Type | title of type model | type | ? (string) | field is used for adding non-explicit consent implied or delayed - or explicit | model consent expectations | Link Optional |
 | Collection Method | short 2-3 word desription | moc | Method of collection | web form | A description of medium in which the consent was collected | compliance, context of consent | Linked to  location/description of consent  |
 | Consent ID | # |  jti |  A unique identifier for the consent receipt | C159A448-A69B-44BF-BFCE-6403FB5D06EE |  A globally unique ID (GUID) | for proof of consent authentication | Not Linked | 
@@ -160,24 +163,28 @@ The purpose of this section is to set out the meta-data for the consent transact
 | __Consent ID:__ | C159A448-A69B-44BF-BFCE-6403FB5D06EE |
 | __PI_Subjct (or Grantee):__ | [roadrunner@fictional.url](mailto:roadrunner@fictional.url) |
 
-Guideance
- 
- cnsent type guidance
+Guideance -  in progress
+*  Jurisdiction - 
+* Consent Time Stamp
+* Consent type guidance: used for explicit and non-explicit, or defined type, this can explicity referenced  a global profile for the consent the consent --> receipt - the
  (or N/A in the case where collection is a legal requirement) | Required | **Note 1:** If collection is required by law, consent should not be sought except for other purposes, since consent is only meaningfull if the PII Subject may say no. **Note 2:** If the PII is sensitive (below) and consent is required for collection, expressed consent will be required in many jurisdictions
+* Collection Method
+* Consent ID
+* PI Subject
 
 ### 2.2 PI Controller, Contact & Policy
 
 The purpose of this section is to identify the entity that is accountable for data protection and the privacy policy tp which the consent is bound.
 
-| Field Name | Description | Type | Notes |
-| --- | --- | --- | --- |
-| Data Controller | That entity that is accountable for compliance over the PII | Required | Typically the entity that owns the web site that the is issuing the consent receipt |
-| Data Processor | The entity that has collected the PII | Optional | When the site operator is acting on behalf of the Data Controller |
-| Contact Name| The person/role to contact for privacy issues | Required | |
-| Contact Address | Physical Address | Required | |
-| Contact Email | Email Address | Required | |
-| Contact Phone | Phone Number | Required | |
-| Privacy Policy | URL of the privacy policy as at the time of the receipt | Required | Note that this means that the entity needs to retain copies of prior privacy policies |  |
+| Receipt Field Label | Receipt Field Format | Data Field Name | Data Type | Example Data Input | Receipt Field Description | Purpose of Field  | Linked |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Data Controller | That entity that is accountable for compliance over the PII | Required | Typically the entity that owns the web site that the is issuing the consent receipt | --- | --- | --- |
+| Data Processor | The entity that has collected the PII | Optional | When the site operator is acting on behalf of the Data Controller |--- | --- | --- |
+| Contact Name| The person/role to contact for privacy issues | Required | --- | --- | --- |
+| Contact Address | Physical Address | Required |--- | --- | --- |
+| Contact Email | Email Address | Required |--- | --- | --- |
+| Contact Phone | Phone Number | Required | --- | --- | --- |
+| Privacy Policy | URL of the privacy policy as at the time of the receipt | Required | Note that this means that the entity needs to retain copies of prior privacy policies | --- | --- | --- |
 
 Guidance
 privacy policy link
@@ -200,15 +207,15 @@ Note that this means that the entity needs to retain copies of prior privacy pol
 
 The purpose of this section is to identify the primary purpose(s) for which the PII Controller is collecting PII, along with any secondary purposes for which the PII might be collected.
 
-| Field Name | Description | Type | Notes |
-| --- | --- | --- | --- |
+| Receipt Field Label | Receipt Field Format | Data Field Name | Data Type | Example Data Input | Receipt Field Description | Purpose of Field  | Linked |
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | | | | Repeat the following set of fields as many times as necessary to set out the purpose(s) for collection |
 | Service | Site, app, or service | Required | Name of the site, the app or the service that will use the PII collected |
 | Purpose | Description of purpose | Required | Should be explicit and specific as reasonably necessary to fulfill the Service |
 | Primary | Is this the primary purpose for collecting PII? (True|False) | Required | Typically only one purpose should be identified as primary. |
 | Necessary | Is this a necessary purpose? (True|False) | Required | The primary purpose will be necessary, but may not be the only necessary purpose. PII subject should be able to provide consent directives to opt out of purposes not identified as necessary . |
 
-#### Notes on Purpose(s)
+#### Guidance on Purpose(s)
 
 * Each purpose MUST link the service name to at least one explicit and specific purpose.
 * Each purpose SHOULD contain an external reference to an on and off preference for this purpose.
@@ -231,8 +238,8 @@ The purpose of this section is to identify the primary purpose(s) for which the 
 
 The purpose of this section is to ensure that the PII Subject is made aware of the types of PII that has been collected and may be used or disclosed.
 
-| Field Name | Description | Type | Notes |
-| --- | --- | --- | --- |
+| Receipt Field Label | Receipt Field Format | Data Field Name | Data Type | Example Data Input | Receipt Field Description | Purpose of Field  | Linked |
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | | | | Repeat the following set of fields as many times as necessary to set out the types of PII |
 | Category | Label for a type of data that may be collected | Required |  |
 | PII | Short description of the category | Required |  |
@@ -255,8 +262,8 @@ The example below is for an on-line pharmacy that provides a delivery service
 
 The purpose of this section is to provide the PII Subject with information about how their information is shared with third parties. In the MVCR this is a Y/N (binary on and off) flag, and if On, then the 3rd parties, the specified purpose and at the minimum the data categories shared may be listed here.
 
-| Field Name | Description | Type | Notes |
-| --- | --- | --- | --- |
+| Receipt Field Label | Receipt Field Format | Data Field Name | Data Type | Example Data Input | Receipt Field Description | Purpose of Field  | Linked |
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | | | | Repeat the following set of fields as many times as necessary identify third parties |
 | Sharing | Category(ies) of data shared | Required |  |
 | Third Party | Third party that receives the data | Required | SHOULD be specific, MAY be generic |
@@ -271,16 +278,28 @@ The following example is from an online financial institution
 | __Financial__ | Tax Authority  | Required by Law Enforcement or Government | Financial institution required to disclose personal financial information for tax purposes |
 | __Contact__ | Advertising Network| Marketing Third Parties | Ad supported web site |
 
+### 2.6 Functional Scope
+| Receipt Field Label | Receipt Field Format | Data Field Name | Data Type | Example Data Input | Receipt Field Description | Purpose of Field  | Linked |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Scope | scope [function] | --- | --- | string. space separated string values | [function] withdraw | provide the techical auhtorisation for [function] | linked to scope definion |
+
+#### Functional Scope Example
+| Sharing | Authority | Purpose | Scope Reference (linked) |
+| ------ | ------ | :------: | :------: |
+| __Scope__ | UMA  | provide technical authoristions for withdraw of consent  | UMA 1.1  |
+
 # 3. Conformance Table
 
-| Field # | Field Name | MVCR Lite | Explicit Consent | Legal Compliance UK |
+This conformance table specifies requirements to fullfill scope as defined. 
+
+| Field # | Field Name | MVCR Lite | Explicit Consent | Legal Compliance UK | Scope |
 | ------ | ------ | -----| :------: | :------: |
-| 1 | Jurisdiction | MAY | MUST | MUST - Machine Readable |
-| 2 | Consent Time Stamp | MAY | |  MUST - Machine Readable|
-| 3 | Explicit Consent (y/n)  | MAY | MUST | MUST - referened and satisfied | 
-| 4 | Collection Method |  | MAY | | |
-| 5 | Consent ID | |  | | |
-| 6 | Grantee Identifier | |  | | |
+| 1 | Jurisdiction | MAY | MUST | MUST - Machine Readable | |
+| 2 | Consent Time Stamp | MAY | |  MUST - Machine Readable| |
+| 3 | Explicit Consent (y/n)  | MAY | MUST | Authoritative reference | techncical scope for this reference | 
+| 4 | Collection Method |  | MAY | | | |
+| 5 | Consent ID | |  | | | |
+| 6 | Grantee Identifier | |  | | | |
 
 
 ## 3.1. Guidance 
@@ -288,8 +307,8 @@ The following example is from an online financial institution
 * The grantee (or data subject) obtains a record of the consent at point in time consent is provided so as to be contextually #usable
 * The grantee (or data subject) and the grantor (Data Controller) can use the receipt to communicate about the consent and its management
 * The consent receipt can be used by the grantee (data subject) and the grantor (Data Controller) to prove consent post the point in time the consent is provided
+ a contact data is required
 
- a contact data is needed 
 ## 3.2 Explicit Consent
 * All Core Fields are required, some 
 * All the requirements of the previous + plus additional fields for the receipt to be usable for scale and compliance
@@ -302,12 +321,11 @@ The following example is from an online financial institution
 the CR purpose is to provide a specific set of requiremetns for explicit consent, which can be mapped to legislation and regulation  to indicate compliance. The legislation notice requirements for auditing the explicit compliance of a consent receipt can be determined by looking at the jurisidiction and header of the receipt, and to use the purpose, data type and sharing to decipher the type of legislation, the  can be added to the A project kit for a method to map compliance to specific legilsation i   
 
 
-
 # 4. Appendices
 
 ## 4.1. All Fields
 
-
+(IN Progress - completed once - fields drafted) 
 
 ## 4.2. Appendix A: JSON example
 
