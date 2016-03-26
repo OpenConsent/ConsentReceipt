@@ -31,17 +31,19 @@ Copyright (c) 2016 Kantara and the persons identified as the document authors. A
 This document is subject to the [Kantara IPR Policy - Option Patent & Copyright: Reciprocal Royalty Free with Opt-Out to Reasonable and Non-discriminatory (RAND)](https://kantarainitiative.org/confluence/download/attachments/2293776/Kantara%20Initiative%20IPR%20Policies%20_V1.1_.pdf?version=1&modificationDate=1244488630000&api=v2)[HTML version](https://kantarainitiative.org/confluence/pages/viewpage.action?pageId=41025689)
 
 ## 1.	Objective
-The Minimum Viable Consent Receipt (MVCR) is a specification to provide the minimum viable fields for a consent record to be independantly usable for managing information sharing. 
+The Minimum Viable Consent Receipt (MVCR) is a specification for common set of minimum viable fields for a consent record to be provided as a consent receipt, independantly usable for managing information sharing. 
 
 ### 1.2 Scope
-This Minimum Viable Consent Receipt specification has the scope of specifying a receipt for recording the provision of consent. This scope includes how a consent record is provided, how to present the record fields, the timing of the record, the format and order of fields, linking fields to external information, as well as the provisioning of the receipt at the point in time when the consent is provided.
+This Minimum Viable Consent Receipt specification has the scope of specifying a receipt for recording the provision of consent. This scope includes how a consent record is provided, how to present the record fields, the format and order of fields, linking fields to external information, as well as the provisioning of the receipt at the point in time when the consent is provided.
 
 Viable, in this scope, means a record of consent that can be retained and used separately by both issuer (grantor) and recipient (grantee) as proof of consent.
 
 Open 
 ### 1.3 Scope: modes of consent 
 
-The term 'minimum' in the MVCR refers to the least amount of information to make an  open, compliant, and explicit consent record  viable for a number of different contexts, defined by the Data Controller (or grantor).  From the minimum viable open consent record with the least amount of fields possible and extended to the maximum viable consent receipt  for the record to be independently usable by both parties, to be open compliant and explict for personal. informaton sharing.  consent record for non explicit consent, for an explicit machine readable consent receipt, to an explicit machine readable consent with explicitly specifying sharing of consent.   Explicit consent are the fields in the consent receipt that can be mapped with this specification to explict regulation,  principles, standards, and best practicesa and extended  referenced.  ISO Privacy Framework, and best practices  .  as to warrant the use of the consent receipt as a specification standard. 
+The term 'minimum' in the MVCR refers to the least amount of data required to make an  open, compliant, and explicit consent record  viable for a number of different contexts, defined by the Data Controller (or grantor).  From the minimum viable open consent record with the least amount of fields possible and extended to the maximum viable consent receipt  for the record to be independently usable by both parties, to be open compliant and explict for personal. informaton sharing.  
+
+Explicit consent is comprised of the fields in a machine readable consent receipt that is  referenced to specification regulation,  principles, standards, and best practicesa and extended  referenced.  ISO Privacy Framework, and best practices  .  So as to indicate it these fields can be specified expliity for  policy, law and technical scopes (for authorisation), to be mapped into a open consent framework. 
 
 The receipt has two modes which further defines the scope: explicit consent mode or non-explicit consent mode, both are specified with a yes/no flag. The modes of consent are to facilate high level of interoperability/extensibility with; a) various consent contexts across different mediums, b) simple legacy consent requirements to complex privacy compliance requirements, c) for adoption with or without legal liability,  
 
@@ -140,10 +142,11 @@ The purpose of this section is to set out the meta-data for the consent transact
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | Jurisdiction | Country and if state/prov if applcable | jurisdiction | string. | US  | ISO two-letter country code if applicable, otherwise free text  | to facilitate compliance requirements |  Not Linked |
 | Consent Time Stamp | military time | iat | number. Integer number of seconds since 1970-01-01 00:00:00 GMT | 1435367226 | Date and time including time zone, or in UTC that consent was granted  for operational use | for logging consent record | Not Linked |
-| Explicit Consent (y/n)  | Yes or No | explicit_consent | ? (Justin) | yes | is used to specify if receipt is explicit or not | compliance,  operational scope for implied or other types of consent  | Link not required |
+| Explicit Consent (y/n)  | Yes or No | explicit_consent | ? (string) | yes | is used to specify if receipt is explicit or not | compliance,  operational scope for implied or other types of consent  | Link not required |
+| Consent Type | title of type model | type | ? (string) | field is used for adding non-explicit consent implied or delayed - or explicit | model consent expectations | Link Optional |
 | Collection Method | short 2-3 word desription | moc | Method of collection | web form | A description of medium in which the consent was collected | compliance, context of consent | Linked to  location/description of consent  |
 | Consent ID | # |  jti |  A unique identifier for the consent receipt | C159A448-A69B-44BF-BFCE-6403FB5D06EE |  A globally unique ID (GUID) | for proof of consent authentication | Not Linked | 
-| Grantee Identifier | email address, picture, device id,  | sub | string | alice@domain.com | Subject provided identifier, email address - or Claim, defined/namespaced | required for proof of consent claim | not linked |
+| PI Subject | email address, picture, device id,  | sub | string | alice@domain.com | Subject provided identifier, email address - or Claim, defined/namespaced | required for proof of consent claim | not linked |
 
 
 #### Header Example
@@ -155,10 +158,12 @@ The purpose of this section is to set out the meta-data for the consent transact
 | _Explicit Consent:__ | Yes |
 | __Collection Method:__ | web form | [http://www.consentreceipt.org](http://www.consentreceipt.org) |
 | __Consent ID:__ | C159A448-A69B-44BF-BFCE-6403FB5D06EE |
-| __Grantee_Identifier:__ | [roadrunner@fictional.url](mailto:roadrunner@fictional.url) |
+| __PI_Subjct (or Grantee):__ | [roadrunner@fictional.url](mailto:roadrunner@fictional.url) |
 
 Guideance
  
+ cnsent type guidance
+ (or N/A in the case where collection is a legal requirement) | Required | **Note 1:** If collection is required by law, consent should not be sought except for other purposes, since consent is only meaningfull if the PII Subject may say no. **Note 2:** If the PII is sensitive (below) and consent is required for collection, expressed consent will be required in many jurisdictions
 
 ### 2.2 PI Controller, Contact & Policy
 
