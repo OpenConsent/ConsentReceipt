@@ -21,7 +21,6 @@ The MVCR is designed to address existing closed consent architecture (ref whitep
 (editors note:  - how should this be referenced and linked? )
 
 
-
 # Status of this document
 The v0.8 draft is a specification candidate - this draft version is for peer review and not meant for distribution.
 
@@ -130,6 +129,7 @@ The MVCR is broken down into 5 sections for usability and to aid in understandin
 3.	Purpose Specification
 4.	Personally Identifiable Information
 5.	Information Sharing
+6.	Functional Scope
 
 
 Global Guidance 
@@ -163,7 +163,7 @@ The purpose of this section is to set out the meta-data for the consent transact
 | __Consent ID:__ | C159A448-A69B-44BF-BFCE-6403FB5D06EE |
 | __PI_Subjct (or Grantee):__ | [roadrunner@fictional.url](mailto:roadrunner@fictional.url) |
 
-Guideance -  in progress
+#### Header Field Guideance -  in progress
 *  Jurisdiction - 
 * Consent Time Stamp
 * Consent type guidance: used for explicit and non-explicit, or defined type, this can explicity referenced  a global profile for the consent the consent --> receipt - the
@@ -186,7 +186,7 @@ The purpose of this section is to identify the entity that is accountable for da
 | Contact Phone | Phone Number | Required | --- | --- | --- |
 | Privacy Policy | URL of the privacy policy as at the time of the receipt | Required | Note that this means that the entity needs to retain copies of prior privacy policies | --- | --- | --- |
 
-Guidance
+#### Guidance
 privacy policy link
 Note that this means that the entity needs to retain copies of prior privacy policies 
 
@@ -256,7 +256,6 @@ The example below is for an on-line pharmacy that provides a delivery service
 | __Address__ | Physical address for deliveries | False | |
 | __Health__ | Personal Health Information| True | Specified by regulation in many jurisdictions |
 | __Financial__ | Credit Card or payment information | True | Specified by regulation in many jurisdictions |
-
 
 ### 2.5 Information Sharing
 
