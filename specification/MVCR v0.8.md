@@ -67,9 +67,12 @@ document are to be interpreted as described in [RFC 2119](http://www.rfc-editor.
 
 ### 1.5 Terminology ###
 (note: in progress) 
-Much of the basic terminology herein is from [ISO/IEC 29100:2011 "Information Technology -- Security techniques -- Privacy Framework"](http://standards.iso.org/ittf/PubliclyAvailableStandards/c045123_ISO_IEC_29100_2011.zip).
 
-(editors note: Push this  ISO reference into Apendix or ISO conformance profile maping to explicit requirements in ISO)
+Terminology herein leverages  [ISO/IEC 29100:2011 "Information Technology -- Security techniques -- Privacy Framework"](http://standards.iso.org/ittf/PubliclyAvailableStandards/c045123_ISO_IEC_29100_2011.zip).
+
+(editors note - For refernce - shoud these  ISO reference be in Appendix ?
+
+(editors note: Push this  ISO reference into Apendix and/or ISO conformance profile - maping to explicit requirements in ISO)
 >> ISO/IEC 29100:2011 ...provides a privacy framework which
 >>
 >> * specifies a common privacy terminology;
@@ -88,7 +91,8 @@ The following are terms that are not referenced in 29100 and are used or referen
 	See PII Subject in in ISO/IEC 29100:2011
 
 * **Explicit Consent**
-	also referred to as express consent, refers to the legal requirements for explicit and unambiguous consent as stated in notice and consent requiremens detailed by regulations. 
+	 referrs to expliitly refering to an authoritative referce so that consent can explicitlt references. 
+(( note : to as express consent, refers to the legal requirements for explicit and unambiguous consent as stated in notice and consent requiremens detailed by regulations. )
 	
 * **Grantee**
 	also referred to as the data subject for compliance conformance, the Grantee refers to the individual, or person acting on behalf of the grantor, who is provisioning consent. 
