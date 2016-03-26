@@ -17,7 +17,6 @@ The MVCR is designed to address existing closed consent architecture (ref whitep
 (ref- FIPPs and  (ISO Principles - "Openness, transparency, notice") and Consent (ISO Principle 1 - "Consent and Choice") are fundamental privacy principles, addressed with this specification.
 (editors note:  - how should this be referenced and linked? )
 
-
 # Status of this document
 The v0.8 draft is a specification candidate - this draft version is for peer review and not meant for distribution.
 
@@ -26,7 +25,7 @@ Copyright (c) 2016 Kantara and the persons identified as the document authors. A
 
 This document is subject to the [Kantara IPR Policy - Option Patent & Copyright: Reciprocal Royalty Free with Opt-Out to Reasonable and Non-discriminatory (RAND)](https://kantarainitiative.org/confluence/download/attachments/2293776/Kantara%20Initiative%20IPR%20Policies%20_V1.1_.pdf?version=1&modificationDate=1244488630000&api=v2)[HTML version](https://kantarainitiative.org/confluence/pages/viewpage.action?pageId=41025689)
 
-## Table of Contetns
+## Table of Contents
 1. Objective
 2. Scope
 2.1 Scope Defined: 3 models of consent specification
@@ -42,14 +41,10 @@ This document is subject to the [Kantara IPR Policy - Option Patent & Copyright:
 5.3 Purpose Specification
 5.3.1 Example
 5.3.2 Guidance
-
-1.	Header
-2.	Data Controller, Contact & Policy
-3.	Purpose Specification
-4.	Personally Identifiable Information
-5.	Information Sharing
-6.	Functional Scope
-7.	
+5.4.	Personally Identifiable Information
+5.5.	Information Sharing
+5.6.	Functional Scope
+	
 
 ## 1.	Objective
 The Minimum Viable Consent Receipt (MVCR) is a specification for common set of minimum viable fields for a consent record to be provided as an independant consent receipt for information sharing.  
