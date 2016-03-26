@@ -5,12 +5,9 @@
 | Version: | 1.0 Draft 0.8 |
 | Date: | March 6, 2016 |
 | Editors: | Mark Lizar |
-| | Heather Flanagan |
-| Contributors: |	Iain Henderson |
-| |	Mary Hodder |
-| |	Justin Richer |
-| |	Sarah Squire |
+| Contributors: |
 | |	John Wunderlich |
+| | 	Justin Richer |
 
 # Abstract
 
@@ -29,10 +26,35 @@ Copyright (c) 2016 Kantara and the persons identified as the document authors. A
 
 This document is subject to the [Kantara IPR Policy - Option Patent & Copyright: Reciprocal Royalty Free with Opt-Out to Reasonable and Non-discriminatory (RAND)](https://kantarainitiative.org/confluence/download/attachments/2293776/Kantara%20Initiative%20IPR%20Policies%20_V1.1_.pdf?version=1&modificationDate=1244488630000&api=v2)[HTML version](https://kantarainitiative.org/confluence/pages/viewpage.action?pageId=41025689)
 
+## Table of Contetns
+1. Objective
+2. Scope
+2.1 Scope Defined: 3 models of consent specification
+3. Notiational Conventions For Conformance
+4. Terminology
+5. MVCR Record Format: Section & Fields
+5.1 Header
+5.1.1 Example
+5.1.2 Guidance
+5.2 Data Controller, Contact & Policy
+5.2.1 Example
+5.2.2 Guidance
+5.3 Purpose Specification
+5.3.1 Example
+5.3.2 Guidance
+
+1.	Header
+2.	Data Controller, Contact & Policy
+3.	Purpose Specification
+4.	Personally Identifiable Information
+5.	Information Sharing
+6.	Functional Scope
+7.	
+
 ## 1.	Objective
 The Minimum Viable Consent Receipt (MVCR) is a specification for common set of minimum viable fields for a consent record to be provided as an independant consent receipt for information sharing.  
 
-### 1.2 Scope
+### 2.1 Scope
 This Minimum Viable Consent Receipt specification has the scope of specifying a receipt for the policy recording the provision of consent for perosnal information. (purpose, types of personal information collected for  this purpose, and the sharing of this data with a 3rd party.)
 
 For authoritiative referencing of policy (principle and best practices), technical scopes. In addition to the physcial provison of the reciept which includes how a consent record is provided, how to present the record fields, the format and order of fields, linking fields to external information, as well as the provisioning of the receipt at the point in time when the consent is provided. 
@@ -40,7 +62,7 @@ For authoritiative referencing of policy (principle and best practices), technic
 Viable, in this scope, means a record of consent that can be retained and used separately by both issuer (grantor) and recipient (grantee) as proof of consent.
 
  
-### 1.3 Scope Defined: 3 models of consent specification layered onto
+### 2.2 Scope Defined: 3 models of consent specification
 
 The term 'minimum' in the MVCR refers to the least amount of data required to make an open, compliant, and explicit consent record  viable for a number of different contexts, defined by 
 * A) the Data Controller (or grantor), self-asserted
@@ -56,7 +78,7 @@ The receipt has consent type to defines the scope as explicit or else non-explic
 
 Both operational modes demonstrate at a minimum, MVCR open consent conformance.  Providing flexibility for implementation and adoption without the burden of legal compliance obligations for the implementor. (see conformance table)
 
-### 1.4 Notational Conventions for Conformance
+### 3 Notational Conventions for Conformance
 
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this
 document are to be interpreted as described in [RFC 2119](http://www.rfc-editor.org/info/rfc2119).
@@ -65,7 +87,7 @@ document are to be interpreted as described in [RFC 2119](http://www.rfc-editor.
  
 (Editorss Note: how do we nreference -->  JSON RFC7159 here? JWT - for tehcnically dynamic use of the receipt)  
 
-### 1.5 Terminology ###
+### 4.  Terminology ###
 (note: in progress) 
 
 Terminology herein leverages  [ISO/IEC 29100:2011 "Information Technology -- Security techniques -- Privacy Framework"](http://standards.iso.org/ittf/PubliclyAvailableStandards/c045123_ISO_IEC_29100_2011.zip).
@@ -124,7 +146,7 @@ The following are terms that are not referenced in 29100 and are used or referen
 * **Sensitive Personal Information Categories**
 	All sensitive infomration categories require explicit consent and is subject to legislation and often industry specific regulation and best pracitce.  Some jurisdictions call out categories of PII specifically, that, by virtue of their sensitivity, require higher levels of protection. The particular categories vary by jurisdiction but will typically include health data (or personal health information - PHI), financial data, political affiliations, sexual orientation, family and personal relationships as defined in law.  In this specification, this field is accompanies by an 'other' feild for free text and the grantor can define or suggest what is sensitive enabling competition and diversity which cannot be specified here.  
 
-## 2. Core MVCR Profile
+## 5. MVCR Record Format: Section & Fields
 
 The MVCR is broken down into 5 sections for usability and to aid in understanding the core function. The 5 sections are:
 
