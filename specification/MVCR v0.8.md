@@ -59,8 +59,8 @@ This document is subject to the [Kantara IPR Policy - Option Patent & Copyright:
 8. Appendix C: Consent Type - 
 9. Appendic D: Purpose Categoies (or purpose type)
 
-
 (editors note: added objective and scope to the specification)
+
 ## 1.	Objective
 The Minimum Viable Consent Receipt (MVCR) is a specification for common set of minimum viable fields for a consent record to be provided as an independant consent receipt for information sharing.  
 
@@ -105,22 +105,12 @@ document are to be interpreted as described in [RFC 2119](http://www.rfc-editor.
 ### 4.  Terminology ###
 (note: in progress) 
 
-Terminology herein leverages  [ISO/IEC 29100:2011 "Information Technology -- Security techniques -- Privacy Framework"](http://standards.iso.org/ittf/PubliclyAvailableStandards/c045123_ISO_IEC_29100_2011.zip).
+Terminology herein leverages where possible,  [ISO/IEC 29100:2011 "Information Technology -- Security techniques -- Privacy Framework"](http://standards.iso.org/ittf/PubliclyAvailableStandards/c045123_ISO_IEC_29100_2011.zip).
 
-(editors note - For refernce -  ISO reference be in Appendix or Reference Section at end of spec?
+(mapping of terms and references in Appendix A) 
 
 (editors note: ISO privacy framework should be references, but not used as source of terms as terms should be consent centric not ISO centric)
 
->> ISO/IEC 29100:2011 ...provides a privacy framework which
->>
->> * specifies a common privacy terminology;
->> * defines the actors and their roles in processing personally identifiable information (PII);
->> * describes privacy safeguarding considerations; and
->> * provides references to known privacy principles for information technology.
->>
-ISO/IEC 29100:2011 is applicable to natural persons and organizations involved in specifying, procuring, architecting, designing, developing, testing, maintaining, administering, and operating information and communication technology systems or services where privacy controls are required for the processing of PII."
-
-The following are terms that are not referenced in 29100 and are used or referenced in this standard:
 
 * **Consent Receipt (CR)**
 	A record of a personal information consent transaction.
@@ -385,7 +375,25 @@ the CR purpose is to provide a specific set of requiremetns for explicit consent
 
 (IN Progress - completed once - fields drafted) 
 
-## 4.2. Appendix A: JSON example
+## 4.2. Appendix A: ISO 29100 Terminology
+
+At the outset of the MVCR it was the intention to move, if possible, this specificatio to ISO, as well, it was recognised that 
+
+>> ISO/IEC 29100:2011 ...provides a privacy framework which can be leveraged in reference to: 
+>>
+>> * specifies a common privacy terminology;
+>> * defines the actors and their roles in processing personally identifiable information (PII);
+>> * describes privacy safeguarding considerations; and
+>> * provides references to known privacy principles for information technology.
+>>
+
+ISO/IEC 29100:2011 is applicable to natural persons and organizations involved in specifying, procuring, architecting, designing, developing, testing, maintaining, administering, and operating information and communication technology systems or services where privacy controls are required for the processing of PII."
+
+Althought, through the spec work it has become apparent that we can borrow from ISO, but that this specification needs to have within it a specific terminology that is independent of other specifications.  Even so, we adopted Personal Information (rather Personal Data) and like decisions to increase interoperability of this work with this framework.  Here in lies the mapping of terminology and components. 
+
+(put in table here mapping elements of MVCR Spec to ISO 29100)
+
+A: JSON example
 
 A demonstration version of the MVCR can be found on the [Example Consent Receipt Generator (CRG)](https://mvcr.herokuapp.com/) page. The example site also contains [API documentation](https://mvcr.herokuapp.com/doc/). This server contains a consent receipt generation API. The API consists of a single endpoint at [http://www.consentreceipt.org/mvcr/api](http://www.consentreceipt.org/mvcr/api). This endpoint accepts HTTP POST requests with input in the form of JSON (application/json) documents and returns output in the form of a signed JSON Web Token (application/jwt). The example site consists of two pages:
 
