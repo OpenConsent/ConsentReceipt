@@ -50,7 +50,15 @@ This document is subject to the [Kantara IPR Policy - Option Patent & Copyright:
 5.3.2 Guidance
 5.4.	Personally Identifiable Information
 5.5.	Information Sharing
-5.6.	Functional Scope
+5.6.	Technical Scope
+6. MVCR Conformance and Compliance
+6.1 Example Each mode of conformance and complaince 
+6.2 Guidance each mode of conformance complaince
+7. Appendix A: ISO Terms - mapping and use in the MVCR
+8. Appendix B: Scope UMA profile
+8. Appendix C: Consent Type - 
+9. Appendic D: Purpose Categoies (or purpose type)
+
 
 (editors note: added objective and scope to the specification)
 ## 1.	Objective
@@ -239,13 +247,14 @@ This section identifies the individual and company that is accountable for data 
 | __Privacy Policy:__ | [ACME Privacy Policy](https://www.acme.fictional.url/privacy.policy) |
 
 #### Guidance
-PI Controller
-PI Processor
-Contact Name
-Contact Address
-Contact Email
-Contact Phone
-privacy policy link
+* PI Controller
+* PI Processor
+	is used as the delegate data controller, which maps to the UK's as acting on behalf of the data controller, a third party analytics service would be a processor on behalf of the controller. 
+* Contact Name
+* Contact Address
+* Contact Email
+* Contact Phone
+* privacy policy link
 
 ### 2.3 Purpose(s)
 
@@ -303,6 +312,9 @@ The example below is for an on-line pharmacy that provides a delivery service
 | __Address__ | Physical address for deliveries | False | |
 | __Health__ | Personal Health Information| True | Specified by regulation in many jurisdictions |
 | __Financial__ | Credit Card or payment information | True | Specified by regulation in many jurisdictions |
+
+#### Guidance
+Sensitive Personal Inforamtion - list of sensitive categories - genetic data, biometric data, and data concerning sexual orientation, can also be define by consentor as sensitive, but needs a subsequent explanation of what is sensitive (includes photographs). 
 
 ### 2.5 Information Sharing
 
