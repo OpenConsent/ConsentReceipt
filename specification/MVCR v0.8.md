@@ -20,9 +20,10 @@
 
 This specification identifies the common consent requirements to record a personal information sharing transaction and provide this record as an independent receipt.  
 
-The MVCR is designed to address existing closed consent architecture with a consent receipt, which effectively provides an open consent  architecture through consent transparency.  Open Consent architecture addresses multiple privacy principle and privacy legal requirements by providing a framework for operationally addressing multiple Fair Information Practice Principles and likewise ISO 29100 privacy principles. 
-(ref- FIPPs and  (ISO Principles - "Openness, transparency, notice") and Consent (ISO Principle 1 - "Consent and Choice") are fundamental privacy principles, addressed with this specification.
+The MVCR is designed to address existing closed consent architecture with a consent receipt, which effectively provides an open consent  architecture through consent transparency.  Open Consent architecture addresses multiple privacy principle and privacy legal requirements by providing a framework for operationally addressing multiple Fair Information Practice Principles and likewise ISO 29100 privacy principles.  See Appendix A: 
+(ref- FIPPs and ISO Principles - "Openness, transparency, notice") and Consent (ISO Principle 1 - "Consent and Choice") are fundamental privacy principles, addressed with this specification.
 (editors note:  - how should this be referenced and linked? )
+
 
 # Status of this document
 The v0.8 draft is a  MVCR specification candidate - this draft version is for peer review and not meant for distribution.
@@ -216,12 +217,13 @@ This section identifies the individual and company that is accountable for data 
 
 | Receipt Field Label | Receipt Field Format | Data Field Name | Data Type | Example Data Input | Receipt Field Description | Purpose of Field  | Linked |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| PI Controller | That entity that is accountable for compliance over the PII | Required | Typically the entity that owns the web site that the is issuing the consent receipt | --- | --- | --- |
-| PI Processor | The entity that has collected the PII | Optional | When the site operator is acting on behalf of the Data Controller |--- | --- | --- |
-| Contact Name| The person/role to contact for privacy issues | Required | --- | --- | --- |
-| Contact Address | Physical Address | Required |--- | --- | --- |
-| Contact Email | Email Address | Required |--- | --- | --- |
-| Contact Phone | Phone Number | Required | --- | --- | --- |
+| PI Controller | Name of formal entity | contoller | object | {"on_behalf": true, "contact": "Dave Controller", "company": "Data Controller Inc.", "address": "123 St., Place", "email": "dave@datacontroller.com", "phone": "00-123-341-2351", "other": }  | name of the data controller | used to identify controller  | linked to controller record or domain | 
+| On Behalf | yes or no | on_behalf | boolean | true | used to identify the delegate of PI Processor entity acting on behalf of stated organization | used to identify processor if different than controller  | linked |
+| Contact Name| name {2 or 3 words] | contact_name | Jon Doe | contact of pi conrtroller who is processing data | to identify name of personal responsible in accordance with requierments |not linked |
+| Contact Address | house #, st, place, country, post code | Physical Address | address | "123 St., Place" | physical address of PI controller | to ascertain location and jurisidicion of responsible entity |  Linked to copy/paste address |
+| Contact Email | Email Address | email | string. Email address | jon@datacontroller.com | contact email address | contact in context of consent to manage consent preferences | linked to email address |
+| Contact Phone | Phone Number | phone | string. Phone numbe | contact phone number | 00-000-000-0000 | contact phone number | Linked |
+| Contact Other | Free text | contact_other | 
 | Privacy Policy | URL of the privacy policy as at the time of the receipt | Required | Note that this means that the entity needs to retain copies of prior privacy policies | --- | --- | --- |
 
 #### PI Controller Data Example ####
@@ -237,9 +239,9 @@ This section identifies the individual and company that is accountable for data 
 | __Privacy Policy:__ | [ACME Privacy Policy](https://www.acme.fictional.url/privacy.policy) |
 
 #### Guidance
-* PI Controller
+* PI Controller - that is accountable for compliance over the PII
 * PI Processor
-	is used as the delegate data controller, which maps to the UK's as acting on behalf of the data controller, a third party analytics service would be a processor on behalf of the controller. 
+	is used as the delegate data controller, which maps to the UK's as acting on behalf of the data controller, a third party analytics service would be a processor on behalf of the controller.  When the site operator is acting on behalf of the Data Controller
 * Contact Name
 * Contact Address
 * Contact Email
@@ -392,6 +394,8 @@ ISO/IEC 29100:2011 is applicable to natural persons and organizations involved i
 Althought, through the spec work it has become apparent that we can borrow from ISO, but that this specification needs to have within it a specific terminology that is independent of other specifications.  Even so, we adopted Personal Information (rather Personal Data) and like decisions to increase interoperability of this work with this framework.  Here in lies the mapping of terminology and components. 
 
 (put in table here mapping elements of MVCR Spec to ISO 29100)
+(ref- FIPPs and  (ISO Principles - "Openness, transparency, notice") and Consent (ISO Principle 1 - "Consent and Choice") are fundamental privacy principles, addressed with this specification.
+(editors note:  - how should this be referenced and linked? )
 
 A: JSON example
 
