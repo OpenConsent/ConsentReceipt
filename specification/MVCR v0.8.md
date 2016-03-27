@@ -7,6 +7,12 @@
 | Editors: | Mark Lizar |
 | Contributors: |
 | |	John Wunderlich |
+| |     Justin Richer   |
+| Supporters:  | 
+| |     Mary Hodder     | 
+| |     Iain Henderson  |
+| |     Sarah Squire    | 
+
 
 (editors note: removed contributors who haven't directly contributed to this specification)
 
@@ -19,7 +25,7 @@ The MVCR is designed to address existing closed consent architecture with a cons
 (editors note:  - how should this be referenced and linked? )
 
 # Status of this document
-The v0.8 draft is a specification candidate - this draft version is for peer review and not meant for distribution.
+The v0.8 draft is a  MVCR specification candidate - this draft version is for peer review and not meant for distribution.
 
 ## Copyright Notice
 Copyright (c) 2016 Kantara and the persons identified as the document authors. All rights reserved.
@@ -29,7 +35,7 @@ This document is subject to the [Kantara IPR Policy - Option Patent & Copyright:
 ## Table of Contents
 1. Objective
 2. Scope
-2.1 Scope Defined: 3 models of consent specification
+2.1 Scope Defined: 4 layers/modes/models of consent specification
 3. Notiational Conventions For Conformance
 4. Terminology
 5. MVCR Record Format: Section & Fields
@@ -115,7 +121,7 @@ The following are terms that are not referenced in 29100 and are used or referen
 	See PII Subject in in ISO/IEC 29100:2011
 
 * **Explicit Consent**
-	 referrs to expliitly refering to an authoritative referce so that consent can explicitlt references. 
+	 referrs to explicit action taken by users which can be explicitly extended to an authoritative reference, scope, and sharing of personal information. 
 ((editors Notes on explicit) 
 * Explicit consent is comprised of the fields that are linked directly to an authoritative reference to ; consent regulation, privacy principles, other consent standards, or industry best practices.  For example: United Kingdom Privacy Laws are used as a conformance example for this specification.  
 * Explicit is also used to specify the action that a user makes to provide un-anbiguous consent, in that the action is an explicit consent action in that a box was ticked, or an 'I agree' button pressed.  
@@ -123,9 +129,8 @@ The following are terms that are not referenced in 29100 and are used or referen
 * Explicit sharing this refers to stating that sharing of data for the above purpose categories takes place, the 3rd party it is taking place with, and the link to the contract in which the 3rd party has agreed to abide by this consent.  
 * Explicit in this specification also refers to technical scopes, in that each scope is seperately defined  as to be explicit)
 
-
 * **Grantee**
-* (editors note: github issue for adding grantee/grantor)
+* (editors note: github issue for adding grantee/grantor as operational terms to refer to the two parties in the receipt)
 	also referred to as the data subject for compliance conformance, the Grantee refers to the individual, or person acting on behalf of the grantor, who is provisioning consent. 
 
 * **Grantor** 
@@ -141,7 +146,7 @@ The following are terms that are not referenced in 29100 and are used or referen
 	This standard
 
   **Consent Notice**
- 	refers to a notice that is required before consent so that a consent can be possible, the quality and usability of the consent notice is what is often used to classify if a consent is legally informed or not, but this varies by jurisdidction context and interpretation.  Consent notices can vary from icons, short notices, direct communication, visceral notice and the like.
+ 	refers to a notice that is required to inform the grantee what they are consenting too, without it consent is not possible, the quality and usability of the consent notice is what is often used to classify if a consent is legally informed or not, but this varies by jurisdidction context and interpretation.  Consent notices can vary from icons, short notices, direct communication, visceral notice and most often online a policy document like terms of service and privacy policy.
 
 * **Personal Information (PI)**
 	See Personally Identifiable Information (PII) in ISO/IEC 29100:2011
@@ -198,7 +203,7 @@ The purpose of this section is to set out the meta-data for the consent transact
 | __Consent ID:__ | C159A448-A69B-44BF-BFCE-6403FB5D06EE |
 | __PI_Subjct (or Grantee):__ | [roadrunner@fictional.url](mailto:roadrunner@fictional.url) |
 
-#### Header Field Guideance -  in progress
+#### Header Field Guideance -  TBF
 *  Jurisdiction - 
 * Consent Time Stamp
 * Consent type guidance: used for explicit and non-explicit, or defined type, this can explicity referenced  a global profile for the consent the consent --> receipt - the
@@ -207,25 +212,21 @@ The purpose of this section is to set out the meta-data for the consent transact
 * Consent ID
 * PI Subject
 
-### 2.2 PI Controller, Contact & Policy
+### 2.2 PI Controller Data
 
-The purpose of this section is to identify the entity that is accountable for data protection and the privacy policy tp which the consent is bound.
+This section identifies the individual and company that is accountable for data protection and the privacy policy tp which the consent is bound.
 
 | Receipt Field Label | Receipt Field Format | Data Field Name | Data Type | Example Data Input | Receipt Field Description | Purpose of Field  | Linked |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| Data Controller | That entity that is accountable for compliance over the PII | Required | Typically the entity that owns the web site that the is issuing the consent receipt | --- | --- | --- |
-| Data Processor | The entity that has collected the PII | Optional | When the site operator is acting on behalf of the Data Controller |--- | --- | --- |
+| PI Controller | That entity that is accountable for compliance over the PII | Required | Typically the entity that owns the web site that the is issuing the consent receipt | --- | --- | --- |
+| PI Processor | The entity that has collected the PII | Optional | When the site operator is acting on behalf of the Data Controller |--- | --- | --- |
 | Contact Name| The person/role to contact for privacy issues | Required | --- | --- | --- |
 | Contact Address | Physical Address | Required |--- | --- | --- |
 | Contact Email | Email Address | Required |--- | --- | --- |
 | Contact Phone | Phone Number | Required | --- | --- | --- |
 | Privacy Policy | URL of the privacy policy as at the time of the receipt | Required | Note that this means that the entity needs to retain copies of prior privacy policies | --- | --- | --- |
 
-#### Guidance
-privacy policy link
-Note that this means that the entity needs to retain copies of prior privacy policies 
-
-#### PI Controller, Contact and Policy Example ####
+#### PI Controller Data Example ####
 
 | Field | Contents|
 | ------:	| ------	|
@@ -236,19 +237,30 @@ Note that this means that the entity needs to retain copies of prior privacy pol
 | __Contact Email:__ | [mel.blanc@fictional.url](mel.blanc@fictional.url) |
 | __Contact Phone:__ | +1 555 555-1212 |
 | __Privacy Policy:__ | [ACME Privacy Policy](https://www.acme.fictional.url/privacy.policy) |
-| __Privacy Label:__ | [ACME Privacy Label](https://www.acme.fictional.url/privacy.label ) |
+
+#### Guidance
+PI Controller
+PI Processor
+Contact Name
+Contact Address
+Contact Email
+Contact Phone
+privacy policy link
 
 ### 2.3 Purpose(s)
 
-The purpose of this section is to identify the primary purpose(s) for which the PII Controller is collecting PII, along with any secondary purposes for which the PII might be collected.
+This section specifies the purpose(s) for which the PI Controller is collecting PI
 
 | Receipt Field Label | Receipt Field Format | Data Field Name | Data Type | Example Data Input | Receipt Field Description | Purpose of Field  | Linked |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | | | | Repeat the following set of fields as many times as necessary to set out the purpose(s) for collection |
 | Service | Site, app, or service | Required | Name of the site, the app or the service that will use the PII collected |
 | Purpose | Description of purpose | Required | Should be explicit and specific as reasonably necessary to fulfill the Service |
-| Primary | Is this the primary purpose for collecting PII? (True|False) | Required | Typically only one purpose should be identified as primary. |
-| Necessary | Is this a necessary purpose? (True|False) | Required | The primary purpose will be necessary, but may not be the only necessary purpose. PII subject should be able to provide consent directives to opt out of purposes not identified as necessary . |
+| Purpose PI Category | Is this a necessary purpose? (True|False) | Required | The primary purpose will be necessary, but may not be the only necessary purpose. PII subject should be able to provide consent directives to opt out of purposes not identified as necessary . |
+| Purpose PI attributes | Is this the primary purpose for collecting PII? (True|False) | Required | Typically only one purpose should be identified as primary. |
+| Purpose Duration |
+| Sensitive PI y/N |
+| Sensitive PI Category | 
 
 #### Guidance on Purpose(s)
 
