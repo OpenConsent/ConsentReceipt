@@ -14,7 +14,7 @@
 | |     Sarah Squire    | 
 
 
-(editors note: removed contributors who haven't directly contributed to this specification)
+(editors note: removed contributors who haven't directly contributed to this version of the specification)
 
 # Abstract
 
