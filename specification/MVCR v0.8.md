@@ -58,21 +58,23 @@ For authoritiative referencing of policy (principle and best practices), technic
 Viable, in this scope, means a record of consent that can be retained and used separately by both issuer (grantor) and recipient (grantee) as proof of consent.
 
 
-### 2.2 Scope Defined: 3 models of consent specification
+### 2.2 Scope Defined: 4 layers of consent record specification
 
 The term 'minimum' in the MVCR refers to the least amount of data required to make an open, compliant, and explicit consent record  viable for a number of different contexts, defined by 
 * A) the PI Controller (or grantor), self-asserted
 * B) and/or Consent - defined by explicit reference to authoritiative policy i.e. regulation, 
-* C) and/or defined by technical scope, i.e. UMA/Oauth - (or regulated technical function)  
+* C) and/or Explicit Sharing of PI to specified 3rd Pary, and ref contract of sharing
+* D) and/or defined by technical scope, i.e. UMA/Oauth - (or regulated technical function)  
 
-Explicit, is understood as an action to agree or assent, by the grantee.  This specification and thus scope extends that action up and down stream. Up stream to the Grantor, and optionally down stream, through explicit reference to authoritative policy, and or technical scopes, for explicit sharing of personal data. 
+Explicit, is understood as an action by an individual to agree or assent to a privacy policy and terms.  This specification and thus scope extends that action up and down stream. Up stream to the Grantor with the consent, and optionally down stream, through explicit reference to authoritative policy, and or technical scopes, for explicit sharing of personal data. 
 
-So a a maximum form of explicit is possible and optional for this specification for consent for inforamtion sharing, that is both compliant with explicit regulation, but conforms to explicit technical scope. 
+A maximum form of explicit is possible combining all 4 layers defined in this scope  for consent and inforamtion sharing receipt, that is both compliant with explicit regulation, but conforms to explicit sharing and technical scope as described. 
 
-The receipt has the Consent Type field in which the scope by defined as 'Explicit' any other text in this field references a form of consent which is undefined with-in this specification.  
+The receipt has the Consent Type field in which the scope by defined as 'Explicit' any other text in this field references a form of consent which is undefined with-in this specification.   In this context, explicit refers to:
 
 * Explicit, indicating the receipt shows both compliance with regulation and conformance with this specification.  
 * Non-Explicit (or externally defined consent type), indicating the receipt has demonstrated conformance with the MVCR, but is limited to, conformance and makes no legal compliance claims.   
+(editors note, does this refer to a different defintion of scope (see terminiology for a collection of how explicit is being used in this spec)
 
 Both operational modes demonstrate at a minimum, MVCR open consent conformance.  Providing flexibility for implementation and adoption without the burden of legal compliance obligations for the implementor. (see conformance table)
 
