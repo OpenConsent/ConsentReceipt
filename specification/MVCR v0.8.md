@@ -1,4 +1,4 @@
-# Record of Consent - Minimum Viable Consent Receipt #
+# Record of Consent - Minimum Viable Consent Receipt (MVCR) #
 
 | Document Information  | |
 | ------	| ------	|
@@ -7,13 +7,14 @@
 | Editors: | Mark Lizar |
 | Contributors: |
 | |	John Wunderlich |
-| | 	Justin Richer |
+
+(editors note: removed contributors who haven't directly contributed to this specification)
 
 # Abstract
 
-The Consent & Information Sharing Working Group (CISWG) has specified a set of requirements to create a Minimum Viable Consent Receipt (MVCR) that can be used to document, for the consent grantee, a consent transactions for an open ended set of consent to share contexts. This specification identifies the common consent requirements to record a personal information sharing transaction and provides a reference for conformance to various uses of the MVCR specification.  Including MVCR Lite, explicit consent compliance, sharing, and explict data sharing. 
+This specification identifies the common consent requirements to record a personal information sharing transaction and provide this record as an independent receipt.  
 
-The MVCR is designed to address existing closed consent architecture (ref whitepare) with a consent record standard which enables a open consent  architecture.  Open Consent, addresses multiple privacy principle and privacy legal requirements by providing a framework for operationally addressing multiple Fair Information Practice Principles and likewise ISO 29100 privacy principles. 
+The MVCR is designed to address existing closed consent architecture with a consent receipt, which effectively provides an open consent  architecture through consent transparency.  Open Consent architecture addresses multiple privacy principle and privacy legal requirements by providing a framework for operationally addressing multiple Fair Information Practice Principles and likewise ISO 29100 privacy principles. 
 (ref- FIPPs and  (ISO Principles - "Openness, transparency, notice") and Consent (ISO Principle 1 - "Consent and Choice") are fundamental privacy principles, addressed with this specification.
 (editors note:  - how should this be referenced and linked? )
 
@@ -35,7 +36,7 @@ This document is subject to the [Kantara IPR Policy - Option Patent & Copyright:
 5.1 Header
 5.1.1 Example
 5.1.2 Guidance
-5.2 Data Controller, Contact & Policy
+5.2 PI Controller Data
 5.2.1 Example
 5.2.2 Guidance
 5.3 Purpose Specification
@@ -44,8 +45,8 @@ This document is subject to the [Kantara IPR Policy - Option Patent & Copyright:
 5.4.	Personally Identifiable Information
 5.5.	Information Sharing
 5.6.	Functional Scope
-	
 
+(editors note: added objective and scope to the specification)
 ## 1.	Objective
 The Minimum Viable Consent Receipt (MVCR) is a specification for common set of minimum viable fields for a consent record to be provided as an independant consent receipt for information sharing.  
 
@@ -56,20 +57,22 @@ For authoritiative referencing of policy (principle and best practices), technic
 
 Viable, in this scope, means a record of consent that can be retained and used separately by both issuer (grantor) and recipient (grantee) as proof of consent.
 
- 
+
 ### 2.2 Scope Defined: 3 models of consent specification
 
 The term 'minimum' in the MVCR refers to the least amount of data required to make an open, compliant, and explicit consent record  viable for a number of different contexts, defined by 
-* A) the Data Controller (or grantor), self-asserted
-* B) and/or defined by authoritiative policy i.e. regulation, 
-* C) and/or defined by technical scope, i.e. UMA/Oauthor  
+* A) the PI Controller (or grantor), self-asserted
+* B) and/or Consent - defined by explicit reference to authoritiative policy i.e. regulation, 
+* C) and/or defined by technical scope, i.e. UMA/Oauth - (or regulated technical function)  
 
-Explicit consent is comprised of the fields in a machine readable consent record, which is further extended by reference, typcially to authoritiative; regulation,  principles, standards, best practices.  For example: ISO Privacy Framework, which informs this specification as a privacy framework.  So as to indicate if these fields can be specified expliity for policy, law and technical scopes (for authorisation), to be mapped into a open consent record.  (editors: requires a ISO conformance table and reference in appendix)
+Explicit, is understood as an action to agree or assent, by the grantee.  This specification and thus scope extends that action up and down stream. Up stream to the Grantor, and optionally down stream, through explicit reference to authoritative policy, and or technical scopes, for explicit sharing of personal data. 
 
-The receipt has consent type to defines the scope as explicit or else non-explicit in regards to referencing the above scopes. The modes of consent are to facilate high level of interoperability/extensibility with; a) various consent contexts across different mediums, b) simple legacy non-digital consent requirements to complex and specific operational privacy compliance requirements, c) for adoption of non-explicit consent with or without legal liability,  
+So a a maximum form of explicit is possible and optional for this specification for consent for inforamtion sharing, that is both compliant with explicit regulation, but conforms to explicit technical scope. 
 
-* Explicit, indicating the receipt shows compliance and conformance for explicit consent.
-* Non-Explicit (or defined consent type), indicating the receipt has demonstrated conformance with the MVCR and demonstrates, but is limited to, conformance and makes no legal compliance claims.   
+The receipt has the Consent Type field in which the scope by defined as 'Explicit' any other text in this field references a form of consent which is undefined with-in this specification.  
+
+* Explicit, indicating the receipt shows both compliance with regulation and conformance with this specification.  
+* Non-Explicit (or externally defined consent type), indicating the receipt has demonstrated conformance with the MVCR, but is limited to, conformance and makes no legal compliance claims.   
 
 Both operational modes demonstrate at a minimum, MVCR open consent conformance.  Providing flexibility for implementation and adoption without the burden of legal compliance obligations for the implementor. (see conformance table)
 
@@ -82,14 +85,16 @@ document are to be interpreted as described in [RFC 2119](http://www.rfc-editor.
  
 (Editorss Note: how do we nreference -->  JSON RFC7159 here? JWT - for tehcnically dynamic use of the receipt)  
 
+
 ### 4.  Terminology ###
 (note: in progress) 
 
 Terminology herein leverages  [ISO/IEC 29100:2011 "Information Technology -- Security techniques -- Privacy Framework"](http://standards.iso.org/ittf/PubliclyAvailableStandards/c045123_ISO_IEC_29100_2011.zip).
 
-(editors note - For refernce - shoud these  ISO reference be in Appendix ?
+(editors note - For refernce -  ISO reference be in Appendix or Reference Section at end of spec?
 
-(editors note: Push this  ISO reference into Apendix and/or ISO conformance profile - maping to explicit requirements in ISO)
+(editors note: ISO privacy framework should be references, but not used as source of terms as terms should be consent centric not ISO centric)
+
 >> ISO/IEC 29100:2011 ...provides a privacy framework which
 >>
 >> * specifies a common privacy terminology;
@@ -109,9 +114,16 @@ The following are terms that are not referenced in 29100 and are used or referen
 
 * **Explicit Consent**
 	 referrs to expliitly refering to an authoritative referce so that consent can explicitlt references. 
-(( note : to as express consent, refers to the legal requirements for explicit and unambiguous consent as stated in notice and consent requiremens detailed by regulations. )
-	
+((editors Notes on explicit) 
+* Explicit consent is comprised of the fields that are linked directly to an authoritative reference to ; consent regulation, privacy principles, other consent standards, or industry best practices.  For example: United Kingdom Privacy Laws are used as a conformance example for this specification.  
+* Explicit is also used to specify the action that a user makes to provide un-anbiguous consent, in that the action is an explicit consent action in that a box was ticked, or an 'I agree' button pressed.  
+* Explicit is also used in this specification for how purpose is explicitly specified,  each purpose, contains a set of data attributes, with an explicit consent preference, i.e.  a  single purpose with a single check box. 
+* Explicit sharing this refers to stating that sharing of data for the above purpose categories takes place, the 3rd party it is taking place with, and the link to the contract in which the 3rd party has agreed to abide by this consent.  
+* Explicit in this specification also refers to technical scopes, in that each scope is seperately defined  as to be explicit)
+
+
 * **Grantee**
+* (editors note: github issue for adding grantee/grantor)
 	also referred to as the data subject for compliance conformance, the Grantee refers to the individual, or person acting on behalf of the grantor, who is provisioning consent. 
 
 * **Grantor** 
@@ -150,8 +162,8 @@ The MVCR is broken down into 5 sections for usability and to aid in understandin
 3.	Purpose Specification
 4.	Personally Identifiable Information
 5.	Information Sharing
-6.	Functional Scope
-
+6.	Technical Scope
+(editors note: added section 6 - technical scope and moved the field scope to this section)
 
 Global Guidance 
 The order is specific and is part of the specification.
@@ -179,7 +191,7 @@ The purpose of this section is to set out the meta-data for the consent transact
 | ------:	| ------	|
 | __Jurisdiction:__ | CA |
 | __Consent Time Stamp:__ | 2016/02/08 12:20:34 EST |
-| _Explicit Consent:__ | Yes |
+| _Consent Typet:__ | Explicit |
 | __Collection Method:__ | web form | [http://www.consentreceipt.org](http://www.consentreceipt.org) |
 | __Consent ID:__ | C159A448-A69B-44BF-BFCE-6403FB5D06EE |
 | __PI_Subjct (or Grantee):__ | [roadrunner@fictional.url](mailto:roadrunner@fictional.url) |
