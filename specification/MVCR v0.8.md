@@ -68,18 +68,20 @@ guidance
 This specification identifies the common consent requirements to record a personal information sharing transaction and provide this record as an independent receipt to the individual.
 
 ### 2.1 Scope
-An MVCR creates record of a consent to share personal information.
+An MVCR creates a record of a consent to share personal information.
 
-This scope includes how a consent record is provided, how to present the record fields, the timing of the record, the format and order of fields, linking fields to external information.
+This scope includes how a consent record is provided, how to present the record fields, the timing of the record, the format requirements for  free text fields, linking fields to external information.
 
-This scope is used to specifiy minimum common methods for making an interoperable record of consent. 
+The scope of the MVCR covers;
+- the provision of the receipt, which includes how a consent record is provided, how to present the record fields, the format for the data fields type of data and order of fields.
 - Referencing via link authoritative policy, regulation and consent notice requirements
--  common govenrnace framework structure and enable purpose based frameworks to have interoperable features.  of data sharing categories of purpose for which information is shared,
+- documenting the purpose of data sharing categories of purpose for which information is shared,
 - documenting the categories of PI
 - documenting the technical scopes for the categories  of PI and purpose
 - documenting the explicit sharing of personal data
 
-Viable, means a record of consent that can be retained and used separately by both issuer (PI Controller) and recipient (PI Subject) as proof of consent. Similar to the concept of a receipt for a transaction.  Leaving external trust framework, services and networks to define the policy and the trust services community to make products that address real issues. 
+
+Viable, in this scope, means a record of consent that can be retained and used separately by both issuer (PI Controller) and recipient (PI Subject) as proof of consent.
 
 
 ### 2.2 Modes of consent record specification
@@ -90,14 +92,10 @@ The term 'minimum' in the MVCR refers to the least amount of data required to ma
 * C) and/or Explicit Sharing of PI to specified 3rd Party, ref contract of sharing - defined by scope requirements
 * D) and/or defined by technical scope, i.e. attribute level permissions - defined by controller, regulation,  PI Subject, regulation and technical requirement. Type of PI, its purpose, context (Confidentiality, Consent Type, Sensitive Information) and sharing. {PI Category, Purpose Category, Sharing}
 
-The receipt has the Consent Type field in which the scope can be defined as 'Explicit', explicit indicates another level of references to legal or authoritiative policy which will have compliance claims.
- form of consent which is undefined with-in this specification.   In this context, explicit refers to:
+The receipt has the Consent Type field in which the scope can be defined as 'Explicit' or a 'Non-Explicit', Consent Type.   Explicit indicates conformance with the MVCR explicit requirements and/or linking to jurisdictional or domain specific notice, and 3rd party sharing consent requirements.
+Non-Expicit is non-explicit and has no compliance claims. Providing flexibility for implementation and adoption without the burden of legal compliance obligations for the implementor. (see conformance table)
 
-* Explicit, indicating the receipt shows both compliance with regulation and conformance with this specification.
-* Non-Explicit (or externally defined consent type), indicating the receipt has demonstrated conformance with the MVCR, but is limited to, conformance and makes no legal compliance claims.
-(editors note, does this refer to a different definition of scope (see terminology for a collection of how explicit is being used in this spec)
 
-Both operational modes demonstrate at a minimum, MVCR open consent conformance.  Providing flexibility for implementation and adoption without the burden of legal compliance obligations for the implementor. (see conformance table)
 
 ### 3 Notational Conventions for Conformance
 
@@ -127,8 +125,11 @@ Terminology herein leverages where possible,  [ISO/IEC 29100:2011 "Information T
 
 * **Explicit Consent**
 	 refers to explicit action taken by users which can be explicitly extended to an authoritative reference, scope, and sharing of personal information.
+   * Explicit, indicating the receipt shows both compliance with regulation and conformance with this specification.
 
-((editors Notes on explicit)
+* ** Non-Explicit (includes self-asserted and externally defined consent type), MVCR Lite Mode demonstrates   receipt  conformance with the MVCR, but is limited to, conformance and makes no legal compliance claims. and non-explicit consent or sensitive data consent.
+
+((editors Notes on us of explicit in this specification)
 * Explicit consent is comprised of the fields that are linked directly to an authoritative reference to ; consent regulation, privacy principles, other consent standards, or industry best practices.  For example: United Kingdom Privacy Laws are used as a conformance example for this specification.
 * Explicit is also used to specify the action that a user makes to provide un-ambiguous consent, in that the action is an explicit consent action in that a box was ticked, or an 'I agree' button pressed.
 * Explicit is also used in this specification for how purpose is explicitly specified,  each purpose, contains a set of data attributes, with an explicit consent preference, i.e.  a  single purpose with a single check box.
