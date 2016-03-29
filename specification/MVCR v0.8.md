@@ -14,8 +14,6 @@
 | |     Sarah Squire    |
 
 
-(editors note: removed contributors who haven't directly contributed to this specific version of the specification)
-
 # Abstract
 
 This specification identifies the common consent requirements to record a personal information sharing transaction and provide this record as an independent receipt.
@@ -78,7 +76,7 @@ The scope of the MVCR covers;
 - documenting the purpose of data sharing categories of purpose for which information is shared,
 - documenting the categories of PI
 - documenting the technical scopes for the categories  of PI and purpose
-- documenting the explicit sharing of personal data
+- documenting the explicit and non-explicit sharing of personal data
 
 
 Viable, in this scope, means a record of consent that can be retained and used separately by both issuer (PI Controller) and recipient (PI Subject) as proof of consent.
@@ -94,7 +92,6 @@ The term 'minimum' in the MVCR refers to the least amount of data required to ma
 
 The receipt has the Consent Type field in which the scope can be defined as 'Explicit' or a 'Non-Explicit', Consent Type.   Explicit indicates conformance with the MVCR explicit requirements and/or linking to jurisdictional or domain specific notice, and 3rd party sharing consent requirements.
 Non-Expicit is non-explicit and has no compliance claims. Providing flexibility for implementation and adoption without the burden of legal compliance obligations for the implementor. (see conformance table)
-
 
 
 ### 3 Notational Conventions for Conformance
@@ -124,14 +121,15 @@ Terminology herein leverages where possible,  [ISO/IEC 29100:2011 "Information T
 	See PII Subject in in ISO/IEC 29100:2011, also data subject (EC directive), consenter, PII Subject in NIST 800
 
 * **Explicit Consent**
-	 refers to explicit action taken by users which can be explicitly extended to an authoritative reference, scope, and sharing of personal information.
-   * Explicit, indicating the receipt shows both compliance with regulation and conformance with this specification.
+	 refers to explicit action taken by users which can be explicitly extended to an authoritative reference, scope, and sharing of personal information. Which is required to make a compliance claim. 
+   * Explicit, for conformance to the MVCR specification, as well as expicit for compliance to legal or authoritative policy, this receit format is used to map the regulation to technical scopes of user owned artefact.  In this regard the specification can extend to maximum explicit and granular requirements for authorisation policy and technical scope.
 
-* ** Non-Explicit (includes self-asserted and externally defined consent type), MVCR Lite Mode demonstrates   receipt  conformance with the MVCR, but is limited to, conformance and makes no legal compliance claims. and non-explicit consent or sensitive data consent.
+* ** Non-Explicit (includes self-asserted and externally defined consent type), MVCR Lite Mode demonstrates   receipt  conformance with the MVCR, but is limited to conformance, and makes no compliance claims, but can demonstrate conformance with MVCR using defined consent types. 
+* 
 
 ((editors Notes on us of explicit in this specification)
 * Explicit consent is comprised of the fields that are linked directly to an authoritative reference to ; consent regulation, privacy principles, other consent standards, or industry best practices.  For example: United Kingdom Privacy Laws are used as a conformance example for this specification.
-* Explicit is also used to specify the action that a user makes to provide un-ambiguous consent, in that the action is an explicit consent action in that a box was ticked, or an 'I agree' button pressed.
+* Explicit is also used to specify the action that a user makes to provide un-ambiguous consent, the action can take the form of an explicit consent action in that a box was ticked, or an 'I agree' button pressed in relation to listed purpose category, 
 * Explicit is also used in this specification for how purpose is explicitly specified,  each purpose, contains a set of data attributes, with an explicit consent preference, i.e.  a  single purpose with a single check box.
 * Explicit sharing this refers to stating that sharing of data for the above purpose categories takes place, the 3rd party it is taking place with, and the link to the contract in which the 3rd party has agreed to abide by this consent.
 * Explicit in this specification also refers to technical scopes, in that each scope is separately defined  as to be explicit)
@@ -152,18 +150,19 @@ Terminology herein leverages where possible,  [ISO/IEC 29100:2011 "Information T
 	See Personally Identifiable Information (PII) in ISO/IEC 29100:2011
 
 * **Personally Identifiable Information**
-Personally identifiable information (PII), or Sensitive Personal Information (SPI),[1][2][3] as used in US privacy law and information security, is information that can be used on its own or with other information to identify, contact, or locate a single person, or to identify an individual in context. The abbreviation PII is widely accepted in the US context, but the phrase it abbreviates has four common variants based on personal / personally, and identifiable / identifying. Not all are equivalent, and for legal purposes the effective definitions can vary depending on the specific purposes for which the term is being used. (In other countries with privacy protection laws derived from the OECD privacy principles, the term used is more often "personal information", which may be somewhat broader:
+Personally identifiable information (PII), or Sensitive Personal Information as used in privacy law and information security, is information that can be used on its own or with other information to identify, contact, or locate a single person, or to identify an individual in context. The abbreviation PII is widely accepted in OECD base FIPPs jurisdiction, but the phrase it abbreviates has four common variants based on personal / personally, and identifiable / identifying. Not all are equivalent, and for legal purposes the effective definitions can vary depending on the specific purposes for which the term is being used. (In other countries with privacy protection laws derived from the OECD privacy principles, the term used is more often "personal information", which may be somewhat broader:
 
 * ** PII confidentiality impact levels, these refer to low, medium, high confidentiality, or Not Applicable levels which correspond to NIST controls sp800-122 and can be use for the organisation, the individual and the developer to ascertain on scale the level of risk and security.
 
 * **Purpose Specification**
 	A statement or series of statements that set out the purpose(s) for which PII has been collected.
-  In the MVCR the purpose is intended to specify the context of use.  Context of Use.
-  Organizations should evaluate the context of use—the purpose for which the PII is collected, stored, used, processed, disclosed, or disseminated.  The context of use may cause the same PII data elements to be assigned different PII confidentiality impact levels based on their use.  For example, suppose that an organization has two lists that contain the same PII data fields (e.g., name, address, phone number).  The first list is people who subscribe to a general
-  -interest newsletter produced by the organization, and the second list is people who work undercover in law enforcement.  If the confidentiality of the lists is breached, the potential impacts to the affected individuals and to the organization are significantly different for each list.
+  In the MVCR the purpose is intended to specify the context of use.  
+
+* **Context of Use**
+  Organizations should evaluate the context of use—the purpose for which the PII is collected, stored, used, processed, disclosed, or disseminated.  The context of use may cause the same PII data elements to be assigned different PII confidentiality impact levels based on their use.  For example, suppose that an organization has two lists that contain the same PII data fields (e.g., name, address, phone number).  The first list is people who subscribe to a general-interest newsletter produced by the organization, and the second list is people who work undercover in law enforcement.  If the confidentiality of the lists is breached, the potential impacts to the affected individuals and to the organization are significantly different for each list.
 
 * **Sensitive Personal Information Categories**
-	All sensitive information categories require explicit consent and is subject to legislation and often industry specific regulation and best practice.  Some jurisdictions call out categories of PII specifically, that, by virtue of their sensitivity, require higher levels of protection. The particular categories vary by jurisdiction but will typically include health data (or personal health information - PHI), financial data, political affiliations, sexual orientation, family and personal relationships as defined in law.  In this specification, this field is accompanies by an 'other' field for free text and the Data Controller can define or suggest what is sensitive enabling competition and diversity which cannot be specified here.
+	All sensitive information categories require explicit consent and is subject to legislation and often industry specific regulation and best practice.  Some jurisdictions call out categories of PII specifically, that, by virtue of their sensitivity, require higher levels of protection. The particular categories vary by jurisdiction but will typically include health data (or personal health information - PHI), financial data, political affiliations, sexual orientation, family and personal relationships as defined in law.  In this specification, this field is accompanies by an 'other' field for free text and the Data Controller can define or suggest what is sensitive with a non-explicit 'consent type'.  
 
 ## 5. MVCR Record Format: Section & Fields
 
@@ -181,7 +180,6 @@ Global Guidance
 The order is specific and is part of the specification.
 Timing of providing a receipt - needs to be provided at the point in time in which the consent is provided.
 The ability for the PI Subject to get a copy of the consent receipt is requirement a requirement
-
 
 ### 2.1 Header
 
@@ -230,7 +228,7 @@ This section identifies the individual and company that is accountable for data 
 | Contact Email | Email Address | email | string. Email address | jon@datacontroller.com | contact email address | contact in context of consent to manage consent preferences | linked to email address |
 | Contact Phone | Phone Number | phone | string. Phone number |  00-000-000-0000 | contact phone number |  a contact field  | Linked |
 | Contact Other | Free text | contact_other | string | @twitter | a contact field  |  for social media or other communication channel | Linked directly |
-| Privacy Policy | URL of the privacy policy as at the time of the receipt | Required | Note that this means that the entity needs to retain copies of prior privacy policies | --- | --- | --- |
+| Privacy Policy | Link to policy | privacy_policy |  http://link.com/privacypolicy | is a link to the current privacy policy |  can be capatured and attached to receipt |  Linked |
 
 #### PI Controller Data Example ####
 
@@ -254,6 +252,7 @@ This section identifies the individual and company that is accountable for data 
 * Contact Email
 * Contact Phone
 * privacy policy link
+	The privacy policy link is to the current policy, if there are materials changes to this policy then a new consent is required for sensitive data categories and various trust network requirements. (note: can be used for compliance- privacy policy can be attached to the receipt payload. 
 
 ### 2.3 Purpose(s)
 
