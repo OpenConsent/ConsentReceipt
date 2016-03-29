@@ -35,7 +35,7 @@ This document is subject to the [Kantara IPR Policy - Option Patent & Copyright:
 ## Table of Contents
 1. Objective
 2. Scope
-2.1 Scope Defined: 4 layers/modes/models of consent specification
+2.1 MVCR Modes
 3. Notational Conventions For Conformance
 4. Terminology
 5. MVCR Record Format: Section & Fields
@@ -49,8 +49,11 @@ This document is subject to the [Kantara IPR Policy - Option Patent & Copyright:
 5.3.1 Example
 5.3.2 Guidance
 5.4.	Personally Identifiable Information
+guidance
 5.5.	Information Sharing
+guidance
 5.6.	Technical Scope
+guidance
 6. MVCR Conformance and Compliance
 6.1 Example Each mode of conformance and compliance
 6.2 Guidance each mode of conformance compliance
@@ -75,12 +78,12 @@ Viable, in this scope, means a record of consent that can be retained and used s
 ### 2.2 Scope Defined: 4 layers of consent record specification
 
 The term 'minimum' in the MVCR refers to the least amount of data required to make an open, compliant, and explicit consent record  viable for a number of different contexts, defined by
-* A) the PI Controller (or grantor), self-asserted
+* A) the PI Controller, self-asserted
 * B) and/or Consent - defined by explicit reference to authoritative policy i.e. regulation,
 * C) and/or Explicit Sharing of PI to specified 3rd Party, and ref contract of sharing
 * D) and/or defined by technical scope, i.e. attribute level permissions - provided by protocols   UMA/Oauth - (or regulated technical function) - recording UMA scopes
 
-Explicit, is understood as an action by an individual to agree or assent to a privacy policy and terms.  This specification and thus scope extends that action up and down stream. Up stream to the Grantor with the consent, and optionally down stream, through explicit reference to authoritative policy, and or technical scopes, for explicit sharing of personal data.
+Explicit, is understood as an action by an individual to agree or assent to a privacy policy and terms.  This specification and thus scope extends that action up and down stream. Up stream to the Data Controller with the consent, and optionally down stream, through explicit reference to authoritative policy, and or technical scopes, for explicit sharing of personal data.
 
 A maximum form of explicit is possible combining all 4 layers defined in this scope  for consent and information sharing receipt, that is both compliant with explicit regulation, but conforms to explicit sharing and technical scope as described.
 
@@ -155,7 +158,7 @@ Personally identifiable information (PII), or Sensitive Personal Information (SP
   -interest newsletter produced by the organization, and the second list is people who work undercover in law enforcement.  If the confidentiality of the lists is breached, the potential impacts to the affected individuals and to the organization are significantly different for each list.
 
 * **Sensitive Personal Information Categories**
-	All sensitive information categories require explicit consent and is subject to legislation and often industry specific regulation and best practice.  Some jurisdictions call out categories of PII specifically, that, by virtue of their sensitivity, require higher levels of protection. The particular categories vary by jurisdiction but will typically include health data (or personal health information - PHI), financial data, political affiliations, sexual orientation, family and personal relationships as defined in law.  In this specification, this field is accompanies by an 'other' field for free text and the grantor can define or suggest what is sensitive enabling competition and diversity which cannot be specified here.
+	All sensitive information categories require explicit consent and is subject to legislation and often industry specific regulation and best practice.  Some jurisdictions call out categories of PII specifically, that, by virtue of their sensitivity, require higher levels of protection. The particular categories vary by jurisdiction but will typically include health data (or personal health information - PHI), financial data, political affiliations, sexual orientation, family and personal relationships as defined in law.  In this specification, this field is accompanies by an 'other' field for free text and the Data Controller can define or suggest what is sensitive enabling competition and diversity which cannot be specified here.
 
 ## 5. MVCR Record Format: Section & Fields
 
@@ -403,8 +406,8 @@ This conformance table specifies requirements to fulfill scope as defined.
 ## 3.1. Guidance
 ### 3.1.1 MVCR Lite : Opening consent by:
 * The PI Subject obtains a record of the consent at point in time consent is provided so as to be contextually #usable
-* The PI Subject and the grantor (Data Controller) can use the receipt to communicate about the consent and its management
-* The consent receipt can be used by the PI Subject and the grantor (Data Controller) to prove consent post the point in time the consent was provided
+* The PI Subject and the Data Controller can use the receipt to communicate about the consent and its management
+* The consent receipt can be used by the PI Subject and the Data Controller to prove consent post the point in time the consent was provided
  a contact data is required
 
 ## 3.2 Explicit Consent
@@ -577,7 +580,7 @@ Other purposes may be uses as appropriate for the specific context of each juris
   -interest newsletter produced by the organization, and the second list is people who work undercover in law enforcement.  If the confidentiality of the lists is breached, the potential impacts to the affected individuals and to the organization are significantly different for each list.
 
 * **Sensitive Personal Information Categories**
-	All sensitive information categories require explicit consent and is subject to legislation and often industry specific regulation and best practice.  Some jurisdictions call out categories of PII specifically, that, by virtue of their sensitivity, require higher levels of protection. The particular categories vary by jurisdiction but will typically include health data (or personal health information - PHI), financial data, political affiliations, sexual orientation, family and personal relationships as defined in law.  In this specification, this field is accompanies by an 'other' field for free text and the grantor can define or suggest what is sensitive enabling competition and diversity which cannot be specified here.
+	All sensitive information categories require explicit consent and is subject to legislation and often industry specific regulation and best practice.  Some jurisdictions call out categories of PII specifically, that, by virtue of their sensitivity, require higher levels of protection. The particular categories vary by jurisdiction but will typically include health data (or personal health information - PHI), financial data, political affiliations, sexual orientation, family and personal relationships as defined in law.  In this specification, this field is accompanies by an 'other' field for free text and the Data Controller can define or suggest what is sensitive enabling competition and diversity which cannot be specified here.
 
 ## 5. MVCR Record Format: Section & Fields
 
@@ -825,8 +828,8 @@ Scope
 ## 3.1. Guidance
 ### 3.1.1 MVCR Lite : Opening consent by:
 * The PI Subject obtains a record of the consent at point in time consent is provided so as to be contextually #usable
-* The PI Subject (or data subject) and the grantor (Data Controller) can use the receipt to communicate about the consent and its management
-* The consent receipt can be used by the PI Subject and the grantor (Data Controller) to prove consent post the point in time the consent is provided
+* The PI Subject  and the PII Controller can use the receipt to communicate about the consent and its management
+* The consent receipt can be used by the PI Subject and the PII Controller to prove consent post the point in time the consent is provided
  a contact data is required
 
 ## 3.2 Explicit Consent
