@@ -8,7 +8,6 @@
 | Contributors: |
 | |	John Wunderlich |
 | |     Justin Richer   |
-| Supporters:  |
 | |     Mary Hodder     |
 | |     Iain Henderson  |
 | |     Sarah Squire    |
