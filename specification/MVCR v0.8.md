@@ -92,11 +92,16 @@ The term 'minimum' in the MVCR refers to the least amount of data required to ma
 The receipt has the Consent Type field in which the scope can be defined as 'Explicit' or a 'Non-Explicit', Consent Type.   Explicit indicates conformance with the MVCR explicit requirements and/or linking to jurisdictional or domain specific notice, and 3rd party sharing consent requirements.
 Non-Explicit is non-explicit (for all types of implied consent) and has no compliance claims. Providing flexibility for implementation and adoption without the burden of legal compliance obligations for the implementor. (see conformance table)
 
-Note: v0.8 has  discussed and is working on consensus for MVCR Lite, which has been the focus of the consent receipt generator (http://api.consentreceipt.org) and the testing for drafting this v0.8. 
+(Editors Note: v0.8 has  discussed and is working on consensus for MVCR Lite, which has been the focus of the consent receipt generator (http://api.consentreceipt.org) and the testing for drafting this v0.8. 
 
- This version v0.8 has taken on the role of being the alpha draft for a machine readable, and a compliance mapping to technical scope requirements that were raised in the MVCR spec development. This will take a v0.8.5 and requires implementation. 
+ This version v0.8 has taken on the role of being the alpha draft for a machine readable, and mapping compliance require to technical  requirements.  These elements are not inlcuded in the MVCR Lite and MVCR Lite is the demonstrator that is being produced for v1 usability 
 
-In this regard, v0.8 meets the requirements of providing an MVCR lite, but is at various levels of development, so that v.08 is a Kantara only draft and meant for internal review.  In this regard, recommendation is for testing with MVCR Lite and to refer to the Kantara Initative Implementation of the consent receipt, to see how it works.    (put in URL - here )
+In this regard, v0.8 meets the requirements of providing an MVCR lite, but is at various levels of development, so that v.08 is a Kantara only draft and meant for internal review. (put in URL of kantar demo - here )
+
+For trust framework engineers - the MVCR Lite is the conceptual and legacy usable verson of the MVCR refer to the Kantara Initative Implementation of the consent receipt, to see how it works.  
+
+The rest of the spec is not finished and requires input form the trust network engineers in order to substantively develope further. 
+Specifically in relations to: auditing, logging and creating authorisation policy, using this consent framework.    Very much would like to show with  conformance testing that opens consent enables interoperability between trust network domains.  Creates value innovation for existing business and opportunity to strenghten privacy and data control for emerging cross domain trust services market. )
 
 
 ### 3 Notational Conventions for Conformance
