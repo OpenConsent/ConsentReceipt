@@ -82,7 +82,7 @@ The scope of the MVCR covers;
 Viable, in this scope, means a record of consent that can be retained and used separately by both issuer (PI Controller) and recipient (PI Subject) as proof of consent.
 
 
-### 2.2 MVCR Modes 
+### 2.2 MVCR Modes
 
 The term 'minimum' in the MVCR refers to the least amount of data required to make an open, compliant, and explicit consent record viable for a number of different contexts, defined by:
 * A) the PI Controller, implied and self-asserted
@@ -121,15 +121,15 @@ Terminology herein leverages where possible,  [ISO/IEC 29100:2011 "Information T
 	See PII Subject in in ISO/IEC 29100:2011, also data subject (EC directive), consenter, PII Subject in NIST 800
 
 * **Explicit Consent**
-	 refers to explicit action taken by users which can be explicitly extended to an authoritative reference, scope, and sharing of personal information. Which is required to make a compliance claim. 
+	 refers to explicit action taken by users which can be explicitly extended to an authoritative reference, scope, and sharing of personal information. Which is required to make a compliance claim.
    * Explicit, for conformance to the MVCR specification, as well as expicit for compliance to legal or authoritative policy, this receit format is used to map the regulation to technical scopes of user owned artefact.  In this regard the specification can extend to maximum explicit and granular requirements for authorisation policy and technical scope.
 
-* ** Non-Explicit (includes self-asserted and externally defined consent type), MVCR Lite Mode demonstrates   receipt  conformance with the MVCR, but is limited to conformance, and makes no compliance claims, but can demonstrate conformance with MVCR using defined consent types. 
-* 
+* ** Non-Explicit (includes self-asserted and externally defined consent type), MVCR Lite Mode demonstrates   receipt  conformance with the MVCR, but is limited to conformance, and makes no compliance claims, but can demonstrate conformance with MVCR using defined consent types.
+*
 
 ((editors Notes on us of explicit in this specification)
 * Explicit consent is comprised of the fields that are linked directly to an authoritative reference to ; consent regulation, privacy principles, other consent standards, or industry best practices.  For example: United Kingdom Privacy Laws are used as a conformance example for this specification.
-* Explicit is also used to specify the action that a user makes to provide un-ambiguous consent, the action can take the form of an explicit consent action in that a box was ticked, or an 'I agree' button pressed in relation to listed purpose category, 
+* Explicit is also used to specify the action that a user makes to provide un-ambiguous consent, the action can take the form of an explicit consent action in that a box was ticked, or an 'I agree' button pressed in relation to listed purpose category,
 * Explicit is also used in this specification for how purpose is explicitly specified,  each purpose, contains a set of data attributes, with an explicit consent preference, i.e.  a  single purpose with a single check box.
 * Explicit sharing this refers to stating that sharing of data for the above purpose categories takes place, the 3rd party it is taking place with, and the link to the contract in which the 3rd party has agreed to abide by this consent.
 * Explicit in this specification also refers to technical scopes, in that each scope is separately defined  as to be explicit)
@@ -251,7 +251,7 @@ This section identifies the individual and company that is accountable for data 
 * Contact Email
 * Contact Phone
 * privacy policy link
-	The privacy policy link is to the current policy, if there are materials changes to this policy then a new consent is required for sensitive data categories and various trust network requirements. (note: can be used for compliance- privacy policy can be attached to the receipt payload. 
+	The privacy policy link is to the current policy, if there are materials changes to this policy then a new consent is required for sensitive data categories and various trust network requirements. (note: can be used for compliance- privacy policy can be attached to the receipt payload.
 
 ### 2.3 Purpose(s)
 
@@ -367,7 +367,7 @@ The following example is from an online financial institution
 
 ####  Scope Example
 
-| Scope  | Purpose | Example | Scope Reference (linked) | Purpose Category | PI Category | 
+| Scope  | Purpose | Example | Scope Reference (linked) | Purpose Category | PI Category |
 | ------ | ------ | :------: | :------: | :------: | :------: |
 
 | __Browser Data__ | Information revealed by the browser to the web server | Read |  IP address is PII but not sensitive |
@@ -423,7 +423,7 @@ This conformance table specifies requirements to fulfill scope as defined.
 * The PI Subject and the Data Controller can use the receipt to communicate about the consent and its management
 * The consent receipt can be used by the PI Subject and the Data Controller to prove consent post the point in time the consent was provided
  a contact data is required
-* Conformance for MVCR requires a minimum of: contact information, proportional linking, and minimum viable purpose specification 
+* Conformance for MVCR requires a minimum of: contact information, proportional linking, and minimum viable purpose specification
 
 ## 3.2 Explicit Consent
 * All Core Fields are required, some
@@ -703,13 +703,13 @@ This section specifies the purpose(s) for which the PI Controller is collecting 
 
 #### Purpose Specification Example ####
 
-| Service | Purpose | Primary | Necessary |
+| Service | Purpose | Preference | Purpose |
 | ------ | ------ | :------: | :------: |
-| __Acme Web Site__ | Core Function | True | True |
-| __Acme Web Site__ | Contact Requested | False | False |
-| __Acme Web Site__ | Personalized Experience | False | False |
-| __Telling PII Subject about other services__ | Marketing | False | False |
-| __Telling PII Subject about third party services__ | Marketing Third Parties | False | False |
+| __Acme Web Site__ | Core Function | No | True |
+| __Acme Web Site__ | Contact Requested | ON | False |
+| __Acme Web Site__ | Personalized Experience | ON | False |
+| __Acme Web Site__ | __Telling PII Subject about other services__ | ON | Marketing |  |  |
+| __Acme Web Site__ | __Telling PII Subject about third party services__ | OFF | Marketing Third Parties  |
 
 #### Guidance on Purpose(s)
 
@@ -747,11 +747,11 @@ Furthermore, the consent receipt can further be extended with a jurisdictional n
 
 Note: Selecting this field, the receipt MUST be selected as explicit consent, as such the 'other' field should not be present as the explicit consent requirements are supplied by jurisdiction and industry and is out-of-scope of this consent receipt specification.
 
-#### PII Example ####
+#### PII Example MVCR Lite ####
 
 The example below is for an on-line pharmacy that provides a delivery service
 
-| Category | Description | Sensitive | Explanation |
+| Category | Description | Sensitive | Explicit | Explanation |
 | ------ | ------ | :------: | :------: |
 | __Browser Data__ | Information revealed by the browser to the web server | False | IP address is PII but not sensitive |
 | __Address__ | Physical address for deliveries | False | |
@@ -797,47 +797,52 @@ The following example is from an online financial institution
 
 This conformance table specifies requirements to fulfill scope as defined.
 
-| Field # | Field Name | MVCR Lite | Explicit Consent | Legal Compliance UK | Scope |
+| Field Name | MVCR Lite | Explicit Consent | Legal Compliance UK | Scope |
 | ------ | ------ | -----| :------: | :------: | :------: |
-| 1 | *Jurisdiction* | MAY | MUST | MUST - Machine Readable | |
-| 2 | *Consent Time Stamp* | MAY |   MUST - Machine Readable| | |
-| 3 | *Consent Type* | MAY | MUST | Authoritative reference | technical scope for this reference | |
-| 4 | *Collection Method* |  | MAY | | |
-| 5 | *Consent ID* | |  | | |
-| 6 | *PI Subject* | |  | | |
+Header 
+| _Jurisdiction_ | MAY | MUST | MUST - Machine Readable | |
+| _Consent Time Stamp_ | MAY |   MUST - Machine Readable| | |
+| _Consent Type_ | MAY | MUST | Authoritative reference | technical scope for this reference | |
+| _Collection Method_ | MAY  | MAY | | |
+| _Consent ID_ | MAY |  | | |
+|  _PI Subject_ | MUST |  | | |
 
-Controller
-| PI Controller |
-| On Behalf |
-| Contact Name|
-| Contact Address |
-| Contact Email |
-| Contact Phone |
-| Contact Other |
-| Privacy Policy |
+| Controller |
+|  | _PI Controller_ | MUST | | | |
+| | Controller | _On Behalf_ | MUST |
+| | Controller | _Contact Name_ |
+|  | _Contact Address_ |
+|  | _Contact Email_ | MUST one of 10 -13 |
+|  | _Contact Phone_ | MUST one of 10 -13 |
+|  | _Contact Other_ |MUST one of 10 -13 |
+|  | _Privacy Policy_ | MUST |
 
-Purpose
-| Service |
 | Purpose |
-| Purpose Category |
-| PI attributes |
-| Purpose Preference (Y/N) |
-| Purpose Duration/Renewal |
+| | Service |
+|  | Purpose | MUST |
+| 17 | Purpose Category | MAY |
+| 18 | PI attributes | MAY |
+| 19 | Purpose Preference (Y/N) | MAY |
+| 20 | Purpose Duration/Renewal | MAY |
 
-PII
-| PI Categories |
-| PI Attribute(s) |
-| PI Confidentiality Level |
-| Sensitive Data Y/N |
-| Sensitive Information Category |
+| Personal Information | 
+| 21 | PI Categories | MAY |
+| 22 | PI Attribute(s) | MAY |
+| 23 | PI Confidentiality Level | MAY |
+| 24 | Sensitive Data Y/N | MUST |
+| 25 | Sensitive Information Category | MUST NOT |
 
 Sharing
-| Sharing |
-| Third Party |
-| Purpose |
+| 26 | Sharing | MAY |
+| 27 | Third Party | MAY |
+| 28 | Sharing Purpose |
+| 29 | Purpose Category | (note: where do attributes fit in? is their PI Categories )
+| Sharing Duration |
+| Sharing contract/policy |
 
-Scope
-| Scope |
+Technical
+|   Scope |
+| Sub Scope |
 
 
 ## 3.1. Guidance
@@ -990,7 +995,7 @@ The list below contains a list of purposes for which Personally Identifiable Inf
 
 Other purposes may be uses as appropriate for the specific context of each jurisdiction and the site, application or service.
 
-## 4.3. Appendix C: Categories of Personal Data (explainers/examples)
+## 4.3. Appendix C: Categories of Personal Information (explainers/examples)
 
 - 1.	Biographical – (General information like Name, DOB, Family info (mother’s maiden name), marital status. Historical data like educational achievement, general employment history.)
 - 2.	Contact – (Address, Email, Telephone Number, etc.)
