@@ -165,7 +165,7 @@ Personally identifiable information (PII), or Sensitive Personal Information as 
 
 ## 5. MVCR Record Format: Section & Fields
 
-The MVCR is broken down into 5 sections for usability and to aid in understanding the core function. The 5 sections are:
+The MVCR is broken down into 6 sections for usability and to aid in understanding the core functions. The 6 sections are:
 
 1.	Header
 2.	Data Controller, Contact & Policy
@@ -173,6 +173,7 @@ The MVCR is broken down into 5 sections for usability and to aid in understandin
 4.	Personally Identifiable Information
 5.	Information Sharing
 6.	Technical Scope
+
 (editors note: added section 6 - technical scope and moved the field scope to this section)
 
 Global Guidance
