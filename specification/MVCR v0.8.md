@@ -90,7 +90,7 @@ The term 'minimum' in the MVCR refers to the least amount of data required to ma
 * D) and/or defined by technical scope, i.e. attribute level permissions - defined by controller, regulation,  PI Subject, regulation and technical requirement. Type of PI, its purpose, context (Confidentiality, Consent Type, Sensitive Information) and sharing. {PI Category, Purpose Category, Sharing}
 
 The receipt has the Consent Type field in which the scope can be defined as 'Explicit' or a 'Non-Explicit', Consent Type.   Explicit indicates conformance with the MVCR explicit requirements and/or linking to jurisdictional or domain specific notice, and 3rd party sharing consent requirements.
-Non-Expicit is non-explicit and has no compliance claims. Providing flexibility for implementation and adoption without the burden of legal compliance obligations for the implementor. (see conformance table)
+Non-Explicit is non-explicit and has no compliance claims. Providing flexibility for implementation and adoption without the burden of legal compliance obligations for the implementor. (see conformance table)
 
 
 ### 3 Notational Conventions for Conformance
