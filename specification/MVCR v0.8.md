@@ -15,9 +15,9 @@
 
 # Abstract
 
-This specification identifies the common consent requirements to record a personal information sharing transaction and provide this record as an independent receipt.
+This specification identifies the common consent requirements to record a personal information (PI) sharing transaction and provide this record as an independent receipt.
 
-The MVCR is designed to address existing closed consent architecture with a consent receipt, which effectively provides an open consent architecture through consent transparency.  Open Consent architecture addresses multiple privacy principle and privacy legal requirements by providing a framework for operationally addressing multiple Fair Information Practice Principles and likewise ISO 29100 privacy principles.  See Appendix A:
+The MVCR is designed to address existing closed consent architecture,  by providing a specification for creating a consistent record of consent.    The common consent format provides  a requirement for people to be provisioned a record of the consent transaction.   This addresses multiple privacy principle and privacy legal requirements by providing a framework for operationally addressing multiple Fair Information Practice Principles and likewise ISO 29100 privacy principles.  See Appendix A:
 (ref- FIPPs and ISO Principles - "Openness, transparency, notice") and Consent (ISO Principle 1 - "Consent and Choice") are fundamental privacy principles, addressed with this specification.
 (editors note:  - how should this be referenced and linked? )
 
@@ -92,16 +92,11 @@ The term 'minimum' in the MVCR refers to the least amount of data required to ma
 The receipt has the Consent Type field in which the scope can be defined as 'Explicit' or a 'Non-Explicit', Consent Type.   Explicit indicates conformance with the MVCR explicit requirements and/or linking to jurisdictional or domain specific notice, and 3rd party sharing consent requirements.
 Non-Explicit is non-explicit (for all types of implied consent) and has no compliance claims. Providing flexibility for implementation and adoption without the burden of legal compliance obligations for the implementor. (see conformance table)
 
-(Editors Note: v0.8 has  discussed and is working on consensus for MVCR Lite, which has been the focus of the consent receipt generator (http://api.consentreceipt.org) and the testing for drafting this v0.8. 
+(Editors Note: v0.8 has  discussed and is working on consensus for MVCR Lite, which has been the focus of the consent receipt generator (http://api.consentreceipt.org) and the testing for drafting this v0.8.  
 
- This version v0.8 has taken on the role of being the alpha draft for a machine readable, and mapping compliance require to technical  requirements.  These elements are not inlcuded in the MVCR Lite and MVCR Lite is the demonstrator that is being produced for v1 usability 
+In this regard, v0.8 intends to meet the requirement of providing an MVCR lite, but also the structure for the MVCR Lite to be extended. 
 
-In this regard, v0.8 meets the requirements of providing an MVCR lite, but is at various levels of development, so that v.08 is a Kantara only draft and meant for internal review. (put in URL of kantar demo - here )
-
-For trust framework engineers - the MVCR Lite is the conceptual and legacy usable verson of the MVCR refer to the Kantara Initative Implementation of the consent receipt, to see how it works.  
-
-The rest of the spec is not finished and requires input form the trust network engineers in order to substantively develope further. 
-Specifically in relations to: auditing, logging and creating authorisation policy, using this consent framework.    Very much would like to show with  conformance testing that opens consent enables interoperability between trust network domains.  Creates value innovation for existing business and opportunity to strenghten privacy and data control for emerging cross domain trust services market. )
+The extensions of conformance to explicit consent and for meeting compliance requiremenst are at various levels of spec review and testing by the WG.  As a result v.08 is a Kantara only draft and meant for internal review. (put in URL of kantar demo - here )
 
 
 ### 3 Notational Conventions for Conformance
@@ -163,14 +158,15 @@ Terminology herein leverages where possible,  [ISO/IEC 29100:2011 "Information T
 * **Personally Identifiable Information**
 Personally identifiable information (PII), or Sensitive Personal Information as used in privacy law and information security, is information that can be used on its own or with other information to identify, contact, or locate a single person, or to identify an individual in context. The abbreviation PII is widely accepted in OECD base FIPPs jurisdiction, but the phrase it abbreviates has four common variants based on personal / personally, and identifiable / identifying. Not all are equivalent, and for legal purposes the effective definitions can vary depending on the specific purposes for which the term is being used. (In other countries with privacy protection laws derived from the OECD privacy principles, the term used is more often "personal information", which may be somewhat broader:
 
-* ** PII confidentiality impact levels, these refer to low, medium, high confidentiality, or Not Applicable levels which correspond to NIST controls sp800-122 and can be use for the organisation, the individual and the developer to ascertain on scale the level of risk and security.
+* ** PII confidentiality impact levels* 
+These refer to low, medium, high confidentiality, or Not Applicable levels, which correspond to NIST controls sp800-122 and can be use for the organisation, the individual and the developer to ascertain on scale the level of risk and security.
 
 * **Purpose Specification**
 	A statement or series of statements that set out the purpose(s) for which PII has been collected.
   In the MVCR the purpose is intended to specify the context of use.  
 
 * **Context of Use**
-  Organizations should evaluate the context of use—the purpose for which the PII is collected, stored, used, processed, disclosed, or disseminated.  The context of use may cause the same PII data elements to be assigned different PII confidentiality impact levels based on their use.  For example, suppose that an organization has two lists that contain the same PII data fields (e.g., name, address, phone number).  The first list is people who subscribe to a general-interest newsletter produced by the organization, and the second list is people who work undercover in law enforcement.  If the confidentiality of the lists is breached, the potential impacts to the affected individuals and to the organization are significantly different for each list.
+  Organizations should evaluate the context of use to provide the purpose for which the PII is collected, stored, used, processed, disclosed, or disseminated.  The context of use may cause the same PII data elements to be assigned different PII confidentiality impact levels based on their use.  For example, suppose that an organization has two lists that contain the same PII data fields (e.g., name, address, phone number).  The first list is people who subscribe to a general-interest newsletter produced by the organization, and the second list is people who work undercover in law enforcement.  If the confidentiality of the lists is breached, the potential impacts to the affected individuals and to the organization are significantly different for each list.
 
 * **Sensitive Personal Information Categories**
 	All sensitive information categories require explicit consent and is subject to legislation and often industry specific regulation and best practice.  Some jurisdictions call out categories of PII specifically, that, by virtue of their sensitivity, require higher levels of protection. The particular categories vary by jurisdiction but will typically include health data (or personal health information - PHI), financial data, political affiliations, sexual orientation, family and personal relationships as defined in law.  In this specification, this field is accompanies by an 'other' field for free text and the Data Controller can define or suggest what is sensitive with a non-explicit 'consent type'.  
