@@ -90,7 +90,13 @@ The term 'minimum' in the MVCR refers to the least amount of data required to ma
 * D) and/or defined by technical scope, i.e. attribute level permissions - defined by controller, regulation,  PI Subject, regulation and technical requirement. Type of PI, its purpose, context (Confidentiality, Consent Type, Sensitive Information) and sharing. {PI Category, Purpose Category, Sharing}
 
 The receipt has the Consent Type field in which the scope can be defined as 'Explicit' or a 'Non-Explicit', Consent Type.   Explicit indicates conformance with the MVCR explicit requirements and/or linking to jurisdictional or domain specific notice, and 3rd party sharing consent requirements.
-Non-Explicit is non-explicit and has no compliance claims. Providing flexibility for implementation and adoption without the burden of legal compliance obligations for the implementor. (see conformance table)
+Non-Explicit is non-explicit (for all types of implied consent) and has no compliance claims. Providing flexibility for implementation and adoption without the burden of legal compliance obligations for the implementor. (see conformance table)
+
+Note: v0.8 has  discussed and is working on consensus for MVCR Lite, which has been the focus of the consent receipt generator (http://api.consentreceipt.org) and the testing for drafting this v0.8. 
+
+ This version v0.8 has taken on the role of being the alpha draft for a machine readable, and a compliance mapping to technical scope requirements that were raised in the MVCR spec development. This will take a v0.8.5 and requires implementation. 
+
+In this regard, v0.8 meets the requirements of providing an MVCR lite, but is at various levels of development, so that v.08 is a Kantara only draft and meant for internal review.  In this regard, recommendation is for testing with MVCR Lite and to refer to the Kantara Initative Implementation of the consent receipt, to see how it works.    (put in URL - here )
 
 
 ### 3 Notational Conventions for Conformance
@@ -123,10 +129,11 @@ Terminology herein leverages where possible,  [ISO/IEC 29100:2011 "Information T
 	 refers to explicit action taken by users which can be explicitly extended to an authoritative reference, scope, and sharing of personal information. Which is required to make a compliance claim.
    * Explicit, for conformance to the MVCR specification, as well as expicit for compliance to legal or authoritative policy, this receit format is used to map the regulation to technical scopes of user owned artefact.  In this regard the specification can extend to maximum explicit and granular requirements for authorisation policy and technical scope.
 
-* ** Non-Explicit (includes self-asserted and externally defined consent type), MVCR Lite Mode demonstrates   receipt  conformance with the MVCR, but is limited to conformance, and makes no compliance claims, but can demonstrate conformance with MVCR using defined consent types.
+* ** Non-Explicit Consent **
+ (includes self-asserted and externally defined consent type), MVCR Lite Mode demonstrates   receipt  conformance with the MVCR, but is limited to conformance, and makes no compliance claims, but can demonstrate conformance with MVCR using defined consent types.
 *
 
-((editors Notes on us of explicit in this specification)
+* **Editors Notes on use of explicit in this specification**
 * Explicit consent is comprised of the fields that are linked directly to an authoritative reference to ; consent regulation, privacy principles, other consent standards, or industry best practices.  For example: United Kingdom Privacy Laws are used as a conformance example for this specification.
 * Explicit is also used to specify the action that a user makes to provide un-ambiguous consent, the action can take the form of an explicit consent action in that a box was ticked, or an 'I agree' button pressed in relation to listed purpose category,
 * Explicit is also used in this specification for how purpose is explicitly specified,  each purpose, contains a set of data attributes, with an explicit consent preference, i.e.  a  single purpose with a single check box.
@@ -165,7 +172,7 @@ Personally identifiable information (PII), or Sensitive Personal Information as 
 
 ## 5. MVCR Record Format: Section & Fields
 
-The MVCR is broken down into 6 sections for usability and to aid in understanding the core functions. The 6 sections are:
+The MVCR is broken down into 5 sections for usability and to aid in understanding the core function. The 5 sections are:
 
 1.	Header
 2.	Data Controller, Contact & Policy
@@ -173,7 +180,6 @@ The MVCR is broken down into 6 sections for usability and to aid in understandin
 4.	Personally Identifiable Information
 5.	Information Sharing
 6.	Technical Scope
-
 (editors note: added section 6 - technical scope and moved the field scope to this section)
 
 Global Guidance
@@ -306,8 +312,10 @@ Sensitive Data
 Sensitive Data
   This is a yes/no question:  can be used for MVCR lite conformance  for non-explicit consent only - which mean its not used for compliance, in this context the "other" field is used to specify sensitivity.    
 
-Sensitive Data Categories (optional for compliance claims)
+* **Sensitive Data Categories**
+  (optional for compliance claims)
  (not usable for MVCR Lite) Sharing sensitive personal information, is actively regulated and requires explicit consent by all OECD FIPPs based regulations, and for trade of information and technology between jurisdictions.  Use of this field is subject to regulatory requirements.  (Notes:  This field provides the normative baseline for binding practice to laws and standards with Open Consent.  This category is specified, but also flexible so that it can expand to authoritative decisions about new categories and the definition of existing category, like the GDPR which requires consent to be both :  “explicit”  and evidenced by “a statement or by a clear affirmative action” ref GDPR - Doc )
+ 
 
  (field is optional, unless for compliance then it is required and linked to authoritative notice, references, and scopes) - these are further specified by jurisdictional legislation, terminology.  Even so,  there are common sensitive data categories for personal information which are enforceable, listed here;  The listing of a sensitive data category in this field indicates this receipt claims to be in conformance and compliance  of compliance requirements.     
 
