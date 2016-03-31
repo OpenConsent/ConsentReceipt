@@ -338,32 +338,38 @@ The example below is for an on-line pharmacy that provides a delivery service
 | __Financial__ | Credit Card or payment information | True | Specified by regulation in many jurisdictions |
 
 #### Guidance
-
+Repeat the following set of fields as many times as necessary identify third parties |
 Sensitive Personal Information - list of sensitive categories - genetic data, biometric data, and data concerning sexual orientation, can also be define by consentor as sensitive, but needs a subsequent explanation of what is sensitive (includes photographs).
 
-### 2.5 Information Sharing
+### 2.5 Information Sharing (TBF)
 
 The purpose of this section is to provide the PII Subject with information about how their information is shared with third parties. In the MVCR this is a Y/N (binary on and off) flag, and if On, then the 3rd parties, the specified purpose and at the minimum the data categories shared may be listed here.
 
 | Receipt Field Label | Receipt Field Format | Data Field Name | Data Type | Example Data Input | Receipt Field Description | Purpose of Field  | Linked |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| | | | Repeat the following set of fields as many times as necessary identify third parties |
-| Sharing | Category(ies) of data shared | Required |  |
+| Sharing | service data, data controller, purpose catgory, pi category wit | sharing_service  |  |
 | Third Party | Third party that receives the data | Required | SHOULD be specific, MAY be generic |
 | Purpose | Purpose (only from list above) for sharing data | Required | **Note:** PII provided to vendors or suppliers to the PII Controller that are providing data processing services of PII to the PII Controller would not normally be considered disclosure or information sharing |
 | Purpose Category |
 | PI Category |
-| Duration of Sharing|
+| Termination of Sharing|
 | contract/policy |
+
 
 #### Information Sharing Example
 
 The following example is from an online financial institution
 
-| Sharing | Third Party | Purpose | Explanation |
+| Sharing Srvice | Third Party | Purpose | Explanation |
 | ------ | ------ | :------: | :------: |
+service  | , data controller, purpose catgory, pi category | with 3rd party name | for pi_attributes | terminated by (duration of service length) |  requireing [x] scopes | linked to contract/policy governing sharing | |  
 | __Financial__ | Tax Authority  | Required by Law Enforcement or Government | Financial institution required to disclose personal financial information for tax purposes |
 | __Contact__ | Advertising Network| Marketing Third Parties | Ad supported web site |
+
+#### Sharing Guidance
+* Repeat the following set of fields as many times as necessary to identify third parties 
+* Termination of Sharing - includes duration, location, specified time,  
+* (note: is sharing a proxy a security concern? )
 
 ### Scope(s)   (TBF)
 | Receipt Field Label |  scope name | PI Category | PI Purpose |  PI attributes |  Data Type | Example  Data Input | Receipt Field Description | Purpose of Field  | Linked |
@@ -382,6 +388,8 @@ The following example is from an online financial institution
 | __Health__ | Personal Health Information| Read + encrypted | linked to notice |
 | __Financial__ | Credit Card or payment information | Read + encrypted + specified 3rd party |  |
 
+#### Scope Guidance
+Repeat the following set of fields as many times as necessary identify third parties |
 
 # 3. Conformance Table
 
