@@ -274,13 +274,13 @@ This section specifies the purpose(s) for which the PI Controller is collecting 
 
 #### Purpose Specification Example (TBF)####
 
-| Service | Purpose | preference | Duration |
+| Service | Purpose | preference | Terminiation |
 | ------ | ------ | :------: | :------: |
-| __Acme Web Site__ | Core Function | True | True |
-| __Acme Web Site__ | Contact Requested | False | False |
-| __Acme Web Site__ | Personalized Experience | False | False |
-| __Telling PII Subject about other services__ | Marketing | False | False |
-| __Telling PII Subject about third party services__ | Marketing Third Parties | False | False |
+| __Acme Web Site__ | Core Function | True | if location changes |
+| __Acme Web Site__ | Contact data use  | True | when service member (life of membership)  |
+| __Acme Web Site__ | Personalized Experience | True | False |
+| __Telling PII Subject about other services__ | Marketing | False | N/A |
+| __Telling PII Subject about third party services__ | Marketing Third Parties | False | N/A |
 
 #### Guidance on Purpose(s)
  Repeat the following set of fields as many times as necessary to set out the purpose(s) for collection 
@@ -294,15 +294,13 @@ This section specifies the purpose(s) for which the PI Controller is collecting 
 
 ### 2.4 Personally Identifiable Information
 
-The purpose of this section is to ensure that the PII Subject is made aware of the types of PII that has been collected and may be used or disclosed.
+This section is used to specify the personal infomration categories, and if required, attributes for the purpose of explicit personal data tracking.  
 
 | Receipt Field Label | Receipt Field Format | Data Field Name | Data Type | Example Data Input | Receipt Field Description | Purpose of Field  | Linked |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| | | | Repeat the following set of fields as many times as necessary to set out the types of PII |
-| PI Categories | Short description of the category |  |  |
-| PI Attribute(s) | used to list attributes that are tracked or automated with authorization scope  |  |  used to map technical scopes in section 6 of the specification |
+| PI Categories |text | pi_category | string |  address | short description of personal data | to classify PI attributes | linked to definition of category | 
 | PI attributes | attributes name | attribute | {text=attribute value} |  multiple PI attributes can be added to a purpose category | used to map technical scope  | not linked externally |
-| PI Confidentiality Level | {low, medium, high, N/A } | con_level | string | low | confidentiality risk level | for security considerations based on purpose and attribute exchange | not linked |
+| PI Confidentiality Level | {low, medium, high, N/A } | con_level | string | low | confidentiality risk level | for security considerations based on purpose and attribute exchange | not linked | 
 | Sensitive Data Y/N | text | yes or no | sensitive | string | Yes | indicates if data is sensitive or not sensitive | used to indicate if consent categories: health, financial, sexual/religous, biometric, family, friends, etc | should be linked to a notice about what is sensitive |  
 | Sensitive Information Category | list of categories with check boxes | sic | string | "Health" | used in the specification to indicate further notice  requiremetns are needed and the receipt has compliance claims | not linked |
 
