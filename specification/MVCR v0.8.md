@@ -135,10 +135,12 @@ Terminology herein leverages where possible,  [ISO/IEC 29100:2011 "Information T
 
 * **Editors Notes on use of explicit in this specification**
 * Explicit consent is comprised of the fields that are linked directly to an authoritative reference to ; consent regulation, privacy principles, other consent standards, or industry best practices.  For example: United Kingdom Privacy Laws are used as a conformance example for this specification.
-* Explicit is also used to specify the action that a user makes to provide un-ambiguous consent, the action can take the form of an explicit consent action in that a box was ticked, or an 'I agree' button pressed in relation to listed purpose category,
+* Explicit is also used to specify the action that a user makes to provide un-ambiguous consent, the action can take the form of an explicit consent action in that a box was ticked, or an 'I agree' button pressed in relation to listed purpose category,--> 
+* EXPRESS consent - has a history, it refers to the context of a PI Subject making an unambigous agreement as to consent.  so it is concievable that a consent can be explicitly expressed  (see council of Europe 5.4.4 https://goo.gl/JGPX2Y) 
 * Explicit is also used in this specification for how purpose is explicitly specified,  each purpose, contains a set of data attributes, with an explicit consent preference, i.e.  a  single purpose with a single check box.
 * Explicit sharing this refers to stating that sharing of data for the above purpose categories takes place, the 3rd party it is taking place with, and the link to the contract in which the 3rd party has agreed to abide by this consent.
 * Explicit in this specification also refers to technical scopes, in that each scope is separately defined  as to be explicit)
+* 
 
 * **Individual**
 	see PI Subject in ISO/IEC 29100:2011.
