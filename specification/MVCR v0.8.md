@@ -401,36 +401,33 @@ This conformance table specifies requirements to fulfill scope as defined.
 | 2 | _Consent Time Stamp_ | MAY |   MUST - Machine Readable| | |
 | 3 | _Consent Type_ | MAY | MUST | Authoritative reference | technical scope for this reference | |
 | 4 | _Collection Method_ |  | MAY | | |
-| 5 | _Consent ID_ | |  | | |
-| 6 | _PI Subject_ | |  | | |
-| 7 | _PI Controller_ |
-| 8 | _On Behalf_ |
-| 9 | _Contact Name_ |
-| 10 | _Contact Address_ |
-| 11 | _Contact Email_ |
-| 12 | _Contact Phone_ |
-| 13 | _Contact Other_ |
-| 14 | _Privacy Policy_ |
-| 15 | Service |
-| 16 | Purpose |
-| 17 | Purpose Category |
-| 18 | PI attributes |
-| 19 | Purpose Preference (Y/N) |
-| 20 | Purpose Duration/Renewal |
-| 21 | PI Categories |
-| 22 | PI Attribute(s) |
-| 23 | PI Confidentiality Level |
-| 24 | Sensitive Data Y/N |
-| 25 | Sensitive Information Category |
-| 26 | Sharing |
-| 27 | Third Party |
-| 28 | Purpose |
-| Purpose Category |
-| PI Category |
-| Duration |
-| contract/policy |
-| 29 | Scope |
-| | Sub Scope |
+| 5 | _Consent ID_ | MUST |  | | |
+| 6 | _PI Subject_ | MAY |  | | |
+| 7 | _PI Controller_ | MUST |
+| 8 | _On Behalf_ | MAY |
+| 9 | _Contact Name_ | MUST 1 of 9-13 |
+| 10 | _Contact Address_ | MUST 1 of 9-13 |
+| 11 | _Contact Email_ | MUST 1 of 9-13 |
+| 12 | _Contact Phone_ | MUST 1 of 9-13 |
+| 13 | _Contact Other_ | MUST 1 of 9-13 |
+| 14 | _Privacy Policy_ | MUST
+| 15 | Service | May | 
+| 16 | Purpose | MUST |
+| 17 | Purpose Category |MAY | 
+| 18 | PI attributes | MAY | 
+| 19 | Purpose Preference (Y/N) | MAY | 
+| 20 | Purpose Termination/Duration/Renewal | MAY | 
+| 21 | PI Categories | MAY | 
+| 22 | PI Attribute(s) | MAY | 
+| 23 | PI Confidentiality Level | MAY | 
+| 24 | Sensitive Data Y/N | Must
+| 25 | Sensitive Information Category | MAY | 
+| 26 | Sharing | MAY | 
+| 27 | Third Party | MAY | 
+| 28 | Purpose | May | 
+| 29 | sharing contract/policy | MAY |
+| 29 | Scope | MAY | 
+| 30 | Sub Scope | MAY |
 
 ## 3.1. Guidance
 ### 3.1.1 MVCR Lite : Opening consent by:
