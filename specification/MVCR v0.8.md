@@ -266,17 +266,15 @@ This section specifies the purpose(s) for which the PI Controller is collecting 
 
 | Receipt Field Label | Receipt Field Format | Data Field Name | Data Type | Example Data Input | Receipt Field Description | Purpose of Field  | Linked |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| | | | Repeat the following set of fields as many times as necessary to set out the purpose(s) for collection |
-| Service | Site, app, or service | Required | Name of the site, the app or the service that will use the PII collected |
+| Service | name of service | up to three words | service | "string" | marketing | the name of the service that requires personal information  | used to identify context of purpose | Optional Linked to a description of the service - or icon  |
 | Purpose | Description of purpose | Required | Should be explicit and specific as reasonably necessary to fulfill the Service |
 | Purpose Category | short description | purpose_category | string | for marketing | The primary purpose will be necessary, but may not be the only necessary purpose. PII subject should be able to provide consent directives to opt out of purposes not identified as necessary . |
-| PI attributes | multiple PI attributes can be added to a purpose category | used to provide technical scope  | not linked |
-| Purpose Preference (Y/N) |  preference | preference | yes | used to distinguish as a secondary purpose separate from the main operational purpose | used to provide purpose scale and distinguish between | linked to preference management settings |
-| Purpose Duration/Renewal |
+| Purpose Preference (Y/N) |  preference | preference | yes | this is a yes no flag | for indicating if this purpose is required or  a secondary purpose separate from the main operational purpose | linked to preference management settings |
+| Purpose termination | termination | limits | string |  {duration for current location} {1 day must delete } | conditions for the termination of consent purpose, or withdraw of consent | linked to policy |
 
 #### Purpose Specification Example (TBF)####
 
-| Service | Purpose | Primary | Necessary |
+| Service | Purpose | preference | Duration |
 | ------ | ------ | :------: | :------: |
 | __Acme Web Site__ | Core Function | True | True |
 | __Acme Web Site__ | Contact Requested | False | False |
@@ -285,7 +283,7 @@ This section specifies the purpose(s) for which the PI Controller is collecting 
 | __Telling PII Subject about third party services__ | Marketing Third Parties | False | False |
 
 #### Guidance on Purpose(s)
-
+ Repeat the following set of fields as many times as necessary to set out the purpose(s) for collection 
 (TBR)
 * Each purpose MUST link the service name to at least one explicit and specific purpose.
 * Each purpose SHOULD contain an external reference to an on and off preference for this purpose.
@@ -303,18 +301,20 @@ The purpose of this section is to ensure that the PII Subject is made aware of t
 | | | | Repeat the following set of fields as many times as necessary to set out the types of PII |
 | PI Categories | Short description of the category |  |  |
 | PI Attribute(s) | used to list attributes that are tracked or automated with authorization scope  |  |  used to map technical scopes in section 6 of the specification |
+| PI attributes | attributes name | attribute | {text=attribute value} |  multiple PI attributes can be added to a purpose category | used to map technical scope  | not linked externally |
 | PI Confidentiality Level | {low, medium, high, N/A } | con_level | string | low | confidentiality risk level | for security considerations based on purpose and attribute exchange | not linked |
-| Sensitive Data Y/N | text | sensitive | string | yes | used to indicate if the receipt contains sensitive data or not in the PII Controller's jurisdiction | used in the specification to determine if the receipt has compliance claims |  Whether or not this type of data is _Sensitive PII_ in  | Required |  |
-| Sensitive Information Category |
+| Sensitive Data Y/N | text | yes or no | sensitive | string | Yes | indicates if data is sensitive or not sensitive | used to indicate if consent categories: health, financial, sexual/religous, biometric, family, friends, etc | should be linked to a notice about what is sensitive |  
+| Sensitive Information Category | list of categories with check boxes | sic | string | "Health" | used in the specification to indicate further notice  requiremetns are needed and the receipt has compliance claims | not linked |
 
-Sensitive Data
+### Guidance 
+
+* **Sensitive Data Y/N**
   This is a yes/no question:  can be used for MVCR lite conformance  for non-explicit consent only - which mean its not used for compliance, in this context the "other" field is used to specify sensitivity.    
 
-Sensitive Data
-  This is a yes/no question:  can be used for MVCR lite conformance  for non-explicit consent only - which mean its not used for compliance, in this context the "other" field is used to specify sensitivity.    
 
 * **Sensitive Data Categories**
   (optional for compliance claims)
+health, financial, sexual/religous, biometric, family, friends, (TBC)
  (not usable for MVCR Lite) Sharing sensitive personal information, is actively regulated and requires explicit consent by all OECD FIPPs based regulations, and for trade of information and technology between jurisdictions.  Use of this field is subject to regulatory requirements.  (Notes:  This field provides the normative baseline for binding practice to laws and standards with Open Consent.  This category is specified, but also flexible so that it can expand to authoritative decisions about new categories and the definition of existing category, like the GDPR which requires consent to be both :  “explicit”  and evidenced by “a statement or by a clear affirmative action” ref GDPR - Doc )
  
 
@@ -444,7 +444,28 @@ This conformance table specifies requirements to fulfill scope as defined.
 * Machine readable is a requirement in order to automate the validation of wether or not a receipt is compliant.
 * Conformance Guidance for Explicit Consent Compliance:
 the CR purpose is to provide a specific set of requirements for explicit consent, which can be mapped to legislation and regulation  to indicate compliance. The legislation notice requirements for auditing the explicit compliance of a consent receipt can be determined by looking at the jurisdiction and header of the receipt, and to use the purpose, data type and sharing to decipher the type of legislation, the  can be added to the A project kit for a method to map compliance to specific legislation.
+For Example:  "Sensitive personal data" in the UK, requies a map of data to personal inforamtion (which happens in the terminology aboe, as well, additional categories and signified."
+i.e. 
+. (additional categories G & H needed to be added to Sensitive Data List as sensitive data that requires and explicit consent)  (see below) 
 
+In this Act “sensitive personal data” means personal data consisting of information as to—
+
+(a)the racial or ethnic origin of the data subject,
+
+(b)his political opinions,
+
+(c)his religious beliefs or other beliefs of a similar nature,
+
+(d)whether he is a member of a trade union (within the meaning of the M1Trade Union and Labour Relations (Consolidation) Act 1992),
+
+(e)his physical or mental health or condition,
+
+(f)his sexual life,
+
+(g)the commission or alleged commission by him of any offence, or
+
+(h)any proceedings for any offence committed or alleged to have been committed by him, the disposal of such proceedings or the sentence of any court in such proceedings. "
+http://www.legislation.gov.uk/ukpga/1998/29/section/2
 
 # 4. Appendices
 
@@ -466,7 +487,7 @@ At the outset of the MVCR it was the intention to move, if possible, this specif
 
 ISO/IEC 29100:2011 is applicable to natural persons and organizations involved in specifying, procuring, architecting, designing, developing, testing, maintaining, administering, and operating information and communication technology systems or services where privacy controls are required for the processing of PII."
 
-Although, through the spec work it has become apparent that we can borrow from ISO, but that this specification needs to have within it a specific terminology that is independent of other specifications.  Even so, we adopted Personal Information (rather Personal Data) and like decisions to increase interoperability of this work with this framework.  Here in lies the mapping of terminology and components.
+Although, through the spec work it has become apparent that we can borrow from ISO,  this specification needs to have within it a specific terminology that is independent of other specifications.  Even so, we adopted Personal Information (rather Personal Data) and like decisions to increase interoperability of this work with this framework.  Similarily, where possible all fields and terms are referenced.  as well, Here in lies the mapping of terminology and components.
 
 (put in table here mapping elements of MVCR Spec to ISO 29100)
 (ref- FIPPs and  (ISO Principles - "Openness, transparency, notice") and Consent (ISO Principle 1 - "Consent and Choice") are fundamental privacy principles, addressed with this specification.
