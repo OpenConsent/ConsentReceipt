@@ -81,13 +81,16 @@ Viable, in this scope, means a record of consent that can be retained and used s
 ### 2.2 MVCR Modes
 
 The term 'minimum' in the MVCR refers to the least amount of data required to make an open, compliant, and explicit consent record viable for a number of different contexts, defined by:
-* A) the PI Controller, implied and self-asserted
+* A) the PI Controller, implied and self-asserted (MINIMUM MVCR)
 * B) and/or Explicit Consent - defined by explicit reference to authoritative policy i.e. regulation,
 * C) and/or Explicit Sharing of PI to specified 3rd Party, ref contract of sharing - defined by scope requirements
 * D) and/or defined by technical scope, i.e. attribute level permissions - defined by controller, regulation,  PI Subject, regulation and technical requirement. Type of PI, its purpose, context (Confidentiality, Consent Type, Sensitive Information) and sharing. {PI Category, Purpose Category, Sharing}
 
 The receipt has the Consent Type field in which the scope can be defined as 'Explicit' or a 'Non-Explicit', Consent Type.   Explicit indicates conformance with the MVCR explicit requirements and/or linking to jurisdictional or domain specific notice, and 3rd party sharing consent requirements.
+
 Non-Explicit is non-explicit (for all types of implied consent) and has no compliance claims. Providing flexibility for implementation and adoption without the burden of legal compliance obligations for the implementor. (see conformance table)
+
+For the MINIMUM MVCR goto section 6.1. MINIMUM MVCR CONFORMANCE GUIDE
 
 (Editors Note: v0.8 has  discussed and is working on consensus for MINIMUM MVCR, which has been the focus of the consent receipt generator (http://api.consentreceipt.org) and the testing for drafting this v0.8.  
 
