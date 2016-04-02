@@ -17,7 +17,7 @@
 
 This specification identifies the consent requirements necessary to record a personal information (PI) sharing transaction and provide this record as an independent receipt.
 
-The MVCR is designed to address existing closed consent architecture, defined by a binary indefinite consent agreement, which people do not get a record of, by providing a consistent record of consent as a consent receipt.    The common consent recording format is required to be provisioned at point of consent.   This addresses multiple privacy principle and privacy legal requirements by providing a framework for operationally addressing multiple Fair Information Practice Principles and likewise ISO 29100 privacy principles.  See Appendix A:
+The MVCR is designed to address existing closed consent architecture, (defined by a binary indefinite consent agreement, which people do not get a record of), by providing a consistent record of consent as a consent receipt.    The common consent recording format is required to be provisioned at point of consent.   This addresses multiple privacy principle and privacy legal requirements by providing a framework for operationally addressing multiple Fair Information Practice Principles and likewise ISO 29100 privacy principles.  See Appendix A:
 (ref- FIPPs and ISO Principles - "Openness, transparency, notice") and Consent (ISO Principle 1 - "Consent and Choice") are fundamental privacy principles, addressed with this specification.
 (editors note:  - how should this be referenced and linked? )
 
@@ -89,12 +89,11 @@ The term 'minimum' in the MVCR refers to the least amount of data required to ma
 The receipt has the Consent Type field in which the scope can be defined as 'Explicit' or a 'Non-Explicit', Consent Type.   Explicit indicates conformance with the MVCR explicit requirements and/or linking to jurisdictional or domain specific notice, and 3rd party sharing consent requirements.
 Non-Explicit is non-explicit (for all types of implied consent) and has no compliance claims. Providing flexibility for implementation and adoption without the burden of legal compliance obligations for the implementor. (see conformance table)
 
-(Editors Note: v0.8 has  discussed and is working on consensus for MVCR Lite, which has been the focus of the consent receipt generator (http://api.consentreceipt.org) and the testing for drafting this v0.8.  
+(Editors Note: v0.8 has  discussed and is working on consensus for MINIMUM MVCR, which has been the focus of the consent receipt generator (http://api.consentreceipt.org) and the testing for drafting this v0.8.  
 
-In this regard, v0.8 intends to meet the requirement of providing a Minimum MVCR, but also the structure for the Minimum MVCR to be extensible.
+In this regard, v0.8 intends to meet the requirement of providing a Minimum MVCR, but also the structure for the Minimum MVCR to be extensible to the maximum MVCR.
 
-The extensions of conformance to explicit consent and for meeting compliance requiremenst are at various levels of spec review and testing by the WG.  As a result v.08 is a Kantara only draft and meant for internal review. (put in URL of kantar demo - here )
-
+The extensions for conformance to explicit consent and for meeting compliance requiremenst are at various levels of spec review and testing by the WG.  As a result v.08 is a Kantara only draft and meant for internal review. (put in URL of kantar demo - here )
 
 ### 3 Notational Conventions for Conformance
 
@@ -114,7 +113,6 @@ Terminology herein leverages where possible,  [ISO/IEC 29100:2011 "Information T
 (mapping of terms and references in Appendix A)
 
 (editors note: ISO privacy framework should be references, but not used as source of terms as terms should be consent centric not ISO centric)
-
 
 * **Consent Receipt (CR)**
 	A record of a personal information consent transaction.
@@ -139,7 +137,6 @@ Terminology herein leverages where possible,  [ISO/IEC 29100:2011 "Information T
 
 * **Explicit Technical Scope:** in this specification also refers to technical scopes, in that each scope is separately defined  as to be explicit)
 
-
 * **Individual**
 	see PI Subject in ISO/IEC 29100:2011.
 
@@ -158,7 +155,7 @@ Terminology herein leverages where possible,  [ISO/IEC 29100:2011 "Information T
 * **Personally Identifiable Information**
 Personally identifiable information (PII), or Sensitive Personal Information as used in privacy law and information security, is information that can be used on its own or with other information to identify, contact, or locate a single person, or to identify an individual in context. The abbreviation PII is widely accepted in OECD base FIPPs jurisdiction, but the phrase it abbreviates has four common variants based on personal / personally, and identifiable / identifying. Not all are equivalent, and for legal purposes the effective definitions can vary depending on the specific purposes for which the term is being used. (In other countries with privacy protection laws derived from the OECD privacy principles, the term used is more often "personal information", which may be somewhat broader:
 
-* ** PII confidentiality impact levels* 
+* ** PII Confidentiality Impact Levels* 
 These refer to low, medium, high confidentiality, or Not Applicable levels, which correspond to NIST controls sp800-122 and can be use for the organisation, the individual and the developer to ascertain on scale the level of risk and security.
 
 * **Purpose Specification**
@@ -170,6 +167,11 @@ These refer to low, medium, high confidentiality, or Not Applicable levels, whic
 
 * **Sensitive Personal Information Categories**
 	All sensitive information categories require explicit consent and is subject to legislation and often industry specific regulation and best practice.  Some jurisdictions call out categories of PII specifically, that, by virtue of their sensitivity, require higher levels of protection. The particular categories vary by jurisdiction but will typically include health data (or personal health information - PHI), financial data, political affiliations, sexual orientation, family and personal relationships as defined in law.  In this specification, this field is accompanies by an 'other' field for free text and the Data Controller can define or suggest what is sensitive with a non-explicit 'consent type'.  
+
+## 5. Global Guidance
+The order is specific and is part of the specification.
+Timing of providing a receipt - needs to be provided at the point in time in which the consent is provided.
+
 
 ## 5. MVCR Record Format: Section & Fields
 
@@ -183,10 +185,6 @@ The MVCR is broken down into 5 sections for usability and to aid in understandin
 6.	Technical Scope
 (editors note: added section 6 - technical scope and moved the field scope to this section)
 
-Global Guidance
-The order is specific and is part of the specification.
-Timing of providing a receipt - needs to be provided at the point in time in which the consent is provided.
-The provision of a consent receipt at the point of consent is requirement of the MVCR.
 
 ### 2.1 Header
 
@@ -430,11 +428,28 @@ This conformance table specifies requirements to fulfill scope as defined.
 | 30 | Sub Scope | MAY |
 
 ## 3.1. Guidance
-### 3.1.1 MVCR Lite : Opening consent by:
+
+All conformance profiles are culminative, in that the MINIMUM MVCR is used to build the EXPLICIT MVCR, which is used to create a COMPLIANT MVCR, which is used to make TECHNICAL SCOPE.
+
+The MINIMUM MVCR can be used to create any type of consent record, and without making it complinant 
+
+### 3.1.1 MINIMUM MVCR :
+
+The  Objective of the MINIMUM MVCR is to: 
+1. Provide Proof of Consent
+2. A tool to communicate and manage consent once it is provided. 
+
+The MINIMUM MVCR Core conformance requirements are intended to make a consent transaction record into a receipt, and to make this record Open. Open meaning that not only does the individual and organisation both have a record of the consent, the receipt can be used to communicate about the specific  consent after the consent has been provided. 
+
+To achieve these, there are the MUSTS, then, there is what SHOULD be in a consent receipt to make it trust worthy for the individual, then there are the optional fields to extend this transparency. 
+
+Without providing details about what is sensitive, the consent record can be used with a very low level of liability, and is not meant to be used for MVCR regulatory compliance. 
+
+MINIMUM MVCR Requirements
 * The PI Subject obtains a record of the consent at point in time consent is provided so as to be contextually #usable
 * The PI Subject and the Data Controller can use the receipt to communicate about the consent and its management
 * The consent receipt can be used by the PI Subject and the Data Controller to prove consent post the point in time the consent was provided
- a contact data is required
+* a verifiable contact information is provided which is proportional to the context and method of consent provision.
 * Conformance for MVCR requires a minimum of: contact information, proportional linking, and minimum viable purpose specification
 
 ## 3.2 Explicit Consent
