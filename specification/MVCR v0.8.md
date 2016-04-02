@@ -15,9 +15,9 @@
 
 # Abstract
 
-This specification identifies the common consent requirements to record a personal information (PI) sharing transaction and provide this record as an independent receipt.
+This specification identifies the consent requirements necessary to record a personal information (PI) sharing transaction and provide this record as an independent receipt.
 
-The MVCR is designed to address existing closed consent architecture,  by providing a specification for creating a consistent record of consent.    The common consent format provides  a requirement for people to be provisioned a record of the consent transaction.   This addresses multiple privacy principle and privacy legal requirements by providing a framework for operationally addressing multiple Fair Information Practice Principles and likewise ISO 29100 privacy principles.  See Appendix A:
+The MVCR is designed to address existing closed consent architecture, defined by a binary indefinite consent agreement, which people do not get a record of, by providing a consistent record of consent as a consent receipt.    The common consent recording format is required to be provisioned at point of consent.   This addresses multiple privacy principle and privacy legal requirements by providing a framework for operationally addressing multiple Fair Information Practice Principles and likewise ISO 29100 privacy principles.  See Appendix A:
 (ref- FIPPs and ISO Principles - "Openness, transparency, notice") and Consent (ISO Principle 1 - "Consent and Choice") are fundamental privacy principles, addressed with this specification.
 (editors note:  - how should this be referenced and linked? )
 
