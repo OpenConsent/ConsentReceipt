@@ -17,7 +17,7 @@
 
 This specification identifies the consent requirements necessary to record a personal information (PI) sharing transaction and provide this record as an independent receipt.
 
-The MVCR is designed to address existing closed consent architecture, (defined by a binary indefinite consent agreement, which people do not get a record of), by providing a consistent record of consent as a consent receipt.    The common consent recording format is required to be provisioned at point of consent.   This addresses multiple privacy principle and privacy legal requirements by providing a framework for operationally addressing multiple Fair Information Practice Principles and likewise ISO 29100 privacy principles.  See Appendix A:
+The MVCR is designed to address existing closed consent architecture, (defined by a binary indefinite consent agreement, which people do not get a record of), by providing a consistent record of consent as a consent receipt for the use and sharing of personal information.    The  consent receipt is required to be provisioned at point of consent.   This addresses multiple privacy principle and privacy legal requirements by providing a framework for operationally addressing multiple Fair Information Practice Principles and likewise ISO 29100 privacy principles.  See Appendix A:
 (ref- FIPPs and ISO Principles - "Openness, transparency, notice") and Consent (ISO Principle 1 - "Consent and Choice") are fundamental privacy principles, addressed with this specification.
 (editors note:  - how should this be referenced and linked? )
 
@@ -316,7 +316,7 @@ health, financial, sexual/religous, biometric, family, friends, (TBC)
 
 The receipt can be further utilized by linking the requirements to the receipt in a way that can be proportionally validated to context.  Providing a context mechanism for trust elevation that can be effectively programed by policy. ( editors note) Which is an inherent requirement for IOT i.e. video surveillance and trust.  
 
-Furthermore, the consent receipt can further be extended with a jurisdictional notice and consent field profile that links to compliance requirements. (See Section X-compliance)  (note: can be delegated by the PI Controller or to 3rd party trust frameworks. using the link)
+The consent receipt can further be extended with a jurisdictional notice and consent field profile that links to compliance requirements. (See Section X-compliance)  (note: can be delegated by the PI Controller or to 3rd party trust frameworks. using the link)
 
 Note: The use of these features make compliance claims when used
 
@@ -343,7 +343,7 @@ The purpose of this section is to provide the PII Subject with information about
 
 | Receipt Field Label | Receipt Field Format | Data Field Name | Data Type | Example Data Input | Receipt Field Description | Purpose of Field  | Linked |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| Sharing | service data, data controller, purpose catgory, pi category wit | sharing_service  |  |
+| Sharing Y/N|  Sharing "" | sharing | string | YES | a yes no flag that inidicate if PI is being shared | indicate if sharing is occuring for the purposes specified in the receipt | not linked | 
 | Third Party | Third party that receives the data | Required | SHOULD be specific, MAY be generic |
 | Purpose | Purpose (only from list above) for sharing data | Required | **Note:** PII provided to vendors or suppliers to the PII Controller that are providing data processing services of PII to the PII Controller would not normally be considered disclosure or information sharing |
 | Purpose Category |
@@ -366,20 +366,20 @@ service  | , data controller, purpose catgory, pi category | with 3rd party name
 * Repeat the following set of fields as many times as necessary to identify third parties 
 * Termination of Sharing - includes duration, location, specified time,  
 * (note: is sharing a proxy a security concern? )
+* *Note:** PII provided to vendors or suppliers to the PII Controller that are providing data processing services of PII to the PII Controller would not normally be considered disclosure or information sharing |
 
 ### 5.6 Technical/Policy Scope(s)   (TBF)
 | Receipt Field Label |  scope name | PI Category | PI Purpose |  PI attributes |  Data Type | Example  Data Input | Receipt Field Description | Purpose of Field  | Linked |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | Scope| share 3rd party | name | string. space separated string values | policy reference  [function] withdraw | provide the technical authorization for [function] | linked to policy |  PI Category | purpose category | PI attribute |
-| Sub Scope | SUB Scope Name |  PI Attribute for sub scope  |  {Permissions} | sub_scope |s|
 
 
 ####  Scope Example
 
-| Scope  | Purpose | Example | Scope Reference (linked) | Purpose Category | PI Category |
+| Scope  | Purpose | Example | Scope Reference (linked) | Purpose Category | PI Category | Confidentiality |
 | ------ | ------ | :------: | :------: | :------: | :------: |
 
-| __Browser Data__ | Information revealed by the browser to the web server | Read |  IP address is PII but not sensitive |
+| __Browser Data__ | Information revealed by the browser to the web server | Read |  IP address is PII but has low confidentiality |
 | __Address__ | Physical address for deliveries | Read | |
 | __Health__ | Personal Health Information| Read + encrypted | linked to notice |
 | __Financial__ | Credit Card or payment information | Read + encrypted + specified 3rd party |  |
@@ -391,7 +391,7 @@ Repeat the following set of fields as many times as necessary identify third par
 
 This conformance table specifies requirements to fulfill scope as defined.
 
-| Field # | Field Name | MVCR Lite | Explicit Consent | Legal Compliance UK | Scope |
+| Field # | Field Name | MINIMUM MVCR  | Explicit MVCR | COMPLIANT MVCR UK | Scope |
 | ------ | ------ | -----| :------: | :------: | :------: |
 | 1 | _Jurisdiction_ | MAY | MUST | MUST - Machine Readable | |
 | 2 | _Consent Time Stamp_ | MAY |   MUST - Machine Readable| | |
@@ -439,18 +439,21 @@ The  Objective of the MINIMUM MVCR is to:
 
 The MINIMUM MVCR Core conformance requirements are intended to make a consent transaction record into a receipt, and to make this record Open. Open meaning that not only does the individual and organisation both have a record of the consent, the receipt can be used to communicate about the specific  consent after the consent has been provided. 
 
-To achieve these, there are the MUSTS, then, there is what SHOULD be in a consent receipt to make it trust worthy for the individual, then there are the optional fields to extend this transparency. 
+To achieve these, there are the MUSTS, then, there is what SHOULD be in a consent receipt to make it trust worthy for the individual, then there are the optional fields to extend this transparency if desired and or required. 
 
 Without providing details about what is sensitive, the consent record can be used with a very low level of liability, and MINIMUM MVCR is not meant to be used for MVCR regulatory compliance. 
 
 FIELD CONFORMANCE: MINIMUM MVCR
-- MUST
-- SHOULD
-- OPTIONAL
-- MAY 
+- MUST - Core Purpose, Link to PP, Proportional Contact, Date & Time, Sensitive Y/N, Sharing Y/N, 
+- SHOULD - 
+- OPTIONAL - 
+- MAY - 
  
-Implementation Guidance
+### Implementation Guidance
 
+Out of Scope :
+- not for use when consent is mandatory for legal or enforcement reasons
+- For use with Terms and Services agreement which state I - the Consentee, grant consent to the Grantor of the service. 
 
 MINIMUM MVCR Requirements
 * The PI Subject obtains a record of the consent at point in time consent is provided so as to be contextually #usable
@@ -464,13 +467,18 @@ MINIMUM MVCR Requirements
 * All the requirements of the previous + plus additional fields for the receipt to be usable for scale and compliance
 
 ## 3.4 Legal compliance UK (example of compliance requirements)
+* Compliance Mapping Table
+* - Sensitive Data - Jurisdiction - Regulations - Notice Requirements - Link to describing how these notice requirements are met (can be third party icon), List of Scopes technically required to make compliant, (i.e UMA)
+* 
 * All previous requirements + explicit references to requirements and its satisfaction (presented as a X (or UK) profile for compliance)
-* Note compliant with current legislation (not GDPR)
-* Machine readable is a requirement in order to automate the validation of wether or not a receipt is compliant.
+* Note compliant with current UK legislation (not GDPR)
+* Machine readable is a requirement in order to automate the validation of wether or not a receipt is compliant. (Automated DYNAMIC CONSENT)
 * Conformance Guidance for Explicit Consent Compliance:
-the CR purpose is to provide a specific set of requirements for explicit consent, which can be mapped to legislation and regulation  to indicate compliance. The legislation notice requirements for auditing the explicit compliance of a consent receipt can be determined by looking at the jurisdiction and header of the receipt, and to use the purpose, data type and sharing to decipher the type of legislation, the  can be added to the A project kit for a method to map compliance to specific legislation.
-For Example:  "Sensitive personal data" in the UK, requies a map of data to personal inforamtion (which happens in the terminology aboe, as well, additional categories and signified."
-i.e. 
+the CR purpose is to provide a specific set of requirements for explicit consent, which can be mapped to legislation and regulation  to indicate compliance. The legislation notice requirements for auditing the explicit compliance of a consent receipt can be determined by looking at the jurisdiction and header of the receipt, and to use the purpose and sensitive sharing cateogries to consistently reference required legislation and  map notice compliance requirements to specific consent legislation/policies/bestpractices.
+
+For Example, in the UK :  "Sensitive personal data" in the UK, is a bit different. 
+
+
 . (additional categories G & H needed to be added to Sensitive Data List as sensitive data that requires and explicit consent)  (see below) 
 
 In this Act “sensitive personal data” means personal data consisting of information as to—
