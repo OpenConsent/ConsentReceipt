@@ -169,7 +169,7 @@ These refer to low, medium, high confidentiality, or Not Applicable levels, whic
   Organizations should evaluate the context of use to provide the purpose for which the PII is collected, stored, used, processed, disclosed, or disseminated.  The context of use may cause the same PII data elements to be assigned different PII confidentiality impact levels based on their use.  For example, suppose that an organization has two lists that contain the same PII data fields (e.g., name, address, phone number).  The first list is people who subscribe to a general-interest newsletter produced by the organization, and the second list is people who work undercover in law enforcement.  If the confidentiality of the lists is breached, the potential impacts to the affected individuals and to the organization are significantly different for each list.
 
 * **Sensitive Personal Information Categories**
-	All sensitive information categories require explicit consent and is subject to legislation and often industry specific regulation and best practice.  Some jurisdictions call out categories of PII specifically, that, by virtue of their sensitivity, require higher levels of protection. The particular categories vary by jurisdiction but will typically include health data (or personal health information - PHI), financial data, political affiliations, sexual orientation, family and personal relationships as defined in law.  In this specification, this field is accompanies by an 'other' field for free text and the Data Controller can define or suggest what is sensitive with a non-explicit 'consent type'.  
+	All compliance based consent receipt with sensitive information categories  required explicit consent and is subject to legislation and often industry specific regulation and best practice.  Some jurisdictions call out categories of PII specifically, that, by virtue of their sensitivity, require higher levels of protection. The particular categories vary by jurisdiction but will typically include health data (or personal health information - PHI), financial data, political affiliations, sexual orientation, family and personal relationships as defined in law, criminal records and court proceedings.  In this specification, this field is accompanied by an 'other' field for free text and the PI Controller can define or suggest what is sensitive with a non-explicit 'consent type'.  
 
 
 ## 5. MVCR Record Format: Section & Fields
@@ -311,7 +311,6 @@ This section specifies personal infomration categories, attributes, PII confiden
 health, financial, sexual/religous, biometric, family, friends, (TBC)
  (not usable for MVCR Lite) Sharing sensitive personal information, is actively regulated and requires explicit consent by all OECD FIPPs based regulations, and for trade of information and technology between jurisdictions.  Use of this field is subject to regulatory requirements.  (Notes:  This field provides the normative baseline for binding practice to laws and standards with Open Consent.  This category is specified, but also flexible so that it can expand to authoritative decisions about new categories and the definition of existing category, like the GDPR which requires consent to be both :  “explicit”  and evidenced by “a statement or by a clear affirmative action” ref GDPR - Doc )
  
-
  (field is optional, unless for compliance then it is required and linked to authoritative notice, references, and scopes) - these are further specified by jurisdictional legislation, terminology.  Even so,  there are common sensitive data categories for personal information which are enforceable, listed here;  The listing of a sensitive data category in this field indicates this receipt claims to be in conformance and compliance  of compliance requirements.     
 
 The receipt can be further utilized by linking the requirements to the receipt in a way that can be proportionally validated to context.  Providing a context mechanism for trust elevation that can be effectively programed by policy. ( editors note) Which is an inherent requirement for IOT i.e. video surveillance and trust.  
@@ -393,8 +392,8 @@ This conformance table specifies requirements to fulfill scope as defined.
 
 | Field # | Field Name | MINIMUM MVCR  | Explicit MVCR | COMPLIANT MVCR UK | Scope |
 | ------ | ------ | -----| :------: | :------: | :------: |
-| 1 | _Jurisdiction_ | MAY | MUST | MUST - Machine Readable | |
-| 2 | _Consent Time Stamp_ | MAY |   MUST - Machine Readable| | |
+| 1 | _Jurisdiction_ | MAY | MUST | MUST | |
+| 2 | _Consent Time Stamp_ | MAY |   MUST| | |
 | 3 | _Consent Type_ | MAY | MUST | Authoritative reference | technical scope for this reference | |
 | 4 | _Collection Method_ |  | MAY | | |
 | 5 | _Consent ID_ | MUST |  | | |
@@ -463,20 +462,33 @@ MINIMUM MVCR Requirements
 * Conformance for MVCR requires a minimum of: contact information, proportional linking, and minimum viable purpose specification
 
 ## 3.3 Explicit Consent
-* All Core Fields are required, some
+* The more explicit the consent record and receipt the more machine readable it becomes. 
+* All Core Fields are required, 
 * All the requirements of the previous + plus additional fields for the receipt to be usable for scale and compliance
 
+FIELD CONFORMANCE: EXPLICIT MVCR
+- MUST - Core Purpose, Link to PP, Proportional Contact, Date & Time, Sensitive Y/N, Sharing Y/N, 
+- SHOULD - 
+- OPTIONAL - 
+- MAY - 
+- 
 ## 3.4 Legal compliance UK (example of compliance requirements)
-* Compliance Mapping Table
+### Compliance Mapping Table
 * - Sensitive Data - Jurisdiction - Regulations - Notice Requirements - Link to describing how these notice requirements are met (can be third party icon), List of Scopes technically required to make compliant, (i.e UMA)
-* 
+
 * All previous requirements + explicit references to requirements and its satisfaction (presented as a X (or UK) profile for compliance)
 * Note compliant with current UK legislation (not GDPR)
 * Machine readable is a requirement in order to automate the validation of wether or not a receipt is compliant. (Automated DYNAMIC CONSENT)
 * Conformance Guidance for Explicit Consent Compliance:
 the CR purpose is to provide a specific set of requirements for explicit consent, which can be mapped to legislation and regulation  to indicate compliance. The legislation notice requirements for auditing the explicit compliance of a consent receipt can be determined by looking at the jurisdiction and header of the receipt, and to use the purpose and sensitive sharing cateogries to consistently reference required legislation and  map notice compliance requirements to specific consent legislation/policies/bestpractices.
 
-For Example, in the UK :  "Sensitive personal data" in the UK, is a bit different. 
+FIELD CONFORMANCE: COMPLIANT MVCR
+- MUST - Core Purpose, Link to PP, Proportional Contact, Date & Time, Sensitive Y/N, Sharing Y/N, 
+- SHOULD - 
+- OPTIONAL - 
+- MAY - 
+- 
+ Example,  UK :  "Sensitive personal data" in the UK, is a bit different. 
 
 
 . (additional categories G & H needed to be added to Sensitive Data List as sensitive data that requires and explicit consent)  (see below) 
@@ -526,7 +538,7 @@ Although, through the spec work it has become apparent that we can borrow from I
 (ref- FIPPs and  (ISO Principles - "Openness, transparency, notice") and Consent (ISO Principle 1 - "Consent and Choice") are fundamental privacy principles, addressed with this specification.
 (editors note:  - how should this be referenced and linked? )
 
-A: JSON example
+A: JSON example used for testing and developing from v0.7 to v0.8
 
 A demonstration version of the MVCR can be found on the [Example Consent Receipt Generator (CRG)](https://mvcr.herokuapp.com/) page. The example site also contains [API documentation](https://mvcr.herokuapp.com/doc/). This server contains a consent receipt generation API. The API consists of a single endpoint at [http://www.consentreceipt.org/mvcr/api](http://www.consentreceipt.org/mvcr/api). This endpoint accepts HTTP POST requests with input in the form of JSON (application/json) documents and returns output in the form of a signed JSON Web Token (application/jwt). The example site consists of two pages:
 
@@ -537,36 +549,8 @@ A demonstration version of the MVCR can be found on the [Example Consent Receipt
 The API takes in a JSON document describing the consent transaction for which the receipt is to be generated. This object includes artifacts such as the presiding jurisdiction for the consent action, an identifier for the party consenting. The output of the API is a signed JSON Web Token (JWT) whose payload consists of all of the input data as well as several additional fields. The output JWT is signed by the server using the RS256 algorithm defined in JSON Web Signatures. The server's public key is published in JSON Web Key format at: http://www.consentreceipt.org/api
 
 
-### JSON Properties
-
-The JSON object described above has the following properties. (You may also see the definition of the MVCR fields above):
-
-1. The receipt MUST have a property to authenticate the origin.
-2. The receipt MUST have an integrity protection property.
-3. The audience SHOULD be restricted and transparent.
-4. The receipt SHOULD be able to be transmitted over various transport protocols.
-5. The payload MUST have a human readable section, and SHOULD have a machine readable section.
-6. The payload SHOULD include the following properties:
- a) Issuer
- b) Date
- c) Time
- d) direct contact information to data controller
- e) Contain a static Link to privacy policy
- f) Purpose (s)
- g) YES or NO Flags
- * 3rd party data sharing
- * Sensitive Personal Data Collection
- * Operational Context
-7. The payload SHOULD include the following properties:
- a) A description of the types of personally identifiable information to which the consent applies.
-8. The payload SHOULD include the following information:
- a) the personal identifier used in the consent receipt
- b) some or all of the personally identifiable information to which the consent applies
-8. The receipt MUST be systematically usable and automatically discoverable
-9. Receipts MUST contain the minimum information to enable request for more information, if required
-10. Receipts MUST contain the minimum information to enable requests for more information, if required
-
 ### JSON Field Table
+This is included above as column for all fields. But data fields are optional.
 
 The following table sets out the fields contained in a JWT that meets the information requirements for a Minimum Viable Consent Receipt.
 
