@@ -257,7 +257,8 @@ This section identifies the individual and company that is accountable for data 
 | __Privacy Policy:__ | [ACME Privacy Policy](https://www.acme.fictional.url/privacy.policy) |
 
 #### Guidance
-* PI Controller - that is accountable for compliance over the PII
+* PI Controller - that is accountable for compliance over the management of PII, A PII controller determines why (purpose) and how (means) the processing of PII takes place. The PII controller shall ensure adherence to the privacy principles during the processing of PII under its control (e.g., by implementing the necessary privacy controls). There may be more than one PII controller for the same PII set or set of operations performed upon PII. In this case the different PII controllers SHOULD be listed for MINMIMUM MVCR, MUST be listed for Explicit CONSENT SHARING mode. 
+
 * On Behalf
 	is used to delegate data controller and or data processing, which maps to the UK's as acting on behalf of the data controller, a third party analytics service would be a processor on behalf of the controller.  When the site operator is acting on behalf of the Data Controller
 * Contact Name
@@ -290,14 +291,14 @@ This section specifies the purpose(s) for which the PI Controller is collecting 
 | __Telling PII Subject about third party services__ | Marketing Third Parties | False | N/A |
 
 #### Guidance on Purpose(s)
- Repeat the following set of fields as many times as necessary to set out the purpose(s) for collection 
-(TBR)
-* Each purpose MUST link the service name to at least one explicit and specific purpose.
-* Each purpose SHOULD contain an external reference to an on and off preference for this purpose.
-* Each purpose MAY contain additional options. Some examples include a trust mark icon or link, a data retention specification, or a link to the purpose description in the policy.
+ Repeat the  creation of purpose, attached to a purpose category or not,  set of fields as many times as necessary to set out the purpose(s) for collection 
+
+* Purpose Preference  - as in priniciple with minimum data collecton for purpose, purpose termination and purpose preference are linked. A preference once turned off should correspond to a sharing or data use function that can be scoped using Section 6 Scopes;  
+* Purpose Termination - Purpose Preference and Purpose terminiation are used in tandem and are put into scope in the scope function Section
+* 
 
 **Note:** A list of commonly used purposes is provided in Appendix B below.
-**Note:** Managing consent directives is out of scope of the MVCR.
+*
 
 ### 5.4 Personally Identifiable Information
 
@@ -383,10 +384,10 @@ The following example is from an online financial institution
 * (note: is sharing a proxy a security concern? )
 * *Note:** PII provided to vendors or suppliers to the PII Controller that are providing data processing services of PII to the PII Controller would not normally be considered disclosure or information sharing |
 
-### 5.6 Technical/Policy Scope(s)   (TBF)
-| Receipt Field Label |  scope name | PI Category | PI Purpose |  PI attributes |  Data Type | Example  Data Input | Receipt Field Description | Purpose of Field  | Linked |
+### 5.6 Functional Scope(s)   (TBF)
+| Receipt Field Label |  scope name | PI Category | PI Purpose |  PI Preference |  Data Type | Example  Data Input | Receipt Field Description | Purpose of Field  | Linked |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| Scope| share 3rd party | name | string. space separated string values | policy reference  [function] withdraw | provide the technical authorization for [function] | linked to policy |  PI Category | purpose category | PI attribute |
+| scope | withdraw consent |  marketing | 3rd party sharing | YES | {purpose preference string} | data@contrller, consent id, purpose preference, temrinate | technical scope | to terminate consent preference | linked to preference in profile | 
 
 
 ####  Scope Example
@@ -408,35 +409,35 @@ This conformance table specifies requirements to fulfill scope as defined.
 
 | Field # | Field Name | MINIMUM MVCR  | Explicit MVCR | COMPLIANT MVCR UK | Scope |
 | ------ | ------ | -----| :------: | :------: | :------: |
-| 1 | _Jurisdiction_ | SHOULD | MUST | MUST | |
+| 1 | _Jurisdiction_ | SHOULD | MUST | MUST |  |  |
 | 2 | _Consent Time Stamp_ | MUST |   MUST| | |
-| 3 | _Consent Type_ | SHOULD | MUST | Authoritative reference | explicit consent  |
+| 3 | _Consent Type_ | SHOULD | MUST |  |   |
 | 4 | _Collection Method_ |  | MAY | | |
 | 5 | _Consent ID_ | MUST |  | | |
-| 6 | _PI Subject_ | MAY |  | | |
+| 6 | _PI Principal ID_ | MUST |  | | |
 | 7 | _PI Controller_ | MUST |
-| 8 | _On Behalf_ | MAY |
+| 8 | _On Behalf_ | MUST |
 | 9 | _Contact Name_ | MUST 1 of 9-13 |
 | 10 | _Contact Address_ | MUST 1 of 9-13 |
 | 11 | _Contact Email_ | MUST 1 of 9-13 |
 | 12 | _Contact Phone_ | MUST 1 of 9-13 |
 | 13 | _Contact Other_ | MUST 1 of 9-13 |
-| 14 | _Privacy Policy_ | MUST
-| 15 | Service | SHOULD | 
-| 16 | Purpose | MUST |
-| 17 | Purpose Category |SHOULD | 
-| 19 | Purpose Preference (Y/N) | OPTIONAL | 
-| 20 | Purpose Termination/Duration/Renewal | SHOULD | 
-| 21 | PI Categories | OPTIONAL | 
-| 22 | PI Attribute(s) | MAY | 
-| 23 | PI Confidentiality Level | SHOULd | 
-| 24 | Sensitive Data Y/N | MUST |
-| 25 | Sensitive Information Category | MUST NOT | 
-| 26 | 3rd Party Sharing Y/N | MUST | 
-| 27 | Third Party | SHOULD | 
-| 28 | Sharing Purpose | OPTIONAL | 
-| 29 | Sharing Contract/Policy | OPTIONAL |
-| 29 | Scope | OPTIONAL | 
+| 14 | _Privacy Policy_ | MUST |  | | |
+| 15 | Service | SHOULD | |  | | |
+| 16 | Purpose | MUST | |  | | |
+| 17 | Purpose Category |SHOULD | |  | | |
+| 18 | Purpose Preference (Y/N) | OPTIONAL | |  | | |
+| 19 | Purpose Termination/Duration/Renewal | SHOULD |  |  | | |
+| 20 | PI Categories | OPTIONAL | |  | | |
+| 21 | PI Attribute(s) | MAY | |  | | |
+| 22 | PI Confidentiality Level | OPTIONAL | |  | | |
+| 23 | Sensitive Data Y/N | SHOULD | |  | | |
+| 24 | Sensitive Information Category | MUST NOT | 
+| 25 | 3rd Party Sharing Y/N | SHOULD | |  | | |
+| 26 | Third Party | SHOULD | |  | | |
+| 27 | Sharing Purpose | OPTIONAL | |  | | |
+| 28 | Sharing Contract/Policy | OPTIONAL | |  | | |
+| 29 | Scope | OPTIONAL | |  | | |
 
 
 ## 6.1. Guidance
@@ -477,6 +478,11 @@ MiNIMUM RECEIPT EXAMPLE
 * Provide email to Bob's website, for new account, bobs email and twitter, mon may 1 2016, Not Sensitive, NO Sharing, PI Subject ID or profile link
 
 ### Implementation Guidance
+(TBR)
+* Each purpose MUST link the service name to at least one explicit and specific purpose.
+* Each purpose SHOULD contain an external reference to an on and off preference for this purpose.
+* Each purpose MAY contain additional options. Some examples include a trust mark icon or link, a data retention specification, or a link to the purpose description in the policy.
+*Note:** Managing consent directives is out of scope of the MVCR.
 
 MINIMUM MVCR Requirements
 * The PI Principal obtains a record of the consent at point in time consent is provided so as to be contextually #usable
