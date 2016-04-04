@@ -478,14 +478,14 @@ An online website - consent receipt could range from minimum legal requirements 
     * *Note:** PII provided to vendors or suppliers to the PII Controller that are providing data processing services of PII to the PII Controller would not normally be considered disclosure or information sharing |
     
     ####  Scope Example
-
-    | Scope  | Purpose | Example |  Purpose Category |  PI Category | Scope Reference (linked) | Scope Description | 
-    | ------ | ------ | :------: | :------: | :------: | :------: | :------: | 
-    | Technical | share | _network data | link to data list |  _Browser Data__, __IP Address__. | security | READ access | medium |
-    | Technical | Collect | ,  __Health__, __Financial__  |  health records | secuirty | Read |  IP address is PII but has low confidentiality |
-    | | Physical address for deliveries | Read | | | | | |
-    | | Personal Health Information| Read + encrypted | linked to notice | | | | 
-    |  | Credit Card or payment information | Read + encrypted + specified 3rd party |  | | | | |
+    
+| Scope  | Purpose | Example |  Purpose Category |  PI Category | Scope Reference (linked) | Scope Description | Confidentiality |
+| ------ | ------ | :------: | :------: | :------: | :------: | :------: | 
+| Technical | share | _network data | link to data list |  _Browser Data__, __IP Address__. | security | READ access | medium |
+    | Technical | Collect | ,  __Health__, __Financial__  |  health records | secuirty | Read |  IP address is PII but has | low confidentiality |
+    | | Physical address for deliveries | Read | | | | | | |
+    | | Personal Health Information| Read + encrypted | linked to notice | | | |  |
+    |  | Credit Card or payment information | Read + encrypted + specified 3rd party |  | | | | | |
 
     #### Scope Guidance
     
