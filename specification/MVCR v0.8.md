@@ -34,7 +34,7 @@ This document is subject to the [Kantara IPR Policy - Option Patent & Copyright:
 
 ## Table of Contents
 - [1. Objective] (#1.Objective)
-2. Scope
+- [2. Scope](2.Scope)
 2.1. MVCR Conformance Profiles
 3. Notational Conventions For Conformance
 4. Terminology
@@ -60,7 +60,7 @@ guidance
 ## 1.Objective
 This specification identifies the common consent requirements to record and provision an independent record of consent in the form of a receipt to the individual.
 
-### 2.1 Scope
+### 2.Scope
 This scope includes how a consent record is provided, how to present the record fields, the timing of the record, the format requirements for free text fields, linking fields to external information and the data types for each field.
 
 The scope of the MVCR focuses on the provision of the receipt, which includes how a consent record is provided, how to present the record fields, the format for the data fields, and the type of data and order of fields.
