@@ -409,15 +409,15 @@ An online website - consent receipt could range from minimum legal requirements 
 * Contact Phone
 * privacy policy link - The privacy policy link is to the current policy, if there are materials changes to this policy then a new consent is required for sensitive data categories and various trust network requirements. (note: can be used for compliance- privacy policy can be attached to the receipt payload.
   
-  #### Purpose Specification Example (TBF)####
+  #### Purpose Specification Example ####
 
   | Service | Purpose |  Purpose Description | Purpose Preference | Purpose Termination |
   | ------ | ------ | :------: | :------: | :------: | 
   | __Acme Web Site__ | Core Function | Website Services | NO | when account deleted |
   | __Acme Web Site__ | marketing | Contact data use  | NO | when service member (life of membership)  |
   | __Acme Web Site__ | Personalized Experience | profiling | YES | when leave location  |
-  | Newsletter | Product Information | __Telling PII Subject about other services__ | Marketing | NO | N/A |
-  | Product ADD-ONS |  __Telling PII Subject about third party services__ | Marketing Third Parties | False | N/A |
+  | Newsletter | Product Information | __Telling PII Subject about other services__ | Product Services | NO | N/A |
+  | Product ADD-ONS |  Advertising | __Telling PII Subject about third party services__ | Marketing Third Parties | NO | N/A |
   | Consent Renewal | Core Function | Renewal of Consent with Renewal to Contract | Agreed to Changes in Purpose |  when account deleted | 
 
   #### Guidance on Purpose(s)
@@ -429,9 +429,11 @@ An online website - consent receipt could range from minimum legal requirements 
   * **Purpose Termination** - defines the duration of consent and/or its condition of termination.  Purpose Preference and Purpose termination are designed to be used in tandem and are put into Scope(s) Section (if machine readability is required)
 
   #### PII Example(s) ####
+ 
   | Field Name | Example |
-  | PI Category |  Address| 
-  | PI Attributes | St, Name, City, Country Postal Code, |
+  | | | 
+  | PI Category |  Address | 
+  | PI Attributes | St, Name, City, Country Postal Code |
   | PI Confidentiality Level | low | 
   | Sensitive Data | No| 
   | Sensitive information category | Not Applicable to MINIMUM MVCR | 
