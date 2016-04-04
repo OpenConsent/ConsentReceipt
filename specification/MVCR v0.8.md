@@ -16,9 +16,9 @@
 
 This specification identifies the consent requirements necessary to record a personal information (PI) sharing transaction and provide this record as an independent receipt.
 
-The MVCR is designed to address existing closed consent that exists today, often defined by a binary and indefinite consent agreement. Addressed by providing a consistent format for recording consent and providing a consent receipt for the use and sharing of personal information.   As the  consent receipt is required to be provisioned at point of consent, this addresses multiple privacy principle and privacy legal requirements.  A consistent consent record provides a framework for binding a consent notice to a privacy control, operationally useful to technically address multiple Fair Information Practice Principles and likewise maps to ISO 29100 privacy framework.
+The MVCR is designed to address existing closed consent that exists today, often defined by a binary and indefinite consent agreement. Closed Consent is addressed by providing both a common specification for recording consent and provision of a consent receipt for the use and sharing of personal information.   As the  consent receipt is required to be provisioned at point of consent, this addresses multiple privacy principle and privacy legal requirements.  A consistent consent record provides a framework for binding a consent notice to a privacy control (i.e. Do Not Track), operationally useful to technically address multiple Fair Information Practice Principles and likewise maps PII management to ISO 29100 privacy framework.
 
-Consent for the use of personal information is a precursor to providing consent to Terms and Services.
+Consent for the use of personal information is a precursor to providing this consent to Terms and Services.
 
 See Appendix A:
 (ref- FIPPs and ISO Principles - "Openness, transparency, notice") and Consent (ISO Principle 1 - "Consent and Choice") are fundamental privacy principles, addressed with this specification.
@@ -33,18 +33,18 @@ This document is subject to the [Kantara IPR Policy - Option Patent & Copyright:
 
 
 ## Table of Contents
-[1. Objective] (#1.-Objective)
-[2. Scope](#2.Scope-Scope)
-[2.1. MVCR Modes of Conformance]
+1. Objective
+2. Scope
+	* 2.1. MVCR Modes of Conformance]
 3. Notational Conventions For Conformance
 4. Terminology
 5. MVCR Record Format: Section & Fields
-5.1. Header
-5.2 PI Controller Data
-5.3 Purpose Specification
-5.4.	Personally Identifiable Information
-5.5.	Information Sharing
-5.6.	Scope(s)
+	* 5.1. Header
+	* 5.2 PI Controller Data
+	* 5.3 Purpose Specification
+	* 5.4.	Personally Identifiable Information
+	* 5.5.	Information Sharing
+	* 5.6.	Scope(s)
 6. MVCR Conformance and Compliance
 6.1 Global Guidance 
 6.2 MINIMUM MVCR Conformance Guidance & Example 
@@ -60,7 +60,7 @@ This document is subject to the [Kantara IPR Policy - Option Patent & Copyright:
 This specification identifies the common consent requirements to record and provision an independent record of consent in the form of a receipt to the individual.
 
 ### 2.Scope
-This scope includes how a consent record is provided, how to present the record fields, the timing of the record, the format requirements for free text fields, linking fields to external information and the data types for each field.
+This scope includes how a consent record is provided, how to present the record fields in a receipt, the timing of the record, the format requirements for free text fields, linking fields to external information and the data types for each field.
 
 The scope of the MVCR focuses on the provision of the receipt, which includes how a consent record is provided, how to present the record fields, the format for the data fields, and the type of data and order of fields.
 - Referencing or linking authoritative policy, regulation and consent notice requirements to consent record
@@ -74,14 +74,14 @@ Viable, in this scope, means a record of consent that can be retained and used s
 
 ### 2.2 MVCR Modes of Conformance 
 
-The term 'minimum' in the MVCR refers to the least amount of data required to make a consent receipt  open, compliant, and explicit consent record viable for a number of different contexts, defined by:
+The term 'minimum' in the MVCR refers to the least amount of data required to make a consent receipt;  open, explicit and compliant consent record viable for a number of different contexts, defined by:
 * A) MINIMUM MVCR - Defned by the PI Controller, implied and self-asserted 
 * B) Explicit MVCR -  is  in reference to  ISO 29100 Framework section 4, defined by being a machine readable Explicit consent
 * C) Compliant MVCR - Explicit consent mapped to notice and consent regulatory requirements and privacy controls; Typically Trust frameworks and trust network operators 
 
-The receipt has the Consent Type field in which the scope can be defined as 'MINIMUM MVCR' 'Explicit', 'Compliant' , Consent Type.   
+The receipt has the Consent Type field in which the scope can be defined as 'MINIMUM MVCR (Implied)' 'Explicit', 'Compliant' , Consent Type.   
 
-MINIMUM MVCR is intended to map to  all legacy types of implied or expressed consent and has no compliance claims besides proof of consent.  Providing flexibility for implementation and adoption without the burden of legal compliance obligations for the implementor. (see conformance table) A consent type can be created as a profile and externally reference .  i.e. UST Defined Consent Type  - NO 3rd PARTY SHARING 
+MINIMUM MVCR is intended to map to all legacy types of implied or expressed consent and has no compliance claims besides proof of consent.  Providing flexibility for implementation and adoption without the burden of legal compliance obligations for the implementor. (see conformance table) A consent type can be created as a profile and externally reference trust frameworks.  i.e. UST Defined Consent Type
 
 For the MINIMUM MVCR ONLY goto section 6.2. MINIMUM MVCR CONFORMANCE, GUIDEANCE & EXAMPLE
 
@@ -112,7 +112,7 @@ Terminology herein leverages where possible,  [ISO/IEC 29100:2011 "Information T
  	    Refers to a notice that is required to inform the consenter what they are consenting too, without it consent is not possible, the quality and usability of the consent notice is what is often used to classify if a consent is legally informed or not, but this varies by jurisdiction context and interpretation.  Consent notices can vary from icons, short notices, direct communication, visceral notice and most often online a policy document like terms of service and privacy policy.
 
 * **Consent Receipt (CR)**
-	 A record of a personal information consent transaction.
+	 A record of a personal information consent transaction provided to the PI Principle at the time of Consent.
 
 * **Explicit Consent**
 	 Refers to explicit action taken by users in which consent is expressed, but, it is also in reference to explicitly stated purpose.  I.e. A box was ticked, or an 'I agree' button pressed in relation to listed purpose or purpose category. In this specification, explicit elements can be extended i.e. by an explicit reference to  authoritative policy and operational scope.  
@@ -135,7 +135,7 @@ Terminology herein leverages where possible,  [ISO/IEC 29100:2011 "Information T
 * **Individual**
 	   see PII Principal in ISO/IEC 29100:2011.
 
-* **Information Sharing**
+* **3rd Party Sharing**
 	   A statement or series of statements that set out what information is shared with third parties and for what purpose(s).
 
 * **Minimum Viable Consent Receipt (MVCR)**
@@ -147,8 +147,8 @@ Terminology herein leverages where possible,  [ISO/IEC 29100:2011 "Information T
 * **Personal Information (PI)**
 	   See Personally Identifiable Information (PII) in ISO/IEC 29100:2011
 
-* **Personally Identifiable Information**
-       Personally identifiable information (PII), or Sensitive Personal Information as used in privacy law and information security, is information that can be used on its own or with other information to identify, contact, or locate a single person, or to identify an individual in context. The abbreviation PII is widely accepted in OECD base FIPPs jurisdiction, but the phrase it abbreviates has four common variants based on personal / personally, and identifiable / identifying. Not all are equivalent, and for legal purposes the effective definitions can vary depending on the specific purposes for which the term is being used. (In other countries with privacy protection laws derived from the OECD privacy principles, the term used is more often "personal information", which may be somewhat broader:
+* **Personally Identifiable Information (PII)**
+       Personally identifiable information (PII), is defined in ISO/IEC 29100:2011.  The abbreviation PII is widely accepted in OECD base FIPPs jurisdiction, but the phrase it abbreviates has four common variants based on personal / personally, and identifiable / identifying. Not all are equivalent, and for legal purposes the operational definitions can vary depending on the specific purposes for which the term is being used. the term used more often is "personal information", which may be somewhat broader.  The specification, is able to reference PII Purpose Category directly to regulation, and in the context of identifiability for EXPLICIT consnet. 
 
        "4.4 : To determine whether or not an individual should be considered identifiable, several factors need to be taken into account. In particular, account should be taken of all the means which can reasonably be used by the entity holding the data, or by any other party to identify that individual on the basis of the given information."  From ISO:29100, additional clarification available ...
 
@@ -157,10 +157,10 @@ Terminology herein leverages where possible,  [ISO/IEC 29100:2011 "Information T
 * **PI Principal**  
     natural person to whom the PI relates, is used for explicit consent in which the person is identified, Principal ID,  is the primary (often principal choses) identifier for linking automatic processing to a persona, and/or collection of attributes provided at point of consent, which are used to identify the PI Subject are shared.
 
-* **PI PRINCIPAL**
+* **PI PRINCIPAL** (duplicate review)
 	 refers to the personal data shared by a person to a company for  which the individual provides consent for its use.   See PII Principal in in ISO/IEC 29100:2011, also data subject (EC directive), consenter, PII PRINCIPLE in NIST 800, this refers to person providing their own personal information.
 
-* **PII Confidentiality Impact Levels*
+* **PII Confidentiality Impact Levels**
     These refer to low, medium, high confidentiality, or Not Applicable; which correspond to NIST controls sp800-122 and can be use for the organisation, the individual and the developer to ascertain on scale the level of risk and security.
 
 * **Purpose Specification**
@@ -174,7 +174,7 @@ Terminology herein leverages where possible,  [ISO/IEC 29100:2011 "Information T
   All Sensitive Information Categories require Explicit Consent 
   Out of scope of the MINIMUM MVCR - See 6.5. Explicit Consent
 
-  * **Sensitive PI Categories**
+* **Sensitive PI Categories**
     (Use only for Explicit Consent: used in MVCR for creating compliance claims)
   * Health
   * Financial
