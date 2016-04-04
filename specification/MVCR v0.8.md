@@ -34,8 +34,8 @@ This document is subject to the [Kantara IPR Policy - Option Patent & Copyright:
 
 ## Table of Contents
 [1. Objective] (#1.-Objective)
-- [2. Scope](#2.Scope-Scope)
-2.1. MVCR Conformance Profiles
+[2. Scope](#2.Scope-Scope)
+[2.1. MVCR Modes of Conformance]
 3. Notational Conventions For Conformance
 4. Terminology
 5. MVCR Record Format: Section & Fields
@@ -45,12 +45,11 @@ This document is subject to the [Kantara IPR Policy - Option Patent & Copyright:
 5.4.	Personally Identifiable Information
 5.5.	Information Sharing
 5.6.	Scope(s)
-guidance
 6. MVCR Conformance and Compliance
-- 6.1 Global Guidance 
-- 6.2 MINIMUM MVCR Conformance Guidance & Example 
-- 6.3 EXPLICIT MVCR (TBF)
-- 6.4 COMPLIANT MVCR (TBF) 
+6.1 Global Guidance 
+6.2 MINIMUM MVCR Conformance Guidance & Example 
+6.3 EXPLICIT MVCR (TBF)
+6.4 COMPLIANT MVCR (TBF) 
 7. Appendix A: ISO Terms - mapping and use in the MVCR
 8. Appendix B: Consent Type -
 9. Appendix C: Purpose Categories (or purpose type)
@@ -99,7 +98,6 @@ document are to be interpreted as described in [RFC 2119](http://www.rfc-editor.
 
  [RFC7159](https://docs.kantarainitiative.org/uma/rec-uma-core.html#RFC7159)
 
-(Editors Note: how do we (or do we) reference -->  JSON RFC7159 here? JWT - for technically dynamic use of the receipt)
 
 ### 4.  Terminology ###
 (note: in progress)
@@ -170,7 +168,7 @@ Terminology herein leverages where possible,  [ISO/IEC 29100:2011 "Information T
   In the MVCR the purpose is intended to specify the context of use.
 
 * **Context of Use**
-      Organizations should evaluate the context of use to provide the purpose for which the PII is collected, stored, used, processed, disclosed, or disseminated.  The context of use may cause the same PII data elements to be assigned different PII confidentiality impact levels based on their use.  For example, suppose that an organization has two lists that contain the same PII data fields (e.g., name, address, phone number).  The first list is people who subscribe to a general-interest newsletter produced by the organization, and the second list is people who work undercover in law enforcement.  If the confidentiality of the lists is breached, the potential impacts to the affected individuals and to the organization are significantly different for each list.
+      Organizations should evaluate the context of use to provide the purpose for which the PI is collected, stored, used, processed, disclosed, or disseminated.  The context of use may cause the same PI data elements to be assigned different PII confidentiality impact levels based on their use.  For example, suppose that an organization has two lists that contain the same PI fields (e.g., name, address, phone number).  The first list is people who subscribe to a general-interest newsletter produced by the organization, and the second list is people who work undercover in law enforcement.  If the confidentiality of the lists is breached, the potential impacts to the affected individuals and to the organization are significantly different for each list.
 
 * **Sensitive Personal Information (PI) Categories**
   All Sensitive Information Categories require Explicit Consent 
