@@ -431,11 +431,11 @@ An online website - consent receipt could range from minimum legal requirements 
   #### PII Example(s) ####
  
   | Field Name | Example |
-  | | | 
+  | --- | --- | 
   | PI Category |  Address | 
   | PI Attributes | St, Name, City, Country Postal Code |
   | PI Confidentiality Level | low | 
-  | Sensitive Data | No| 
+  | Sensitive Data | No | 
   | Sensitive information category | Not Applicable to MINIMUM MVCR | 
   
   The example below is for an on-line pharmacy that provides a delivery service
