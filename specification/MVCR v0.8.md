@@ -351,19 +351,19 @@ Once consent is provided and parties identified, this consent can be bound to te
 | MAY |
 | MUST NOT | Sensitive Personal Information Categories | 
 
-#### MiNIMUM MVCR EXAMPLE & Guidance 
+### MiNIMUM MVCR EXAMPLE & Guidance  
 
- A hand written consent receipt for Verbal Consent would be:
+#### 1.  A hand written consent receipt for Verbal Consent would be:
 *-On Date, Principal ID has provided verbal consent to, PI Controller, to use this PI Category, for membership, in accordance with printed privacy policy.  All issues or questions can be addressed by calling. PI Controller at Ph#.  (signed: both parties)
 1. MINIMUM MVCR EXMAPLE  
 | timestamp | alice@subject.com | Bob bob@bob.com |   verbal consent  |@bob | Not Sensitive | NO 3rd Party Sharing | Privacy Policy Read at point of Consent | 
 
 
+
+ ####  2. The Recommended CISWG: MINIMUM MVCR for ONLINE Consent Receipts
+ 
+ 
 * For website based consent that context can vary widely depending on the METHOD of Collection and the sensitivity of the PI the MINIMUM changes as a result the CISWG is proposing on recommending a standard set of MINIMUM MVCR fields. 
-
-An online website - consent receipt could range from minimum legal requirements in the UK 
-
-2. The Recommended CISWG: MINIMUM MVCR for ONLINE Consent Receipts
 
 ##### Header Example
 
@@ -377,6 +377,7 @@ An online website - consent receipt could range from minimum legal requirements 
 | __Principal ID :__ | [roadrunner@fictional.url](mailto:roadrunner@fictional.url) |
 
 ##### Header Guidance Notes -  TBF
+
 *  Jurisdiction -
 * Consent Time Stamp
 * Consent type guidance: used for explicit and non-explicit, or defined type, an can be linked to an external consent type profile for the  receipt.  (or N/A in the case where collection is a legal requirement)
