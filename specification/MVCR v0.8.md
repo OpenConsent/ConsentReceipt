@@ -31,20 +31,20 @@ Copyright (c) 2016 Kantara and the persons identified as the document authors. A
 
 This document is subject to the [Kantara IPR Policy - Option Patent & Copyright: Reciprocal Royalty Free with Opt-Out to Reasonable and Non-discriminatory (RAND)](https://kantarainitiative.org/confluence/download/attachments/2293776/Kantara%20Initiative%20IPR%20Policies%20_V1.1_.pdf?version=1&modificationDate=1244488630000&api=v2)[HTML version](https://kantarainitiative.org/confluence/pages/viewpage.action?pageId=41025689)
 
+- [I'm a Heading](##i'm-a-heading)
 ## Table of Contents
-1. Objective
+[1. Objective] (#1.-Objective)
 2. Scope
 2.1. MVCR Conformance Profiles
 3. Notational Conventions For Conformance
 4. Terminology
 5. MVCR Record Format: Section & Fields
 5.1. Header
-- 5.2 PI Controller Data
-- 5.3 Purpose Specification
-- 5.4.	Personally Identifiable Information
-guidance
-- 5.5.	Information Sharing
-- 5.6.	Scope(s)
+5.2 PI Controller Data
+5.3 Purpose Specification
+5.4.	Personally Identifiable Information
+5.5.	Information Sharing
+5.6.	Scope(s)
 guidance
 6. MVCR Conformance and Compliance
 - 6.1 Global Guidance 
