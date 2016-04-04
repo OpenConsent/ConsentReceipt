@@ -17,7 +17,7 @@
 
 This specification identifies the consent requirements necessary to record a personal information (PI) sharing transaction and provide this record as an independent receipt.
 
-The MVCR is designed to address existing closed consent process that exists today, often defined by a binary and indefinite consent agreement. Addressed by providing a consistent format for recording consent and providing a consent receipt for the use and sharing of personal information.    As the  consent receipt is required to be provisioned at point of consent, this addresses multiple privacy principle and privacy legal requirements.  A consistent consent record provides a framework for binding a consent notice to a privacy control, operationally useful to technically address multiple Fair Information Practice Principles and likewise ISO 29100 privacy principles.
+The MVCR is designed to address existing closed consent that exists today, often defined by a binary and indefinite consent agreement. Addressed by providing a consistent format for recording consent and providing a consent receipt for the use and sharing of personal information.   As the  consent receipt is required to be provisioned at point of consent, this addresses multiple privacy principle and privacy legal requirements.  A consistent consent record provides a framework for binding a consent notice to a privacy control, operationally useful to technically address multiple Fair Information Practice Principles and likewise ISO 29100 privacy principles.
 
 See Appendix A:
 (ref- FIPPs and ISO Principles - "Openness, transparency, notice") and Consent (ISO Principle 1 - "Consent and Choice") are fundamental privacy principles, addressed with this specification.
@@ -34,32 +34,26 @@ This document is subject to the [Kantara IPR Policy - Option Patent & Copyright:
 ## Table of Contents
 1. Objective
 2. Scope
-2.1 MVCR Modes
+2.1. MVCR Conformance Profiles
 3. Notational Conventions For Conformance
 4. Terminology
 5. MVCR Record Format: Section & Fields
-5.1 Header
-5.1.1 Example
-5.1.2 Guidance
+5.1. Header
 5.2 PI Controller Data
-5.2.1 Example
-5.2.2 Guidance
 5.3 Purpose Specification
-5.3.1 Example
-5.3.2 Guidance
 5.4.	Personally Identifiable Information
 guidance
 5.5.	Information Sharing
-guidance
 5.6.	Scope(s)
 guidance
 6. MVCR Conformance and Compliance
-6.1 Example Each mode of conformance and compliance
-6.2 Guidance each mode of conformance compliance
+6.1 Global Guidance 
+6.2 MINIMUM MVCR Conformance Guidance & Example 
+6.3 EXPLICIT MVCR
+6.4 COMPLIANT MVCR
 7. Appendix A: ISO Terms - mapping and use in the MVCR
-8. Appendix B: Scope UMA profile
-8. Appendix C: Consent Type -
-9. Appendix D: Purpose Categories (or purpose type)
+8. Appendix B: Consent Type -
+9. Appendix C: Purpose Categories (or purpose type)
 
 (editors note: added objective and scope to the specification)
 
@@ -119,52 +113,56 @@ Terminology herein leverages where possible,  [ISO/IEC 29100:2011 "Information T
 (editors note: ISO privacy framework should be references, but not used as source of terms as terms should be consent receipt centric not ISO 29100 centric, and this spec should be an independently usable with all of the terms defined )
 
 * **Consent Receipt (CR)**
-	A record of a personal information consent transaction.
+	 A record of a personal information consent transaction.
 
 * **Explicit Consent**
 	 Refers to explicit action taken by users in which consent is expressed, but, it is also in reference to explicitly stated purpose.  I.e. A box was ticked, or an 'I agree' button pressed in relation to listed purpose or purpose category. In this specification, explicit elements can be extended i.e. by an explicit reference to  authoritative policy and operational scope.  
 
 * ** Non-Explicit Consent **
- (includes self-asserted and externally defined consent type), MVCR Lite Mode demonstrates   receipt  conformance with the MVCR, but is limited to conformance, and makes no compliance claims, but can demonstrate conformance with MVCR using defined consent types.
+  (includes self-asserted and externally defined consent type), MVCR Lite Mode demonstrates   receipt  conformance with the MVCR, but is limited to conformance, and makes no compliance claims, but can demonstrate conformance with MVCR using defined consent types.
 
 * ** Explicit Consent Reference **  
   is described by a direct link  to a law or authoritative reference to; consent regulation, privacy principles, other consent standards, or industry best practices.  
 
-* **EXPRESS consent** - has a history, it refers to the context of a PI Subject making an unambigous agreement as to consent.  so it is conceivable that a consent can be  expressed  and contain explicit references to also be compliant  (see council of Europe 5.4.4 https://goo.gl/JGPX2Y)
+* **EXPRESS consent** - 
+    has a history, it refers to the context of a PI Subject making an unambigous agreement as to consent.  so it is conceivable that a consent can be  expressed  and contain explicit references to also be compliant  (see council of Europe 5.4.4 https://goo.gl/JGPX2Y)
 
-* **Explicit Purpose:** Explicit is  used in this specification for how purpose is explicitly specified,  each purpose, contains a set of data attributes, with an explicit consent preference, i.e.  a  single purpose with a single check box.
+* **Explicit Purpose:** 
+    Explicit is  used in this specification for how purpose is explicitly specified,  each purpose, contains a set of data attributes, with an explicit consent preference, i.e.  a  single purpose with a single check box.
 
-* **Explicit sharing:**  The degree  that sharing is specified can be explicit.  This would include listing the 3rd party, a link to the contract in which the 3rd party has agreed to abide by this consent, and the duration of sharing can be explicitly specified
+* **Explicit sharing:**  
+    The degree  that sharing is specified can be explicit.  This would include listing the 3rd party, a link to the contract in which the 3rd party has agreed to abide by this consent, and the duration of sharing can be explicitly specified
 
 * ** OPT-IN or OPT-OUT Consent **
-To opt in to provide consent for a core consent requirement or purpose preference, to opt out of implied consent or an implied preference.
+    To opt in to provide consent for a core consent requirement or purpose preference, to opt out of implied consent or an implied preference.
 
 * **Individual**
-	see PII Principal in ISO/IEC 29100:2011.
+	   see PII Principal in ISO/IEC 29100:2011.
 
 * **Information Sharing**
-	A statement or series of statements that set out what information is shared with third parties and for what purpose(s).
+	   A statement or series of statements that set out what information is shared with third parties and for what purpose(s).
 
 * **Minimum Viable Consent Receipt (MVCR)**
-	Is a record of consent provided to the person providing consent for personal information sharing as a receipt.
+	   Is a record of consent provided to the person providing consent for personal information sharing as a receipt.
 
   **Consent Notice**
- 	Refers to a notice that is required to inform the consenter what they are consenting too, without it consent is not possible, the quality and usability of the consent notice is what is often used to classify if a consent is legally informed or not, but this varies by jurisdiction context and interpretation.  Consent notices can vary from icons, short notices, direct communication, visceral notice and most often online a policy document like terms of service and privacy policy.
+ 	    Refers to a notice that is required to inform the consenter what they are consenting too, without it consent is not possible, the quality and usability of the consent notice is what is often used to classify if a consent is legally informed or not, but this varies by jurisdiction context and interpretation.  Consent notices can vary from icons, short notices, direct communication, visceral notice and most often online a policy document like terms of service and privacy policy.
 
 * **Personal Information (PI)**
-	See Personally Identifiable Information (PII) in ISO/IEC 29100:2011
+	   See Personally Identifiable Information (PII) in ISO/IEC 29100:2011
 
 * **Personally Identifiable Information**
        Personally identifiable information (PII), or Sensitive Personal Information as used in privacy law and information security, is information that can be used on its own or with other information to identify, contact, or locate a single person, or to identify an individual in context. The abbreviation PII is widely accepted in OECD base FIPPs jurisdiction, but the phrase it abbreviates has four common variants based on personal / personally, and identifiable / identifying. Not all are equivalent, and for legal purposes the effective definitions can vary depending on the specific purposes for which the term is being used. (In other countries with privacy protection laws derived from the OECD privacy principles, the term used is more often "personal information", which may be somewhat broader:
 
-"4.4 : To determine whether or not an individual should be considered identifiable, several factors need to be taken into account. In particular, account should be taken of all the means which can reasonably be used by the entity holding the data, or by any other party to identify that individual on the basis of the given information."  From ISO:29100, additional clarification available ...
+       "4.4 : To determine whether or not an individual should be considered identifiable, several factors need to be taken into account. In particular, account should be taken of all the means which can reasonably be used by the entity holding the data, or by any other party to identify that individual on the basis of the given information."  From ISO:29100, additional clarification available ...
 
-" Treatment of PII is distinct from other types of data because it needs to be not only protected, but also collected, maintained, and disseminated in accordance with Federal law." NIST 800-222
+       " Treatment of PII is distinct from other types of data because it needs to be not only protected, but also collected, maintained, and disseminated in accordance with Federal law." NIST 800-222
 
-* **PI Principal**  natural person to whom the PI relates, is used for explicit consent in which the person is identified, Principal ID,  is the primary (often principal choses) identifier for linking automatic processing to a persona, and/or collection of attributes provided at point of consent, which are used to identify the PI Subject are shared.
+* **PI Principal**  
+    natural person to whom the PI relates, is used for explicit consent in which the person is identified, Principal ID,  is the primary (often principal choses) identifier for linking automatic processing to a persona, and/or collection of attributes provided at point of consent, which are used to identify the PI Subject are shared.
 
 * **PI PRINCIPAL **
-	refers to the personal data shared by a person to a company for  which the individual provides consent for its use.   See PII Principal in in ISO/IEC 29100:2011, also data subject (EC directive), consenter, PII PRINCIPLE in NIST 800, this refers to person providing their own personal information.
+	 refers to the personal data shared by a person to a company for  which the individual provides consent for its use.   See PII Principal in in ISO/IEC 29100:2011, also data subject (EC directive), consenter, PII PRINCIPLE in NIST 800, this refers to person providing their own personal information.
 
 * ** PII Confidentiality Impact Levels*
     These refer to low, medium, high confidentiality, or Not Applicable; which correspond to NIST controls sp800-122 and can be use for the organisation, the individual and the developer to ascertain on scale the level of risk and security.
@@ -198,8 +196,8 @@ To opt in to provide consent for a core consent requirement or purpose preferenc
 
 The MVCR is broken down into 6 sections for usability and to aid in understanding the core function. The 5 sections are:
 
-1.	Header
-2.	Data Controller, Contact & Policy
+1.	Consent Receipt Header
+2.	PI Controller Information
 3.	Purpose Specification
 4.	Personally Identifiable Information
 5.	Information Sharing
@@ -219,29 +217,9 @@ The purpose of this section is to set out the meta-data for the consent transact
 | Consent ID | # |  jti |  A unique identifier for the consent receipt | C159A448-A69B-44BF-BFCE-6403FB5D06EE |  A globally unique ID (GUID) | for proof of consent authentication | Not Linked |
 | PI Principal ID | email address, picture, device id,  | sub | string | alice@domain.com | Subject provided identifier, email address - or Claim, defined/namespace | required for proof of consent claim | not linked |
 
-(note should data type sub be changes to principal to coninside with field label change? )
 
-#### Header Example
 
-| Field | Contents|
-| ------:	| ------	|
-| __Jurisdiction:__ | CA |
-| __Consent Time Stamp:__ | 2016/02/08 12:20:34 EST |
-| _Consent Type:__ | Explicit |
-| __Collection Method:__ | web form | [http://www.consentreceipt.org](http://www.consentreceipt.org) |
-| __Consent ID:__ | C159A448-A69B-44BF-BFCE-6403FB5D06EE |
-| __Principal ID :__ | [roadrunner@fictional.url](mailto:roadrunner@fictional.url) |
-
-#### Header Field Guidance Notes -  TBF
-*  Jurisdiction -
-* Consent Time Stamp
-* Consent type guidance: used for explicit and non-explicit, or defined type, an can be linked to an external consent type profile for the  receipt.  (or N/A in the case where collection is a legal requirement)
-* **Note 1:** If collection is required by law, consent should not be sought except for other purposes, since consent is only meaningful if the PII Subject may say no.
-* Collection Method : provides an indication of the context, additional fields are appropriate for different contexts.  For instance on websites, digital fields are data collected is expected to be reflected on the receipt. (see should fields)
-* Consent ID: this is the identifier for the specific consent
-* Principal ID: is the primary personal information (PI)  identifier for linking automatic processing, which is normally volunteered and chosen by the principal.
-
-### 5.2 PI Controller Data
+### 5.2 PI Controller Information
 
 This section identifies the individual and company that is accountable for data protection and the privacy policy to which the consent is bound.
 
@@ -256,30 +234,7 @@ This section identifies the individual and company that is accountable for data 
 | Contact Other | Free text | contact_other | string | @twitter | a contact field  |  for social media or other communication channel | Linked directly |
 | Privacy Policy | Link to policy | privacy_policy |  http://link.com/privacypolicy | is a link to the current privacy policy |  can be captured and attached to receipt |  Linked |
 
-#### PI Controller Data Example ####
 
-| Field | Contents|
-| ------:	| ------	|
-| __Data Controller:__ | Acme Corporation, Inc |
-| __On Behalf :__ | null |
-| __Contact Name:__ | Mel Blanc |
-| __Contact Address:__ | 123 Main Street, Somewhere Else |
-| __Contact Email:__ | [mel.blanc@fictional.url](mel.blanc@fictional.url) |
-| __Contact Phone:__ | +1 555 555-1212 |
-| __Contact Other:__ | @twitter |
-| __Privacy Policy:__ | [ACME Privacy Policy](https://www.acme.fictional.url/privacy.policy) |
-
-#### Guidance Notes
-* PI Controller - that is accountable for compliance over the management of PII, A PII in ISO 29100 (for explicit consent) controller determines why (purpose) and how (means) the processing of PII takes place. The PII controller shall ensure adherence to the privacy principles during the processing of PII under its control (e.g., by implementing the necessary privacy controls). There may be more than one PI(I) controller for the same PI(I) set or set of operations performed upon PI(I). In this case the different PI(I) controllers SHOULD be listed for MINIMUM MVCR, MUST be listed for Explicit CONSENT SHARING .
-
-* On Behalf
-	is used to delegate data controller and or data processing, which maps to the UK's as acting on behalf of the data controller, a third party analytics service would be a processor on behalf of the controller.  When the site operator is acting on behalf of the Data Controller
-* Contact Name
-* Contact Address
-* Contact Email
-* Contact Phone
-* privacy policy link
-	The privacy policy link is to the current policy, if there are materials changes to this policy then a new consent is required for sensitive data categories and various trust network requirements. (note: can be used for compliance- privacy policy can be attached to the receipt payload.
 
 ### 5.3 Purpose(s)
 
@@ -292,25 +247,6 @@ This section specifies the purpose(s) for which the PI Controller is collecting 
 | Purpose Category | short description | purpose_category | string | for marketing | The primary purpose will be necessary, but may not be the only necessary purpose. PII subject should be able to provide consent directives to opt out of purposes not identified as necessary . |
 | Purpose Preference (Y/N) |  preference | preference | yes | this is a yes no flag | for indicating if this purpose is required or  a secondary purpose separate from the main operational purpose | linked to preference management settings |
 | Purpose termination | termination | limits | string |  {duration for current location} {1 day must delete } | conditions for the termination of consent purpose, or withdraw of consent | linked to policy |
-
-#### Purpose Specification Example (TBF)####
-
-| Service | Purpose |  Purpose Description | Purpose Preference | Purpose Termination |
-| ------ | ------ | :------: | :------: |
-| __Acme Web Site__ | Core Function | Website Services | NO | when account deleted |
-| __Acme Web Site__ | marketing | Contact data use  | NO | when service member (life of membership)  |
-| __Acme Web Site__ | Personalized Experience | profiling | YES | when leave location  |
-| Newsletter | Product Information | __Telling PII Subject about other services__ | Marketing | NO | N/A |
-| Product ADD-ONS |  __Telling PII Subject about third party services__ | Marketing Third Parties | False | N/A |
-| Consent Renewal | Core Function | Renewal of Consent with Renewal to Contract | Agreed to Changes in Purpose |  when account deleted | 
-
-#### Guidance on Purpose(s)
- Repeat the  creation of purpose, attached to a purpose category or not,  set of fields as many times as necessary to set out the purpose(s) for collection
-
-* **Purpose Preference**
-  -  in context of purpose limitation, minimum data collection for purpose, purpose termination and purpose preference are linked. A preference once turned off should correspond to a sharing or data use function that can be scoped using Section 6 Scopes and linked to termination of purpose;
-
-* **Purpose Termination** - defines the duration of consent and its method of termination.  Purpose Preference and Purpose termination are designed to be used in tandem and are put into Scope(s) Section (if machine readability is required)
 
 **Note:** A list of commonly used purposes is provided in Appendix B below.
 
@@ -326,32 +262,6 @@ This section specifies personal information categories, attributes, PI confident
 | Sensitive Data Y/N | text | yes or no | sensitive | string | Yes | indicates if data is sensitive or not sensitive | used to indicate if consent categories: (see sensitive categories) | should be linked to a notice about what is sensitive |
 | Sensitive Information Category | list of categories with check boxes | sic | string | "Health" | used in the specification to indicate further notice  requirements are needed and the receipt has compliance claims | not linked |
 
-### Guidance
-* ** PI Categories **
-- These are specified by industry and jurisdiction, but, we have a common list of PI Categores in Appendix C
-
-* ** PI Attributes **
-* 	These are the data attributes that are combined to create a category or data set. i.e.  first and last name of PII Principal, = Name.  PI Attributed can further be defined by permission, i.e. restricted access, read only, do not share, do not track, etc.
-
-* **Sensitive Data Y/N**
-  This is a yes/no question:  can be used for MVCR lite conformance  for non-explicit consent only - which mean its not used for compliance, in this context the "other" field is used to specify sensitivity.
-
-
-
-#### PII Example ####
-
-The example below is for an on-line pharmacy that provides a delivery service
-
-| Category | Description | Sensitive | Explanation |
-| ------ | ------ | :------: | :------: |
-| __Browser Data__ | Information revealed by the browser to the web server | False | IP address is PII but not sensitive |
-| __Address__ | Physical address for deliveries | False | |
-| __Health__ | Personal Health Information| True | Specified by regulation in many jurisdictions |
-| __Financial__ | Credit Card or payment information | True | Specified by regulation in many jurisdictions |
-
-#### Guidance
-Repeat the following set of fields as many times as necessary identify third parties |
-Sensitive Personal Information - list of sensitive categories - genetic data, biometric data, and data concerning sexual orientation, can also be define by consentor as sensitive, but needs a subsequent explanation of what is sensitive (includes photographs).
 
 ### 5.5 Information Sharing (TBF)
 
@@ -359,7 +269,7 @@ The purpose of this section is to provide the PII Subject with information about
 
 | Receipt Field Label | Receipt Field Format | Data Field Name | Data Type | Example Data Input | Receipt Field Description | Purpose of Field  | Linked |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| Sharing Y/N|  Sharing "" | sharing | string | YES | a yes no flag that inidicate if PI is being shared | indicate if sharing is occurring for the purposes specified in the receipt | not linked |
+| 3rd Party Sharing Y/N|  Sharing "" | sharing | string | YES | a yes no flag that indicate if PI is being shared | indicate if sharing is occurring for the purposes specified in the receipt | not linked |
 | Third Party | Third party that receives the data | Required | SHOULD be specific, MAY be generic |
 | Purpose | Purpose (only from list above) for sharing data | Required | **Note:** PII provided to vendors or suppliers to the PII Controller that are providing data processing services of PII to the PII Controller would not normally be considered disclosure or information sharing |
 | Purpose Category |
@@ -367,44 +277,10 @@ The purpose of this section is to provide the PII Subject with information about
 | Termination of Sharing|
 | contract/policy |
 
-
-#### Information Sharing Example
-
-The following example is from an online financial institution
-
-|  Service | Third Party | Purpose | Explanation |
-| ------ | ------ | :------: | :------: |
-| service  name | , data controller, purpose category, pi category | with 3rd party name | for pi_attributes | terminated by (duration of service length) |  requiring [x] scopes | linked to contract/policy governing sharing | |
-| __Financial__ | Tax Authority  | Required by Law Enforcement or Government | Financial institution required to disclose personal financial information for tax purposes |
-| __Contact__ | Advertising Network| Marketing Third Parties | Ad supported web site |
-
-#### Sharing Guidance
-* Repeat the following set of fields as many times as necessary to identify third parties
-* Termination of Sharing - includes duration, location, specified time,
-* (note: is sharing a proxy a security concern? )
-* *Note:** PII provided to vendors or suppliers to the PII Controller that are providing data processing services of PII to the PII Controller would not normally be considered disclosure or information sharing |
-
 ### 5.6  Scope(s)   (TBF)
-|  Scope |  scope name | PI Category | PI Purpose |  PI Preference | Permissons | Data Type | Example  Data Input | Scope Description | Scope Purpose  | Linked |
+|  Scope |  scope name | PI Category | PI Purpose |  PI Preference | Permission | Data Type | Example  Data Input | Scope Description | Scope Purpose  | Linked |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| Technical/Legal | withdraw consent |  marketing | 3rd party sharing | YES | {purpose preference string} | data@subject.com, consent id, principal ID, purpose preference, temrinate | technical scope | to terminate consent preference | linked to preference in profile |
-
-
-####  Scope Example
-
-| Scope  | Purpose | Example | Scope Reference (linked) | Purpose Category |  PI Category | Description | Confidentiality/Audience |
-| ------ | ------ | :------: | :------: | :------: | :------: |
-
-| Technical | share | _network data | link to data list | security | _Browser Data__, __IP Address__. | medium |
-| Technical | Collect | ,  __Health__, __Financial__  | Information revealed by the browser to the web server | Read |  IP address is PII but has low confidentiality |
-| | Physical address for deliveries | Read | |
-| | Personal Health Information| Read + encrypted | linked to notice |
-|  | Credit Card or payment information | Read + encrypted + specified 3rd party |  |
-
-#### Scope Guidance
-* Scope - refers to the Scope field, which can be used to add, PI Categories, technical requirements, sensitivity level, and security requirements
-* Repeat to create scope, or enter defined scopes for of following set of fields as many times as necessary identify i.e. for each third party |
-* Scope name, this is the technical action, or the PI category required
+| Technical/Legal | withdraw consent |  marketing | 3rd party sharing | YES | {purpose preference string} | data@subject.com, consent id, principal ID, purpose preference, terminate | technical scope | to terminate consent preference | linked to preference in profile |
 
 # 6. Conformance Table
 
@@ -474,10 +350,135 @@ MiNIMUM RECEIPT EXAMPLE
  A hand written consent receipt for Verbal Consent would be:
 *-On Date, Principal ID has provided verbal consent to, PI Controller, to use this PI Category, for membership, in accordance with printed privacy policy.  All issues or questions can be addressed by calling. PI Controller at Ph#.  (signed: both parties)
 
-* For Bob's website: Put in examples from above
+* For Bob's website: a minimum might look like
+| timestamp | alice@subject.com | Bob bob@bob.com |   for new account |@bob | Not Sensitive | NO Sharing |
+
+#### Header Example
+
+| Field | Contents|
+| ------:	| ------	|
+| __Jurisdiction:__ | CA |
+| __Consent Time Stamp:__ | 2016/02/08 12:20:34 EST |
+| _Consent Type:__ | Explicit |
+| __Collection Method:__ | web form | [http://www.consentreceipt.org](http://www.consentreceipt.org) |
+| __Consent ID:__ | C159A448-A69B-44BF-BFCE-6403FB5D06EE |
+| __Principal ID :__ | [roadrunner@fictional.url](mailto:roadrunner@fictional.url) |
+
+#### Header Guidance Notes -  TBF
+*  Jurisdiction -
+* Consent Time Stamp
+* Consent type guidance: used for explicit and non-explicit, or defined type, an can be linked to an external consent type profile for the  receipt.  (or N/A in the case where collection is a legal requirement)
+* **Note 1:** If collection is required by law, consent should not be sought except for other purposes, since consent is only meaningful if the PII Subject may say no.
+* Collection Method : provides an indication of the context, additional fields are appropriate for different contexts.  For instance on websites, digital fields are data collected is expected to be reflected on the receipt. (see should fields)
+* Consent ID: this is the identifier for the specific consent
+* Principal ID: is the primary personal information (PI)  identifier for linking automatic processing, which is normally volunteered and chosen by the principal.
 * Additional Should Fields Are included as proportional to method of collection.
 
-* Provide email to Bob's website, for new account, bobs email and twitter, mon may 1 2016, Not Sensitive, NO Sharing, PI Subject ID or profile link
+#### PI Controller Data Example ####
+
+| Field | Contents|
+| ------:	| ------	|
+| __Data Controller:__ | Acme Corporation, Inc |
+| __On Behalf :__ | null |
+| __Contact Name:__ | Mel Blanc |
+| __Contact Address:__ | 123 Main Street, Somewhere Else |
+| __Contact Email:__ | [mel.blanc@fictional.url](mel.blanc@fictional.url) |
+| __Contact Phone:__ | +1 555 555-1212 |
+| __Contact Other:__ | @twitter |
+| __Privacy Policy:__ | [ACME Privacy Policy](https://www.acme.fictional.url/privacy.policy) |
+
+#### Guidance Notes
+* PI Controller - that is accountable for compliance over the management of PII, A PII in ISO 29100 (for explicit consent) controller determines why (purpose) and how (means) the processing of PII takes place. The PII controller shall ensure adherence to the privacy principles during the processing of PII under its control (e.g., by implementing the necessary privacy controls). There may be more than one PI(I) controller for the same PI(I) set or set of operations performed upon PI(I). In this case the different PI(I) controllers SHOULD be listed for MINIMUM MVCR, MUST be listed for Explicit CONSENT SHARING .
+
+* On Behalf
+	is used to delegate data controller and or data processing, which maps to the UK's as acting on behalf of the data controller, a third party analytics service would be a processor on behalf of the controller.  When the site operator is acting on behalf of the Data Controller
+* Contact Name
+* Contact Address
+* Contact Email
+* Contact Phone
+* privacy policy link
+	The privacy policy link is to the current policy, if there are materials changes to this policy then a new consent is required for sensitive data categories and various trust network requirements. (note: can be used for compliance- privacy policy can be attached to the receipt payload.
+  
+  #### Purpose Specification Example (TBF)####
+
+  | Service | Purpose |  Purpose Description | Purpose Preference | Purpose Termination |
+  | ------ | ------ | :------: | :------: |
+  | __Acme Web Site__ | Core Function | Website Services | NO | when account deleted |
+  | __Acme Web Site__ | marketing | Contact data use  | NO | when service member (life of membership)  |
+  | __Acme Web Site__ | Personalized Experience | profiling | YES | when leave location  |
+  | Newsletter | Product Information | __Telling PII Subject about other services__ | Marketing | NO | N/A |
+  | Product ADD-ONS |  __Telling PII Subject about third party services__ | Marketing Third Parties | False | N/A |
+  | Consent Renewal | Core Function | Renewal of Consent with Renewal to Contract | Agreed to Changes in Purpose |  when account deleted | 
+
+  #### Guidance on Purpose(s)
+   Repeat the  creation of purpose, attached to a purpose category or not,  set of fields as many times as necessary to set out the purpose(s) for collection
+
+  * **Purpose Preference**
+    -  in context of purpose limitation, minimum data collection for purpose, purpose termination and purpose preference are linked. A preference once turned off should correspond to a sharing or data use operation that can be captured as a scoped using Section 6 Scopes and linked to termination of purpose;
+
+  * **Purpose Termination** - defines the duration of consent and its method of termination.  Purpose Preference and Purpose termination are designed to be used in tandem and are put into Scope(s) Section (if machine readability is required)
+
+  #### PII Example(s) ####
+  | Field Name | Example |
+  | PI Category |  Address| 
+  | PI Attributes | St, Name, City, Country Postal Code, |
+  | PI Confidentiality Level | low | 
+  | Sensitive Data | No| 
+  | Sensitive information category | Not Applicable to MINIMUM MVCR | 
+  
+  The example below is for an on-line pharmacy that provides a delivery service
+
+  | Category | Description | Sensitive | Confidential | Explanation |
+  | ------ | ------ | :------: | :------: |
+  | __Browser Data__ | Information revealed by the browser to the web server | False | Low | IP address is PII but not sensitive |
+  | __Address__ | Physical address for deliveries | False | Medium |
+  | __Health__ | Personal Health Information| True | HIGH | Specified by regulation in many jurisdictions |
+  | __Financial__ | Credit Card or payment information | True | HIGH | Specified by regulation in many jurisdictions |
+
+  ### Guidance
+  * ** PI Categories **
+  - These are specified by industry and jurisdiction, but, we have a common list of PI Categores in Appendix C
+
+  * ** PI Attributes **
+  * 	These are the data attributes that are combined to create a category or data set. i.e.  first and last name of PII Principal, = Name.  PI Attributed can further be defined by permission, i.e. restricted access, read only, do not share, do not track, etc.
+
+  * **Sensitive Data Y/N**
+    This is a yes/no question:  can be used for MVCR lite conformance  for non-explicit consent only - which mean its not used for compliance, in this context the "other" field is used to specify sensitivity.
+
+    
+    #### Information Sharing Example
+
+    The following example is from an online financial institution
+
+    |  Service | Third Party | Purpose | Explanation |
+    | ------ | ------ | :------: | :------: |
+    | service  name | , data controller, purpose category, pi category | with 3rd party name | for pi_attributes | terminated by (duration of service length) |  requiring [x] scopes | linked to contract/policy governing sharing | |
+    | __Financial__ | Tax Authority  | Required by Law Enforcement or Government | Financial institution required to disclose personal financial information for tax purposes |
+    | __Contact__ | Advertising Network| Marketing Third Parties | Ad supported web site |
+
+    #### Sharing 3rd Party Guidance
+    * Repeat the following set of fields as many times as necessary to identify third parties
+    * Termination of Sharing - includes duration, location, specified time,
+    * (note: is sharing a proxy a security concern? )
+    * *Note:** PII provided to vendors or suppliers to the PII Controller that are providing data processing services of PII to the PII Controller would not normally be considered disclosure or information sharing |
+    
+
+    ####  Scope Example
+
+    | Scope  | Purpose | Example | Scope Reference (linked) | Purpose Category |  PI Category | Description | Confidentiality/Audience |
+    | ------ | ------ | :------: | :------: | :------: | :------: |
+
+    | Technical | share | _network data | link to data list | security | _Browser Data__, __IP Address__. | medium |
+    | Technical | Collect | ,  __Health__, __Financial__  | Information revealed by the browser to the web server | Read |  IP address is PII but has low confidentiality |
+    | | Physical address for deliveries | Read | |
+    | | Personal Health Information| Read + encrypted | linked to notice |
+    |  | Credit Card or payment information | Read + encrypted + specified 3rd party |  |
+
+    #### Scope Guidance
+    * Scope - refers to the Scope field, which can be used to add, PI Categories, technical requirements, sensitivity level, and security requirements
+    * Repeat to create scope, or enter defined scopes for of following set of fields as many times as necessary identify i.e. for each third party |
+    * Scope name, this is the technical action, or the PI category required
+
 
 ### Implementation Guidance
 (TBR: INPUT from JOHN and OLiver)
@@ -699,4 +700,3 @@ Other purposes may be uses as appropriate for the specific context of each juris
 - 14.	Membership – (Political, trade union affiliations, any other opt-in organisational/group membership data - third party organisations only. Includes name of employer when not held by employer. Could extend to online platform membership. Some might be more sensitive than others – may want a separate category)
 - 15.	Behavioural – (Any data about the behaviour, habits or movements of an individual - electronic or physical. Location, browser/search history, web page usage (analytics), energy usage (smart meters), login history, calendar data, etc.)
 - 16.	Profile – (Marketing and social segmentation data. Any categorisation that impacts information presented or decisions made about an individual. This might be observed or derived data (algorithmic) or volunteered by the individual. Profile data is often generated from Behavioural data).
-
