@@ -257,7 +257,7 @@ This section identifies the individual and company that is accountable for data 
 | __Privacy Policy:__ | [ACME Privacy Policy](https://www.acme.fictional.url/privacy.policy) |
 
 #### Guidance
-* PI Controller - that is accountable for compliance over the management of PII, A PII controller determines why (purpose) and how (means) the processing of PII takes place. The PII controller shall ensure adherence to the privacy principles during the processing of PII under its control (e.g., by implementing the necessary privacy controls). There may be more than one PII controller for the same PII set or set of operations performed upon PII. In this case the different PII controllers SHOULD be listed for MINMIMUM MVCR, MUST be listed for Explicit CONSENT SHARING mode. 
+* PI Controller - that is accountable for compliance over the management of PII, A PII in ISO 29100 (for explicit consent) controller determines why (purpose) and how (means) the processing of PII takes place. The PII controller shall ensure adherence to the privacy principles during the processing of PII under its control (e.g., by implementing the necessary privacy controls). There may be more than one PI(I) controller for the same PI(I) set or set of operations performed upon PI(I). In this case the different PI(I) controllers SHOULD be listed for MINMIMUM MVCR, MUST be listed for Explicit CONSENT SHARING . 
 
 * On Behalf
 	is used to delegate data controller and or data processing, which maps to the UK's as acting on behalf of the data controller, a third party analytics service would be a processor on behalf of the controller.  When the site operator is acting on behalf of the Data Controller
@@ -385,23 +385,26 @@ The following example is from an online financial institution
 * *Note:** PII provided to vendors or suppliers to the PII Controller that are providing data processing services of PII to the PII Controller would not normally be considered disclosure or information sharing |
 
 ### 5.6 Functional Scope(s)   (TBF)
-| Receipt Field Label |  scope name | PI Category | PI Purpose |  PI Preference |  Data Type | Example  Data Input | Receipt Field Description | Purpose of Field  | Linked |
+| Funtional Scope |  scope name | PI Category | PI Purpose |  PI Preference | Permissons | Data Type | Example  Data Input | Scope Description | Scope Purpose  | Linked |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| scope | withdraw consent |  marketing | 3rd party sharing | YES | {purpose preference string} | data@contrller, consent id, purpose preference, temrinate | technical scope | to terminate consent preference | linked to preference in profile | 
+| Technical/Legal | withdraw consent |  marketing | 3rd party sharing | YES | {purpose preference string} | data@contrller, consent id, principal ID, purpose preference, temrinate | technical scope | to terminate consent preference | linked to preference in profile | 
 
 
 ####  Scope Example
 
-| Scope  | Purpose | Example | Scope Reference (linked) | Purpose Category | PI Category | Confidentiality |
+| Scope  | Purpose | Example | Scope Reference (linked) | Purpose Category |  PI Category | Description | Confidentiality/Audience | 
 | ------ | ------ | :------: | :------: | :------: | :------: |
 
-| __Browser Data__ | Information revealed by the browser to the web server | Read |  IP address is PII but has low confidentiality |
-| __Address__ | Physical address for deliveries | Read | |
-| __Health__ | Personal Health Information| Read + encrypted | linked to notice |
-| __Financial__ | Credit Card or payment information | Read + encrypted + specified 3rd party |  |
+| Technical | share | _network data | link to data list | security | _Browser Data__, __IP Address__. | medium | 
+| Technical | Collect | ,  __Health__, __Financial__  | Information revealed by the browser to the web server | Read |  IP address is PII but has low confidentiality |
+| | Physical address for deliveries | Read | |
+| | Personal Health Information| Read + encrypted | linked to notice |
+|  | Credit Card or payment information | Read + encrypted + specified 3rd party |  |
 
 #### Scope Guidance
-Repeat the following set of fields as many times as necessary identify third parties |
+* Scope - refers to the functional scope feild, which can be used to add, PI Categories, technical reuquirments, sensitivity level, and security requierments 
+* Repeat to create scope, or enter defined scopes for of following set of fields as many times as necessary identify i.e. for each third party |
+* Scope name, this is the technical action, or the PI category required
 
 # 6. Conformance Table
 
@@ -437,12 +440,11 @@ This conformance table specifies requirements to fulfill scope as defined.
 | 26 | Third Party | SHOULD | |  | | |
 | 27 | Sharing Purpose | OPTIONAL | |  | | |
 | 28 | Sharing Contract/Policy | OPTIONAL | |  | | |
-| 29 | Scope | OPTIONAL | |  | | |
-
+| 29 | Functional Scope(s) | OPTIONAL | |  | | |
 
 ## 6.1. Guidance
 
-All conformance profiles are culminative, in that the MINIMUM MVCR is used to build the EXPLICIT MVCR, which is used to create a COMPLIANT MVCR, which is used to develop  Functional SCOPE.
+All conformance profiles are culminative, in that the MINIMUM MVCR is used to build the EXPLICIT MVCR, which is used to create a COMPLIANT MVCR, all of which is used to develop  Functional SCOPE.
 
 The MINIMUM MVCR can be used to create any type of consent record, and without making it complinant 
 
@@ -452,33 +454,33 @@ The  Objective of the MINIMUM MVCR is to:
 * 1. Provide Proof of Consent
 * 2. contact details to communicate and manage consent once it is provided, that are proportionate to context of consent provision. 
 
-The MINIMUM MVCR conformance requirements are intended to make a consent transaction record into a receipt, and to make this record Open so as to include people in the consent transaction. Open meaning that not only does the individual and organisation both have a record of the consent, the receipt can be used to communicate about the specific  consent during and after the consent has been provided. 
+The MINIMUM MVCR conformance requirements are intended to make a consent transaction record into a receipt, and to provide people with this receipt as to make this record Open in both a common format and a common practice. Open functionally meaning that not only does the individual and organisation both have a record of the consent, the receipt can be used to communicate about the specific  consent during and after the consent has been provided. 
 
-As a result, iterative changes or conesnt preferences can be developed and collected an managed on consent transaction or change management basis, as long as it is linked to the original consent and logged. 
+As a result, iterative changes or conesnt preferences can be developed and collected an managed on consent transaction or on a consent change management basis, as long as it is linked to the original consent and logged. 
 
-To achieve conformance the MUST,  SHOULD, and optionally extend a receipt in the MINIMUM MVCR.   be in a consent receipt to make it viable, as well as OPTIONAL fields to exend the use of the MVCR. 
+To achieve conformance the MUST,  SHOULD, and OPTIONAL fields extend a receipt in the MINIMUM MVCR. 
 
 Without providing details about what is sensitive, the consent record can be used with a very low level of liability, and MINIMUM MVCR is not meant to be used for demonstrating MVCR regulatory compliance. 
 
 Once consent is provided and parties identified, this consent can be bound to terms of services that require access and use of that PI.  
-
 FIELD CONFORMANCE: MINIMUM MVCR
 - MUST - PI Controller, Core Purpose, Link to PP, Proportional Contact, Date & Time, Sensitive Y/N, Sharing Y/N,  Principlal ID
-- SHOULD - 
-- OPTIONAL - 
+- SHOULD - Jurisdiction, Consent Type, Collection Method, Service Name, Purpose Category, Purpose Termination, Sensitive Information y/n, 3rd Party Sharing y/n, 
+- OPTIONAL - PI Categories, Purpose Preference, Confidentiality Level, Sharing Purpose, Sharing Contract, Sharing, Functional Scope(s)
 - MAY - 
+- MUST NOT - Sensitive Personal Information Categories 
  
 MiNIMUM RECEIPT EXAMPLE
  A hand written consent receipt for Verbal Consent would be:
 *-On Date, Principal ID has provided verbal consent to, PI Controller, to use this PI Category, for membership, in accordance with printed privacy policy.  All issues or questions can be addressed by calling. PI Controller at Ph#.  (signed: both parties)
 
-* For Bob's website:
+* For Bob's website: Put in examples from above
 * Additional Should Fields Are included as porportional to method of collection. 
 
 * Provide email to Bob's website, for new account, bobs email and twitter, mon may 1 2016, Not Sensitive, NO Sharing, PI Subject ID or profile link
 
 ### Implementation Guidance
-(TBR)
+(TBR: INPUT from JOHN and OLiver)
 * Each purpose MUST link the service name to at least one explicit and specific purpose.
 * Each purpose SHOULD contain an external reference to an on and off preference for this purpose.
 * Each purpose MAY contain additional options. Some examples include a trust mark icon or link, a data retention specification, or a link to the purpose description in the policy.
@@ -491,22 +493,21 @@ MINIMUM MVCR Requirements
 * verifiable contact information is linked to the record which is proportional to the context and method of consent provision.
 * Conformance for MVCR requires a minimum of: contact information, proportional linking, and minimum viable purpose specification
 
-## 6.3 Explicit Consent
-* The more explicit the consent record and receipt the more machine readable it becomes. 
-* All Core Fields are required, 
-* All the requirements of the previous + plus additional fields for the receipt to be usable for scale and compliance
-*  In addition, explicit consent is outlined in "Guidelines for Notification, Consent and Choice in Online Services for Consumers" which  http://www.meti.go.jp/press/2014/10/20141017002/20141017002a.pdf (which can be found translated on the Kanatar WIKI - put in link) 
+## 6.3 Explicit Consent (TBF After MINIMUM MVCR)
+* (Note: The more explicit the consent record and receipt the more machine readable it becomes.)  
+* All the requirements of the previous +  additional fields for the receipt to be deemed explicit for PII in ISO 29100
+*  explicit consent: "Guidelines for Notification, Consent and Choice in Online Services for Consumers" which  http://www.meti.go.jp/press/2014/10/20141017002/20141017002a.pdf (which can be found translated on the Kanatar WIKI - put in link) 
 
 FIELD CONFORMANCE: EXPLICIT MVCR
-- MUST - Core Purpose, Link to PP, Proportional Contact, Date & Time, Sensitive Y/N, Sharing Y/N, 
+- MUST -  
 - SHOULD - 
 - OPTIONAL - 
 - MAY - 
 - 
-## 6.4  compliance UK (example of compliance requirements)
+## 6.4  compliance UK (example of compliance requirements) (TBF After MINIMUM MVCR)
 
 * All previous requirements + explicit references to requirements and its satisfaction (presented as a X (or UK) profile for compliance)
-* Note compliant with current UK legislation (not GDPR)
+* Note example compliant with current UK legislation (not GDPR)
 * Machine readable is a requirement in order to automate the validation of wether or not a receipt is compliant. (Automated DYNAMIC CONSENT)
 * Conformance Guidance for Explicit Consent Compliance:
 the CR purpose is to provide a specific set of requirements for explicit consent, which can be mapped to legislation and regulation  to indicate/demonstrate compliance. The legislation notice requirements for auditing the explicit compliance of a consent receipt can be determined by looking at the jurisdiction and header of the receipt, and to use the purpose and sensitive sharing cateogries to consistently reference required legislation. 
@@ -520,9 +521,8 @@ Table to  map notice compliance requirements to specific consent legislation/pol
 | medical records | Health | UK | DPA | Register at Data Controller Registry; include criminal records as sensitve data, map PI to data subject,   | notice for use, store Encyrpted, log access,   | -- | --|
 
 
-
 FIELD CONFORMANCE: COMPLIANT MVCR
-- MUST - Core Purpose, Link to PP, Proportional Contact, Date & Time, Sensitive Y/N, Sharing Y/N, 
+- MUST - 
 - SHOULD - 
 - OPTIONAL - 
 - MAY - 
