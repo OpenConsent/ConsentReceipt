@@ -1,4 +1,4 @@
-# Consistent Record of Consent - Minimum Viable Consent Receipt (MVCR) #
+# Minimum Viable Consent Receipt (MVCR) for a Consistent Record of Consent - #
 
 | Document Information  | |
 | ------	| ------	|
@@ -123,14 +123,14 @@ Terminology herein leverages where possible,  [ISO/IEC 29100:2011 "Information T
 * **Explicit Consent Reference**  
   is described by a direct link  to a law or authoritative policy ; consent regulation, privacy principles, other consent standards, or industry best practices.  
 
-* **EXPRESS consent** - 
-    has a history, it refers to the context of a PI Subject making an unambigous agreement as to consent.  so it is conceivable that a consent can be  expressed  and contain explicit consent references to also be compliant  (see council of Europe 5.4.4 https://goo.gl/JGPX2Y)
+* **EXPRESS Consent** 
+	Refers to the context of a PI Principal making an unambigous agreement  to consent.  It is conceivable, in the context of this specification, that a consent can be  expressed  and contain explicit consent references to also be compliant  (see council of Europe 5.4.4 https://goo.gl/JGPX2Y)
 
 * **Explicit Purpose:** 
-    Explicit is  used in this specification for how purpose is explicitly specified,  each purpose, contains a set of data attributes, with an explicit consent preference, i.e.  a  single purpose with a single check box.
+    A term used to reference how a purpose is specified,  each purpose is contained in a purppose category and is  explicit if it conincides with a consent for that specific purpose category.   i.e.  a  single purpose with a single check box.
 
-* **Explicit sharing:**  
-    The degree  that sharing is specified can be explicit.  This would include listing the 3rd party, a link to the contract in which the 3rd party has agreed to abide by this consent, and the duration of sharing can be explicitly specified
+* **Explicit 3rd Sharing:**  
+    The degree  that sharing is specified can be explicit.  In the specification, the sharing purpose category SHOULD be listed, as well as the the third party at a minimum. But, this can further be explicitly specified with options that include sharing contract, preference, and termination fields, which are beyond minimum requirements.  
 
 * **Individual**
 	   see PII Principal in ISO/IEC 29100:2011.
@@ -145,7 +145,7 @@ Terminology herein leverages where possible,  [ISO/IEC 29100:2011 "Information T
 	   Is a record of consent provided to the person providing consent for personal information sharing as a receipt.
 
 * **OPT-OUT Consent**
-    An example of 3 types of consent currently defined. Opt-Out is implied consent mechanism onlie. 
+	An example of 3 types of consent currently defined. Opt-Out is implied consent mechanism online that is used for an array of purpose specifications. 
 
 * **Personal Information (PI)**
 	   See Personally Identifiable Information (PII) in ISO/IEC 29100:2011
@@ -161,7 +161,7 @@ Terminology herein leverages where possible,  [ISO/IEC 29100:2011 "Information T
     natural person to whom the PI relates, is used for explicit consent in which the person is identified, Principal ID,  is the primary (often principal choses) identifier for linking automatic processing to a persona, and/or collection of attributes provided at point of consent, which are used to identify the PI Subject are shared.
 
 * **PI PRINCIPAL** (duplicate review)
-	 refers to the personal data shared by a person to a company for  which the individual provides consent for its use.   See PII Principal in in ISO/IEC 29100:2011, also data subject (EC directive), consenter, PII PRINCIPLE in NIST 800, this refers to person providing their own personal information.
+	 refers to the personal data shared by a person to an organisation for which the individual provides consent for PI use.   See PII Principal in in ISO/IEC 29100:2011, also data subject (EC directive), consenter, PII PRINCIPLE in NIST 800, this refers to person providing their own personal information.
 
 * **PII Confidentiality Impact Levels**
     These refer to low, medium, high confidentiality, or Not Applicable; which correspond to NIST controls sp800-122 and can be use for the organisation, the individual and the developer to ascertain on scale the level of risk and security.
@@ -363,7 +363,6 @@ Once consent is provided and parties identified, this consent can be bound to te
 
 An online website - consent receipt could range from minimum legal requirements in the UK 
 
-
 2. The Recommended CISWG: MINIMUM MVCR for ONLINE Consent Receipts
 
 ##### Header Example
@@ -413,7 +412,7 @@ An online website - consent receipt could range from minimum legal requirements 
   #### Purpose Specification Example (TBF)####
 
   | Service | Purpose |  Purpose Description | Purpose Preference | Purpose Termination |
-  | ------ | ------ | :------: | :------: |
+  | ------ | ------ | :------: | :------: | :------: | 
   | __Acme Web Site__ | Core Function | Website Services | NO | when account deleted |
   | __Acme Web Site__ | marketing | Contact data use  | NO | when service member (life of membership)  |
   | __Acme Web Site__ | Personalized Experience | profiling | YES | when leave location  |
