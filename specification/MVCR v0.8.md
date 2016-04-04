@@ -71,21 +71,20 @@ The scope of the MVCR focuses on the provision of the receipt, which includes ho
 - Documenting the explicit and non-explicit sharing of personal data
 - Documenting Sensitive PI Categories 
 
-Viable, in this scope, means a record of consent that can be retained and used separately by both issuer (PI Controller) and recipient (PI Subject) as proof of consent.
+Viable, in this scope, means a record of consent that can be retained and used separately by both issuer (PI Controller) and recipient (PI Principal) as proof of consent.
 
-### 2.2 MVCR Conformance Profiles
+### 2.2 MVCR Modes of Conformance 
 
-The term 'minimum' in the MVCR refers to the least amount of data required to make an open, compliant, and explicit consent record viable for a number of different contexts, defined by:
-* A) the PI Controller, implied and self-asserted (MINIMUM MVCR)
-* B) and/or Explicit Consent - defined by explicit reference to authoritative policy i.e. regulation,
-* C) and/or Explicit Sharing of PI to specified 3rd Party, ref contract of sharing - defined by scope requirements
-* D) and/or defined by scope, i.e. attribute level permissions - defined by controller, regulation,  PI Subject (Like UST), regulation and or a specific technical requirement.
+The term 'minimum' in the MVCR refers to the least amount of data required to make a consent receipt  open, compliant, and explicit consent record viable for a number of different contexts, defined by:
+* A) MINIMUM MVCR - Defned by the PI Controller, implied and self-asserted 
+* B) Explicit MVCR -  is  in reference to  ISO 29100 Framework section 4, defined by being a machine readable Explicit consent
+* C) Compliant MVCR - Explicit consent mapped to notice and consent regulatory requirements and privacy controls; Typically Trust frameworks and trust network operators 
 
-The receipt has the Consent Type field in which the scope can be defined as 'MINIMUM MVCR' 'Explicit', 'Compliant' , Consent Type.   Explicit indicates conformance with the MVCR explicit requirements, complaint is for linking to jurisdictional or domain specific notice requirements, and 3rd party explicit is for granular sharing consent requirements.
+The receipt has the Consent Type field in which the scope can be defined as 'MINIMUM MVCR' 'Explicit', 'Compliant' , Consent Type.   
 
-MINIMUM MVCR is for all types of implied or expressed consent, but has no compliance claims besides proof of consent. Providing flexibility for implementation and adoption without the burden of legal compliance obligations for the implementor. (see conformance table) A consent type can be created as a profile and externally referenced here.  i.e. published on Customer Commons  for a UST Terms Set.
+MINIMUM MVCR is intended to map to  all legacy types of implied or expressed consent and has no compliance claims besides proof of consent.  Providing flexibility for implementation and adoption without the burden of legal compliance obligations for the implementor. (see conformance table) A consent type can be created as a profile and externally reference .  i.e. UST Defined Consent Type  - NO 3rd PARTY SHARING 
 
-For the MINIMUM MVCR ONLY goto section 6.2. MINIMUM MVCR CONFORMANCE GUIDE
+For the MINIMUM MVCR ONLY goto section 6.2. MINIMUM MVCR CONFORMANCE, GUIDEANCE & EXAMPLE
 
 (Editors Note: v0.8 has  discussed and is close to a consensus for MINIMUM MVCR, which has been the focus of the consent receipt generator (http://api.consentreceipt.org) and the testing for drafting this v0.8.  (put in URL of Kantara demo - here )
 
@@ -190,7 +189,6 @@ Terminology herein leverages where possible,  [ISO/IEC 29100:2011 "Information T
   * Other
   - Criminal Record/Justice Proceeding (UK)
 
-
 ## 5. MVCR Record Format: Section & Fields
 
 The MVCR is broken down into 6 sections for usability and to aid in understanding the core function. The 5 sections are:
@@ -222,7 +220,7 @@ This section identifies the individual and company that is accountable for data 
 
 | Receipt Field Label | Receipt Field Format | Data Field Name | Data Type | Example Data Input | Receipt Field Description | Purpose of Field  | Linked |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| PI Controller | Name of formal entity | controller | object | {"on_behalf": true, "contact": "Dave Controller", "company": "Data Controller Inc.", "address": "123 St., Place", "email": "dave@datacontroller.com", "phone": "00-123-341-2351", "other": }  | name of the data controller | used to identify controller  | linked to controller record or domain |
+| PI Controller | Name of processing entity | controller | object | {"on_behalf": true, "contact": "Dave Controller", "company": "Data Controller Inc.", "address": "123 St., Place", "email": "dave@datacontroller.com", "phone": "00-123-341-2351", "other": }  | name of the data controller | used to identify controller  | linked to controller record or domain |
 | On Behalf | yes or no | on_behalf | boolean | true | used to identify the delegate of PI Processor entity acting on behalf of stated organization | used to identify processor if different than controller  | linked |
 | Contact Name| [First & Last Name] | contact_name | Jon Doe | contact of pi controller who is processing data | to identify name of personal responsible in accordance with requirements |not linked |
 | Contact Address | house #, st, place, country, post code | Physical Address | address | "123 St., Place" | physical address of PI controller | to ascertain location and jurisdiction of responsible entity |  Linked to copy/paste address |
@@ -285,11 +283,11 @@ This conformance table specifies requirements to fulfill scope as defined.
 | 1 | _Jurisdiction_ | SHOULD | MUST | MUST |  |  |
 | 2 | _Consent Time Stamp_ | MUST |   MUST| | |
 | 3 | _Consent Type_ | SHOULD | MUST |  |   |
-| 4 | _Collection Method_ |  | MAY | | |
+| 4 | _Collection Method_ | SHOULD | MAY | | |
 | 5 | _Consent ID_ | MUST |  | | |
 | 6 | _PI Principal ID_ | MUST |  | | |
-| 7 | _PI Controller_ | MUST |
-| 8 | _On Behalf_ | MUST |
+| 7 | _PI Controller_ | MUST | | | |
+| 8 | _On Behalf_ | MUST | | | |
 | 9 | _Contact Name_ | MUST 1 of 9-13 |
 | 10 | _Contact Address_ | MUST 1 of 9-13 |
 | 11 | _Contact Email_ | MUST 1 of 9-13 |
@@ -316,9 +314,11 @@ This conformance table specifies requirements to fulfill scope as defined.
 
 All conformance profiles culminate, in that the MINIMUM MVCR is used to build the EXPLICIT MVCR, which is used to create a COMPLIANT MVCR, all of which is used to develop SCOPE(s).
 
-The MINIMUM MVCR can be used to create any type of consent record as long as it is not for explict compliance. 
+
 
 ### 6.2  MINIMUM MVCR :
+
+The MINIMUM MVCR can be used to create any type of consent record as long as it is not for explict compliance for sensitive data.
 
 The  Objective of the MINIMUM MVCR is to:
 * 1. Provide Proof of Consent
@@ -329,7 +329,7 @@ The MINIMUM MVCR conformance requirements are intended to make a consent transac
 
 As a result, iterative changes or consent preferences can be developed and collected an managed on consent transaction or on a consent change management basis, as long as it is linked to the original consent and logged.
 
-To achieve conformance the MUST,  SHOULD, and OPTIONAL fields extend a receipt in the MINIMUM MVCR.
+To achieve conformance the MUST, SHOULD, and OPTIONAL fields extend a receipt in the MINIMUM MVCR.
 
 Without providing details about what is sensitive, the consent record can be used with a very low level of liability, and MINIMUM MVCR is not meant to be used for demonstrating MVCR regulatory compliance.
 
@@ -359,7 +359,7 @@ FIELD CONFORMANCE: MINIMUM MVCR
 | __Consent ID:__ | C159A448-A69B-44BF-BFCE-6403FB5D06EE |
 | __Principal ID :__ | [roadrunner@fictional.url](mailto:roadrunner@fictional.url) |
 
-#### Header Guidance Notes -  TBF
+##### Header Guidance Notes -  TBF
 *  Jurisdiction -
 * Consent Time Stamp
 * Consent type guidance: used for explicit and non-explicit, or defined type, an can be linked to an external consent type profile for the  receipt.  (or N/A in the case where collection is a legal requirement)
@@ -369,7 +369,7 @@ FIELD CONFORMANCE: MINIMUM MVCR
 * Principal ID: is the primary personal information (PI)  identifier for linking automatic processing, which is normally volunteered and chosen by the principal.
 * Additional Should Fields Are included as proportional to method of collection.
 
-#### PI Controller Data Example ####
+##### PI Controller Data Example ####
 
 | Field | Contents|
 | ------:	| ------	|
@@ -382,18 +382,15 @@ FIELD CONFORMANCE: MINIMUM MVCR
 | __Contact Other:__ | @twitter |
 | __Privacy Policy:__ | [ACME Privacy Policy](https://www.acme.fictional.url/privacy.policy) |
 
-#### Guidance Notes
+##### Guidance Notes
 * PI Controller - that is accountable for compliance over the management of PII, A PII in ISO 29100 (for explicit consent) controller determines why (purpose) and how (means) the processing of PII takes place. The PII controller shall ensure adherence to the privacy principles during the processing of PII under its control (e.g., by implementing the necessary privacy controls). There may be more than one PI(I) controller for the same PI(I) set or set of operations performed upon PI(I). In this case the different PI(I) controllers SHOULD be listed for MINIMUM MVCR, MUST be listed for Explicit CONSENT SHARING .
 * Contact informantion used should be proportional to the method of collection and context.  All contact infomratin should be verifiable at the point of reciept provision
-
-* On Behalf
-	is used to delegate data controller and or data processing, which maps to the UK's as acting on behalf of the data controller, a third party analytics service would be a processor on behalf of the controller.  When the site operator is acting on behalf of the Data Controller
+* On Behalf - is used to delegate data controller and or data processing, which maps to the UK's as acting on behalf of the data controller, a third party analytics service would be a processor on behalf of the controller.  When the site operator is acting on behalf of the Data Controller
 * Contact Name - in some jurisdictions the name of the person responsible for processing PII is required
-* Contact Address
+* Contact Address - (if different from location of consent) 
 * Contact Email
 * Contact Phone
-* privacy policy link
-	The privacy policy link is to the current policy, if there are materials changes to this policy then a new consent is required for sensitive data categories and various trust network requirements. (note: can be used for compliance- privacy policy can be attached to the receipt payload.
+* privacy policy link - The privacy policy link is to the current policy, if there are materials changes to this policy then a new consent is required for sensitive data categories and various trust network requirements. (note: can be used for compliance- privacy policy can be attached to the receipt payload.
   
   #### Purpose Specification Example (TBF)####
 
@@ -410,9 +407,9 @@ FIELD CONFORMANCE: MINIMUM MVCR
    Repeat the  creation of purpose, attached to a purpose category or not,  set of fields as many times as necessary to set out the purpose(s) for collection
 
   * **Purpose Preference**
-    -  in context of purpose limitation, minimum data collection for purpose, purpose termination and purpose preference are linked. A preference once turned off should correspond to a sharing or data use operation that can be captured as a scoped using Section 6 Scopes and linked to termination of purpose;
+    -  is a secondary purpose that is not core to the service, which can be turend on and off without withdrawing consent for the service.   A preference SHOULD correspond to a sharing scope  and linked to termination of purpose;
 
-  * **Purpose Termination** - defines the duration of consent and its method of termination.  Purpose Preference and Purpose termination are designed to be used in tandem and are put into Scope(s) Section (if machine readability is required)
+  * **Purpose Termination** - defines the duration of consent and/or its condition of termination.  Purpose Preference and Purpose termination are designed to be used in tandem and are put into Scope(s) Section (if machine readability is required)
 
   #### PII Example(s) ####
   | Field Name | Example |
