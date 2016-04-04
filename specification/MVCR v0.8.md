@@ -441,9 +441,9 @@ An online website - consent receipt could range from minimum legal requirements 
   The example below is for an on-line pharmacy that provides a delivery service
 
   | Category | Description | Sensitive | Confidential | Explanation |
-  | ------ | ------ | :------: | :------: |
+  | ------ | ------ | :------: | :------: | :------: |
   | __Browser Data__ | Information revealed by the browser to the web server | False | Low | IP address is PII but not sensitive |
-  | __Address__ | Physical address for deliveries | False | Medium |
+  | __Address__ | Physical address for deliveries | FALSE | Medium | used for billing  | 
   | __Health__ | Personal Health Information| True | HIGH | Specified by regulation in many jurisdictions |
   | __Financial__ | Credit Card or payment information | True | HIGH | Specified by regulation in many jurisdictions |
 
@@ -462,31 +462,30 @@ An online website - consent receipt could range from minimum legal requirements 
 
     The following example is from an online financial institution
 
-    |  Service | Third Party | Purpose | Explanation |
+    |  Service | Third Party | Sharing Purpose | Sharing Purpose Category | Explanation | 
     | ------ | ------ | :------: | :------: |
-    | service  name | , data controller, purpose category, pi category | with 3rd party name | for pi_attributes | terminated by (duration of service length) |  requiring [x] scopes | linked to contract/policy governing sharing | |
+    | Tax Assist | taxassist.com | tax filing |  Financial PI | to submit taxes | for pi_attributes | 
     | __Financial__ | Tax Authority  | Required by Law Enforcement or Government | Financial institution required to disclose personal financial information for tax purposes |
-    | __Contact__ | Advertising Network| Marketing Third Parties | Ad supported web site |
+    | Marketing Accountant Services  | Accountant Network |  Contact Details | Marketing Third Parties - Ad supported web site |
 
 **Note:** PII provided to vendors or suppliers to the PII Controller that are providing data processing services of PII to the PII Controller would not normally be considered disclosure or information sharing |
 
     #### Sharing 3rd Party Guidance
     
-    * Repeat the following set of fields as many times as necessary to identify third parties
+    * Repeat the set of fields as many times as necessary to identify third parties
     * Termination of Sharing - includes duration, location, specified time,
     * (note: is sharing a proxy a security concern? )
     * *Note:** PII provided to vendors or suppliers to the PII Controller that are providing data processing services of PII to the PII Controller would not normally be considered disclosure or information sharing |
     
     ####  Scope Example
 
-    | Scope  | Purpose | Example | Scope Reference (linked) | Purpose Category |  PI Category | Description | Confidentiality/Audience |
-    | ------ | ------ | :------: | :------: | :------: | :------: |
-
-    | Technical | share | _network data | link to data list | security | _Browser Data__, __IP Address__. | medium |
-    | Technical | Collect | ,  __Health__, __Financial__  | Information revealed by the browser to the web server | Read |  IP address is PII but has low confidentiality |
-    | | Physical address for deliveries | Read | |
-    | | Personal Health Information| Read + encrypted | linked to notice |
-    |  | Credit Card or payment information | Read + encrypted + specified 3rd party |  |
+    | Scope  | Purpose | Example |  Purpose Category |  PI Category | Scope Reference (linked) | Scope Description | 
+    | ------ | ------ | :------: | :------: | :------: | :------: | :------: | 
+    | Technical | share | _network data | link to data list |  _Browser Data__, __IP Address__. | security | READ access | medium |
+    | Technical | Collect | ,  __Health__, __Financial__  |  health records | secuirty | Read |  IP address is PII but has low confidentiality |
+    | | Physical address for deliveries | Read | | | | | |
+    | | Personal Health Information| Read + encrypted | linked to notice | | | | 
+    |  | Credit Card or payment information | Read + encrypted + specified 3rd party |  | | | | |
 
     #### Scope Guidance
     
@@ -496,7 +495,7 @@ An online website - consent receipt could range from minimum legal requirements 
 
 
 ### Implementation Guidance
-(TBR: INPUT from JOHN and OLiver)
+(TBR: INPUT and Review from JOHN and OLiver)
 * Each purpose MUST link the service name to at least one explicit and specific purpose.
 * Each purpose SHOULD contain an external reference to an on and off preference for this purpose.
 * Each purpose MAY contain additional options. Some examples include a trust mark icon or link, a data retention specification, or a link to the purpose description in the policy.
@@ -515,7 +514,7 @@ MINIMUM MVCR Requirements
 * All the requirements of the previous +  additional fields for the receipt to be deemed explicit for PII in ISO 29100
 *  explicit consent: "Guidelines for Notification, Consent and Choice in Online Services for Consumers" which  http://www.meti.go.jp/press/2014/10/20141017002/20141017002a.pdf (which can be found translated on the Kanatar WIKI - put in link)
 
-FIELD CONFORMANCE: EXPLICIT MVCR
+FIELD CONFORMANCE: EXPLICIT MVCR 
 - MUST -
 - SHOULD -
 - OPTIONAL -
@@ -547,7 +546,8 @@ FIELD CONFORMANCE: EXPLICIT MVCR
 * Note: The use of these features make compliance claims when used
 
 Note:  The receipt MUST be selected as explicit consent, as well as determine the functional notice and consent requirements to be compliant.  These can then be used to specify the such the 'other' field MUST NOT be present when the explicit consent type is selected.  Requirements are supplied by jurisdiction and industry and is out-of-scope of the MINIMUM MVCR consent receipt specification.)
-## 6.4  compliance UK (example of compliance requirements) (TBF After MINIMUM MVCR)
+
+## 6.4  compliance UK (example of compliance requirements) (TBF)
 
 * All previous requirements + explicit references to requirements and its satisfaction (presented as a X (or UK) profile for compliance)
 * Note example compliant with current UK legislation (not GDPR)
