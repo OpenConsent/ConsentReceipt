@@ -46,10 +46,10 @@ This document is subject to the [Kantara IPR Policy - Option Patent & Copyright:
 	* 5.5.	Information Sharing
 	* 5.6.	Scope(s)
 6. MVCR Conformance and Compliance
-6.1 Global Guidance 
-6.2 MINIMUM MVCR Conformance Guidance & Example 
-6.3 EXPLICIT MVCR (TBF)
-6.4 COMPLIANT MVCR (TBF) 
+	* 6.1 Global Guidance 
+	* 6.2 MINIMUM MVCR Conformance Guidance & Example 
+	* 6.3 EXPLICIT MVCR (TBF)
+	* 6.4 COMPLIANT MVCR (TBF) 
 7. Appendix A: ISO Terms - mapping and use in the MVCR
 8. Appendix B: Consent Type -
 9. Appendix C: Purpose Categories (or purpose type)
@@ -135,6 +135,9 @@ Terminology herein leverages where possible,  [ISO/IEC 29100:2011 "Information T
 * **Individual**
 	   see PII Principal in ISO/IEC 29100:2011.
 
+* **Linked**
+	In this specification, this means that there is a field that linked to an external source, icon, and or reference structure.
+
 * **3rd Party Sharing**
 	   A statement or series of statements that set out what information is shared with third parties and for what purpose(s).
 
@@ -168,7 +171,7 @@ Terminology herein leverages where possible,  [ISO/IEC 29100:2011 "Information T
   In the MVCR the purpose is intended to specify the context of use.
 
 * **Context of Use**
-      Organizations should evaluate the context of use to provide the purpose for which the PI is collected, stored, used, processed, disclosed, or disseminated.  The context of use may cause the same PI data elements to be assigned different PII confidentiality impact levels based on their use.  For example, suppose that an organization has two lists that contain the same PI fields (e.g., name, address, phone number).  The first list is people who subscribe to a general-interest newsletter produced by the organization, and the second list is people who work undercover in law enforcement.  If the confidentiality of the lists is breached, the potential impacts to the affected individuals and to the organization are significantly different for each list.
+      Organisations should evaluate the context of use to provide the purpose for which the PI is collected, stored, used, processed, disclosed, or disseminated.  The context of use may cause the same PI data elements to be assigned different PII confidentiality impact levels based on their use.  For example, suppose that an organization has two lists that contain the same PI fields (e.g., name, address, phone number).  The first list is people who subscribe to a general-interest newsletter produced by the organization, and the second list is people who work undercover in law enforcement.  If the confidentiality of the lists is breached, the potential impacts to the affected individuals and to the organization are significantly different for each list.
 
 * **Sensitive Personal Information (PI) Categories**
   All Sensitive Information Categories require Explicit Consent 
@@ -189,7 +192,9 @@ Terminology herein leverages where possible,  [ISO/IEC 29100:2011 "Information T
 
 ## 5. MVCR Record Format: Section & Fields
 
-The MVCR is broken down into 6 sections for usability and to aid in understanding the core function. The 5 sections are:
+The MVCR is broken down into 6 sections for usability and to aid in understanding the core function. 
+
+The 6 sections are:
 
 1.	Consent Receipt Header
 2.	PI Controller Information
@@ -201,7 +206,7 @@ The MVCR is broken down into 6 sections for usability and to aid in understandin
 
 ### 5.1 Header
 
-The purpose of this section is to set out the meta-data for the consent transaction. This section will contain the following fields:
+The purpose of this section is to set out administrative fields for the consent transaction. This section contains the following fields:
 
 | Receipt Field Label | Receipt Field Format | Data Field Name | Data Type | Example Data Input | Receipt Field Description | Purpose of Field  | Linked |
 | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -224,7 +229,7 @@ This section identifies the individual and company that is accountable for data 
 | Contact Address | house #, st, place, country, post code | Physical Address | address | "123 St., Place" | physical address of PI controller | to ascertain location and jurisdiction of responsible entity |  Linked to copy/paste address |
 | Contact Email | Email Address | email | string. Email address | jon@datacontroller.com | contact email address | contact in context of consent to manage consent preferences | linked to email address |
 | Contact Phone | Phone Number | phone | string. Phone number |  00-000-000-0000 | contact phone number |  a contact field  | Linked |
-| Contact Other | Free text | contact_other | string | @twitter | a contact field  |  for social media or other communication channel | Linked directly |
+| Contact Other | Free text | contact_other | string | @twitter | a contact field  |  for social media or other communication channel | Linked directly to communication channel where possible |
 | Privacy Policy | Link to policy | privacy_policy |  http://link.com/privacypolicy | is a link to the current privacy policy |  can be captured and attached to receipt |  Linked |
 
 ### 5.3 Purpose(s)
@@ -233,7 +238,7 @@ This section specifies the purpose(s) for which the PI Controller is collecting 
 
 | Receipt Field Label | Receipt Field Format | Data Field Name | Data Type | Example Data Input | Receipt Field Description | Purpose of Field  | Linked |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| Service | name of service | up to three words | service | "string" | marketing | the name of the service that requires personal information  | used to identify context of purpose | Optional Linked to a description of the service - or icon  |
+| Service Name | name of service | up to three words | service | "string" | marketing | the name of the service that requires personal information  | used to identify context of purpose | Optional Linked to a description of the service - or icon  |
 | Purpose | Description of purpose | Required | Should be explicit and specific as reasonably necessary to fulfill the Service |
 | Purpose Category | short description | purpose_category | string | for marketing | The primary purpose will be necessary, but may not be the only necessary purpose. PII subject should be able to provide consent directives to opt out of purposes not identified as necessary . |
 | Purpose Preference (Y/N) |  preference | preference | yes | this is a yes no flag | for indicating if this purpose is required or  a secondary purpose separate from the main operational purpose | linked to preference management settings |
@@ -253,19 +258,18 @@ This section specifies personal information categories, attributes, PI confident
 | Sensitive Data Y/N | text | yes or no | sensitive | string | Yes | indicates if data is sensitive or not sensitive | used to indicate if consent categories: (see sensitive categories) | should be linked to a notice about what is sensitive |
 | Sensitive Information Category | list of categories with check boxes | sic | string | "Health" | used in the specification to indicate further notice  requirements are needed and the receipt has compliance claims | not linked |
 
-### 5.5 Information Sharing (TBF)
+### 5.5 3rd Party Sharing (TBF)
 
 The purpose of this section is to provide the PII Subject with information about how their information is shared with third parties. In the MVCR this is a Y/N (binary on and off) flag, and if On, then the 3rd parties, the specified purpose and at the minimum the data categories shared may be listed here.
 
 | Receipt Field Label | Receipt Field Format | Data Field Name | Data Type | Example Data Input | Receipt Field Description | Purpose of Field  | Linked |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | 3rd Party Sharing Y/N|  Sharing "" | sharing | string | YES | a yes no flag that indicate if PI is being shared | indicate if sharing is occurring for the purposes specified in the receipt | not linked |
-| Third Party | Third party that receives the data | Required | SHOULD be specific, MAY be generic |
-| Purpose | Purpose (only from list above) for sharing data | Required | **Note:** PII provided to vendors or suppliers to the PII Controller that are providing data processing services of PII to the PII Controller would not normally be considered disclosure or information sharing |
-| Purpose Category |
-| PI Category |
-| Termination of Sharing|
-| contract/policy |
+| Third Party | Name of Organisation (Text) | 3rdp | string | Bob's Website | Third party that receives the PI | to identify data controller and purpose | SHOULD be Linked |
+| Sharing Purpose | select from existing purpose or purpose category field input |  sh_purpose | string | core service | to identify reason for sharing | not linked | 
+| Sharing Purpose Category | select from existing purpose category field input | sh_purpose_cat | string | core service | to identify expectation  for sharing | not linked | 
+| Termination of Sharing | | | |
+| Sharing contract/policy | | | |
 
 ### 5.6  Scope(s)   
 |  Scope |  scope name | PI Category | PI Purpose |  PI Preference | Permission | Data Type | Example  Data Input | Scope Description | Scope Purpose  | Linked |
@@ -310,41 +314,52 @@ This conformance table specifies requirements to fulfill scope as defined.
 
 ## 6.1. Global Guidance
 
-All conformance profiles culminate, in that the MINIMUM MVCR is used to build the EXPLICIT MVCR, which is used to create a COMPLIANT MVCR, all of which is used to develop SCOPE(s).
-
-
+* All conformance profiles culminate, in that the MINIMUM MVCR is used to build the EXPLICIT MVCR, which is used to create a COMPLIANT MVCR, all of which is used to develop SCOPE(s).
+* All of the record fields should be presented with the consent receipt label field on the receipt which is viewalbe by the receipt receipient.   
+* The receipt can be provisioned in any way that is feasible according to the context. 
+* Propotionailty refers to the context (or medium) of the consent, method of collection, and to how the fieds are linked .  
+	* If it is verbal, then a written receipt with a phone number to the PI Controller is sufficent to make a MINIMUM MVCR
+	* If it is online, Like Bob & Alice website use case, then additional fields are required to make a MINIMUM MVCR
+	* Different context have different expectations, and these can be documented by Consent Type
+* 
 
 ### 6.2  MINIMUM MVCR :
 
 The MINIMUM MVCR can be used to create any type of consent record as long as it is not for explict compliance for sensitive data.
 
-The  Objective of the MINIMUM MVCR is to:
-* 1. Provide Proof of Consent
-* 2. contact details to communicate and manage consent once it is provided, that are proportionate to context of consent provision.
+The MUST Requirements  for the MINIMUM MVCR is to:
+* 1. Provide Proof of Consent in form of a dated Receipt
+* 2. Provide Contact details to communicate and manage consent once it is provided, that are proportionate to context of consent provision.
 
 ### MINIMUM MVCR Conformance
 The MINIMUM MVCR conformance requirements are intended to make a consent transaction record into a receipt, and to provide people with this receipt as to make this record Open in both a common format and a common practice. Open functionally meaning that not only does the individual and organisation both have a record of the consent, the receipt can be used to communicate about the specific  consent during and after the consent has been provided.
 
 As a result, iterative changes or consent preferences can be developed and collected an managed on consent transaction or on a consent change management basis, as long as it is linked to the original consent and logged.
 
-To achieve conformance the MUST, SHOULD, and OPTIONAL fields extend a receipt in the MINIMUM MVCR.
+To achieve conformance for consent context (or method of collection), the MUST, SHOULD, and OPTIONAL fields extend a receipt in the MINIMUM MVCR.
 
 Without providing details about what is sensitive, the consent record can be used with a very low level of liability, and MINIMUM MVCR is not meant to be used for demonstrating MVCR regulatory compliance.
 
 Once consent is provided and parties identified, this consent can be bound to terms of services that require access and use of that PI.
-FIELD CONFORMANCE: MINIMUM MVCR
-- MUST - PI Controller, Core Purpose, Link to PP, Proportional Contact, Date & Time, Sensitive Y/N, Sharing Y/N,  Principal ID
-- SHOULD - Jurisdiction, Consent Type, Collection Method, Service Name, Purpose Category, Purpose Termination, Sensitive Information y/n, 3rd Party Sharing y/n,
-- OPTIONAL - PI Categories, Purpose Preference, Confidentiality Level, Sharing Purpose, Sharing Contract, Sharing, Scope(s)
-- MAY -
-- MUST NOT - Sensitive Personal Information Categories
+
+### FIELD CONFORMANCE: MINIMUM MVCR
+| - MUST - | -  PI Controller, Core Purpose, Link to PP, Proportional Contact, Date & Time, Sensitive Y/N, Sharing Y/N,  Principal ID |
+| __SHOULD__ | - Jurisdiction, Consent Type, Collection Method, Service Name, Purpose Category, Purpose Termination, Sensitive  Information y/n, 3rd Party Sharing y/n |
+| __OPTIONAL__ |  PI Categories, Purpose Preference, Confidentiality Level, Sharing Purpose, Sharing Contract, Sharing, Scope(s)
+| MAY |
+| MUST NOT | Sensitive Personal Information Categories | 
 
 #### MiNIMUM MVCR EXAMPLE & Guidance 
+
  A hand written consent receipt for Verbal Consent would be:
 *-On Date, Principal ID has provided verbal consent to, PI Controller, to use this PI Category, for membership, in accordance with printed privacy policy.  All issues or questions can be addressed by calling. PI Controller at Ph#.  (signed: both parties)
 
-* For Bob's website: a minimum might look like
-| timestamp | alice@subject.com | Bob bob@bob.com |   for new account |@bob | Not Sensitive | NO Sharing |
+* For website based consent: 
+
+1. MINIMUM MVCR EXMAPE Bob's website: a minimum MVCR for very simple low confidentiality sharing of PI:  
+| timestamp | alice@subject.com | Bob bob@bob.com |   for new account |@bob | Not Sensitive | NO 3rd Party Sharing | Link to PP | 
+
+2. The Recommended CISWG: MVCR Example for ONLINE Consent
 
 ##### Header Example
 
@@ -437,7 +452,7 @@ FIELD CONFORMANCE: MINIMUM MVCR
     This is a yes/no question:  can be used for MVCR lite conformance  for non-explicit consent only - which mean its not used for compliance, in this context the "other" field is used to specify sensitivity.
 
     
-    #### Information Sharing Example
+    #### 3rd Party Sharing Example
 
     The following example is from an online financial institution
 
@@ -447,13 +462,15 @@ FIELD CONFORMANCE: MINIMUM MVCR
     | __Financial__ | Tax Authority  | Required by Law Enforcement or Government | Financial institution required to disclose personal financial information for tax purposes |
     | __Contact__ | Advertising Network| Marketing Third Parties | Ad supported web site |
 
+**Note:** PII provided to vendors or suppliers to the PII Controller that are providing data processing services of PII to the PII Controller would not normally be considered disclosure or information sharing |
+
     #### Sharing 3rd Party Guidance
+    
     * Repeat the following set of fields as many times as necessary to identify third parties
     * Termination of Sharing - includes duration, location, specified time,
     * (note: is sharing a proxy a security concern? )
     * *Note:** PII provided to vendors or suppliers to the PII Controller that are providing data processing services of PII to the PII Controller would not normally be considered disclosure or information sharing |
     
-
     ####  Scope Example
 
     | Scope  | Purpose | Example | Scope Reference (linked) | Purpose Category |  PI Category | Description | Confidentiality/Audience |
@@ -466,6 +483,7 @@ FIELD CONFORMANCE: MINIMUM MVCR
     |  | Credit Card or payment information | Read + encrypted + specified 3rd party |  |
 
     #### Scope Guidance
+    
     * Scope - refers to the Scope field, which can be used to add, PI Categories, technical requirements, sensitivity level, and security requirements
     * Repeat to create scope, or enter defined scopes for of following set of fields as many times as necessary identify i.e. for each third party |
     * Scope name, this is the technical action, or the PI category required
@@ -496,6 +514,7 @@ FIELD CONFORMANCE: EXPLICIT MVCR
 - SHOULD -
 - OPTIONAL -
 - MAY -
+- MUST NOT _ 
 
 * **Sensitive Data Categories**
   (Use only for Explicit Consent: used for creating compliance claims)
