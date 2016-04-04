@@ -273,12 +273,15 @@ The purpose of this section is to provide the PII Subject with information about
 
 ### 5.6  Scope(s)   
 |  Scope |  scope name | PI Category | PI Purpose |  PI Preference | Permission | Data Type | Example  Data Input | Scope Description | Scope Purpose  | Linked |
-| --- | --- | --- | --- | --- | --- | --- | --- |
+| --- | --- | --- | --- | --- | --- | --- | --- | -- | -- |
 | Technical/Legal | withdraw consent |  marketing | 3rd party sharing | YES | {purpose preference string} | data@subject.com, consent id, principal ID, purpose preference, terminate | technical scope | to terminate consent preference | linked to preference in profile |
 
 # 6. Conformance Table
 
-This conformance table specifies requirements to fulfill scope as defined.
+This  table specifies requirements to fulfill conformance for each mode as defined.
+MINIMUM MVCR is for all types of implied and mixed consent contexts.
+EXPLICIT MVCR is for standardised consent contexts
+COMPLIANT MVCR is for specific privacy controls as defined by regulation or policy
 
 | Field # | Field Name | MINIMUM MVCR  | Explicit MVCR | COMPLIANT MVCR UK | Scope |
 | ------ | ------ | -----| :------: | :------: | :------: |
@@ -316,12 +319,11 @@ This conformance table specifies requirements to fulfill scope as defined.
 
 * All conformance profiles culminate, in that the MINIMUM MVCR is used to build the EXPLICIT MVCR, which is used to create a COMPLIANT MVCR, all of which is used to develop SCOPE(s).
 * All of the record fields should be presented with the consent receipt label field on the receipt which is viewalbe by the receipt receipient.   
-* The receipt can be provisioned in any way that is feasible according to the context. 
+* The receipt can be provisioned in any manner that is feasible or expecte in according to the context. 
 * Propotionailty refers to the context (or medium) of the consent, method of collection, and to how the fieds are linked .  
 	* If it is verbal, then a written receipt with a phone number to the PI Controller is sufficent to make a MINIMUM MVCR
 	* If it is online, Like Bob & Alice website use case, then additional fields are required to make a MINIMUM MVCR
 	* Different context have different expectations, and these can be documented by Consent Type
-* 
 
 ### 6.2  MINIMUM MVCR :
 
@@ -353,13 +355,16 @@ Once consent is provided and parties identified, this consent can be bound to te
 
  A hand written consent receipt for Verbal Consent would be:
 *-On Date, Principal ID has provided verbal consent to, PI Controller, to use this PI Category, for membership, in accordance with printed privacy policy.  All issues or questions can be addressed by calling. PI Controller at Ph#.  (signed: both parties)
+1. MINIMUM MVCR EXMAPLE  
+| timestamp | alice@subject.com | Bob bob@bob.com |   verbal consent  |@bob | Not Sensitive | NO 3rd Party Sharing | Privacy Policy Read at point of Consent | 
 
-* For website based consent: 
 
-1. MINIMUM MVCR EXMAPE Bob's website: a minimum MVCR for very simple low confidentiality sharing of PI:  
-| timestamp | alice@subject.com | Bob bob@bob.com |   for new account |@bob | Not Sensitive | NO 3rd Party Sharing | Link to PP | 
+* For website based consent that context can vary widely depending on the METHOD of Collection and the sensitivity of the PI the MINIMUM changes as a result the CISWG is proposing on recommending a standard set of MINIMUM MVCR fields. 
 
-2. The Recommended CISWG: MVCR Example for ONLINE Consent
+An online website - consent receipt could range from minimum legal requirements in the UK 
+
+
+2. The Recommended CISWG: MINIMUM MVCR for ONLINE Consent Receipts
 
 ##### Header Example
 
@@ -563,8 +568,8 @@ FIELD CONFORMANCE: COMPLIANT MVCR
 - SHOULD -
 - OPTIONAL -
 - MAY -
--
- Example,  UK :  "Sensitive personal data" in the UK, is a bit different.
+
+Example,  UK :  "Sensitive personal data" in the UK, is a bit different.
 
 
 . (additional categories G & H needed to be added to Sensitive Data List as sensitive data that requires and explicit consent)  (see below)
@@ -614,7 +619,53 @@ Although, through the spec work it has become apparent that we can borrow from I
 (ref- FIPPs and  (ISO Principles - "Openness, transparency, notice") and Consent (ISO Principle 1 - "Consent and Choice") are fundamental privacy principles, addressed with this specification.
 (editors note:  - how should this be referenced and linked? )
 
-Demonstrator: 
+
+
+## 4.2. Appendix B: Purpose Categories
+
+The list below contains a list of purposes for which Personally Identifiable Information (PII) has been collected, based on input from subject matter experts. This list is neither normative, in that none of these are required purposes in any given context, nor complete, in that each purpose for each collection by each entity is contextually specific. This list is provided for convenience and demonstration purposes. It is the case that in many jurisdictions, the entity collecting PII for identified primary purposes may not use that same information without the consent of the PII Subject for secondary purposes, unless required to do so by law, and it is the case that the PII Subject should be able to deny consent for secondary purposes while still receiving core functions from the site, application or service.
+
+| # | Description | Short Code | Notes |
+| --- | --- | --- | --- |
+| 1. | To enable the entity to carry out the core functions of its site/app/services. | _Core Function_ | Default Purpose |
+| 2. | To provide contracted or requested services to the PII Subject. | _Contracted Service_ | |
+| 3. | To deliver contracted or requested services to the PII Subject. | _Delivery_ | |
+| 4. | Communicating with you about information or services you specifically request. | _Contact Requested_ | |
+| 5. | Providing you with a personalised experience of our site/app/service. | _Personalized Experience_ | |
+| 6. | Communicating with you about our other services you may be interested in. | _Marketing_ | |
+| 7. | Communicating with you about the services of third parties you may be interested in. | _Marketing Third Parties_ | |
+| 8. | Providing the information to third parties to deliver our services on our behalf. | _Sharing for Delivery_ | |
+| 9. | Providing the information to third parties to enable them to communicate with you about their own services you may be interested in. | _Sharing for Marketing_ | |
+| 10. | Providing the information to third parties to enable them to deliver or improve their own services to you. | _3rd Party Sharing for Core Function_ | |
+| 11. | Providing the information to third parties to enable them to deliver or improve their own services to others. | _3rd Party Sharing for ..._ | |
+| 12. | Complying with our legal obligations for record keeping. | _Legally Required Data Retention_ | |
+| 13. | Complying with our legal obligations to provide the information to law enforcement or other regulatory/government bodies. | _Required by Law Enforcement or Government_ | |
+| 14. | Protecting your vital and health interests. | _Protecting Your Health_ | |
+| 15. | Protecting our legitimate interests, yours or those of a third party. | _Protecting Our Interests_ | |
+| 16. | Measure or improve our performance or the delivery of our services. | _Improve Performance_ | |
+
+Other purposes may be uses as appropriate for the specific context of each jurisdiction and the site, application or service.
+
+## 4.3. Appendix C: Categories of Personal Data (explainers/examples)
+
+- 1.	Biographical – (General information like Name, DOB, Family info (mother’s maiden name), marital status. Historical data like educational achievement, general employment history.)
+- 2.	Contact – (Address, Email, Telephone Number, etc.)
+- 3.	Biometric – (Photos, fingerprints, DNA. General physical characteristics – height, weight, hair colour. Racial/ethnic origin or identification - whether self-identified or not)
+- 4.	Communications/Social – (Email, message and phone records – both content and metadata. Friends and contacts data.)
+- 5.	Network/Service – (Login ids, usernames, passwords, server log data, IP addresses, cookie-type identifiers)
+- 6.	Health – (Ailments, treatments, family doctor info. X-rays and other medical scan data)
+- 7.	Financial – (This includes information such as bank account, credit card data. Income and tax records, financial assets/liabilities, purchase/sale of assets history.)
+- 8.	Official/Government Identifiers – (This includes any widely recognised identifiers that link to individual people. Examples include National Insurance, ID card, Social security, passport and driving licence numbers, NHS number (UK). Just the numbers rather than data associated with them.)
+- 9.	Social Services/Welfare – (Welfare and benefits status and history)
+- 10.	Judicial – (Criminal and police records, inc. traffic offenses.)
+- 11.	Property/Asset – (Identifiers of property – license plate numbers, MAC addresses for mobiles, other device identifiers. Not financial assets. Could include digital assets like ebook and digital music data)
+- 12.	Human Resources – (Records held about employees/ members/ studentsP not elsewhere defined. Incl. HR records such as job title, attendance/disciplinary records. Salary - as opposed to income.)
+- 13.	Psychological/Attitudinal – (Inc. religious, political beliefs, sexual orientation and gender identity – though not genetic gender which is Biometric. Traits and personality measures or assessments, but not psychological health - which is health data).
+- 14.	Membership – (Political, trade union affiliations, any other opt-in organisational/group membership data - third party organisations only. Includes name of employer when not held by employer. Could extend to online platform membership. Some might be more sensitive than others – may want a separate category)
+- 15.	Behavioural – (Any data about the behaviour, habits or movements of an individual - electronic or physical. Location, browser/search history, web page usage (analytics), energy usage (smart meters), login history, calendar data, etc.)
+
+
+4.4 ### JSON Demonstrator:  (editors note: review for input into V0.8 required) 
 JSON example used for testing and developing from v0.7 to v0.8
 
 A demonstration version of the MVCR can be found on the [Example Consent Receipt Generator (CRG)](https://mvcr.herokuapp.com/) page. The example site also contains [API documentation](https://mvcr.herokuapp.com/doc/). This server contains a consent receipt generation API. The API consists of a single endpoint at [http://www.consentreceipt.org/mvcr/api](http://www.consentreceipt.org/mvcr/api). This endpoint accepts HTTP POST requests with input in the form of JSON (application/json) documents and returns output in the form of a signed JSON Web Token (application/jwt). The example site consists of two pages:
@@ -666,47 +717,4 @@ The following table sets out the fields contained in a JWT that meets the inform
 | scopes | string. space separated string values | What you’re allowed to do on the service (these can be tied to legal / business / technical layers) | read update |
 
 **Note:** Table incomplete. See [https://mvcr.herokuapp.com/doc/](https://mvcr.herokuapp.com/doc/)
-
-## 4.2. Appendix B: Purpose Categories
-
-The list below contains a list of purposes for which Personally Identifiable Information (PII) has been collected, based on input from subject matter experts. This list is neither normative, in that none of these are required purposes in any given context, nor complete, in that each purpose for each collection by each entity is contextually specific. This list is provided for convenience and demonstration purposes. It is the case that in many jurisdictions, the entity collecting PII for identified primary purposes may not use that same information without the consent of the PII Subject for secondary purposes, unless required to do so by law, and it is the case that the PII Subject should be able to deny consent for secondary purposes while still receiving core functions from the site, application or service.
-
-| # | Description | Short Code | Notes |
-| --- | --- | --- | --- |
-| 1. | To enable the entity to carry out the core functions of its site/app/services. | _Core Function_ | Default Purpose |
-| 2. | To provide contracted or requested services to the PII Subject. | _Contracted Service_ | |
-| 3. | To deliver contracted or requested services to the PII Subject. | _Delivery_ | |
-| 4. | Communicating with you about information or services you specifically request. | _Contact Requested_ | |
-| 5. | Providing you with a personalised experience of our site/app/service. | _Personalized Experience_ | |
-| 6. | Communicating with you about our other services you may be interested in. | _Marketing_ | |
-| 7. | Communicating with you about the services of third parties you may be interested in. | _Marketing Third Parties_ | |
-| 8. | Providing the information to third parties to deliver our services on our behalf. | _Sharing for Delivery_ | |
-| 9. | Providing the information to third parties to enable them to communicate with you about their own services you may be interested in. | _Sharing for Marketing_ | |
-| 10. | Providing the information to third parties to enable them to deliver or improve their own services to you. | _3rd Party Sharing for Core Function_ | |
-| 11. | Providing the information to third parties to enable them to deliver or improve their own services to others. | _3rd Party Sharing for ..._ | |
-| 12. | Complying with our legal obligations for record keeping. | _Legally Required Data Retention_ | |
-| 13. | Complying with our legal obligations to provide the information to law enforcement or other regulatory/government bodies. | _Required by Law Enforcement or Government_ | |
-| 14. | Protecting your vital and health interests. | _Protecting Your Health_ | |
-| 15. | Protecting our legitimate interests, yours or those of a third party. | _Protecting Our Interests_ | |
-| 16. | Measure or improve our performance or the delivery of our services. | _Improve Performance_ | |
-
-Other purposes may be uses as appropriate for the specific context of each jurisdiction and the site, application or service.
-
-## 4.3. Appendix C: Categories of Personal Data (explainers/examples)
-
-- 1.	Biographical – (General information like Name, DOB, Family info (mother’s maiden name), marital status. Historical data like educational achievement, general employment history.)
-- 2.	Contact – (Address, Email, Telephone Number, etc.)
-- 3.	Biometric – (Photos, fingerprints, DNA. General physical characteristics – height, weight, hair colour. Racial/ethnic origin or identification - whether self-identified or not)
-- 4.	Communications/Social – (Email, message and phone records – both content and metadata. Friends and contacts data.)
-- 5.	Network/Service – (Login ids, usernames, passwords, server log data, IP addresses, cookie-type identifiers)
-- 6.	Health – (Ailments, treatments, family doctor info. X-rays and other medical scan data)
-- 7.	Financial – (This includes information such as bank account, credit card data. Income and tax records, financial assets/liabilities, purchase/sale of assets history.)
-- 8.	Official/Government Identifiers – (This includes any widely recognised identifiers that link to individual people. Examples include National Insurance, ID card, Social security, passport and driving licence numbers, NHS number (UK). Just the numbers rather than data associated with them.)
-- 9.	Social Services/Welfare – (Welfare and benefits status and history)
-- 10.	Judicial – (Criminal and police records, inc. traffic offenses.)
-- 11.	Property/Asset – (Identifiers of property – license plate numbers, MAC addresses for mobiles, other device identifiers. Not financial assets. Could include digital assets like ebook and digital music data)
-- 12.	Human Resources – (Records held about employees/ members/ studentsP not elsewhere defined. Incl. HR records such as job title, attendance/disciplinary records. Salary - as opposed to income.)
-- 13.	Psychological/Attitudinal – (Inc. religious, political beliefs, sexual orientation and gender identity – though not genetic gender which is Biometric. Traits and personality measures or assessments, but not psychological health - which is health data).
-- 14.	Membership – (Political, trade union affiliations, any other opt-in organisational/group membership data - third party organisations only. Includes name of employer when not held by employer. Could extend to online platform membership. Some might be more sensitive than others – may want a separate category)
-- 15.	Behavioural – (Any data about the behaviour, habits or movements of an individual - electronic or physical. Location, browser/search history, web page usage (analytics), energy usage (smart meters), login history, calendar data, etc.)
 - 16.	Profile – (Marketing and social segmentation data. Any categorisation that impacts information presented or decisions made about an individual. This might be observed or derived data (algorithmic) or volunteered by the individual. Profile data is often generated from Behavioural data).
