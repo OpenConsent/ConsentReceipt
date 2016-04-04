@@ -34,7 +34,7 @@ This document is subject to the [Kantara IPR Policy - Option Patent & Copyright:
 
 ## Table of Contents
 - [1. Objective] (#1.Objective)
-- [2. Scope](2.Scope)
+- [2. Scope](##2.Scope)
 2.1. MVCR Conformance Profiles
 3. Notational Conventions For Conformance
 4. Terminology
