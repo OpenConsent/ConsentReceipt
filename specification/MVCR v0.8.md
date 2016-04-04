@@ -12,12 +12,11 @@
 | |     Iain Henderson  |
 | |     Sarah Squire    |
 
-
 # Abstract
 
 This specification identifies the consent requirements necessary to record a personal information (PI) sharing transaction and provide this record as an independent receipt.
 
-The MVCR is designed to address existing closed consent that exists today, often defined by a binary and indefinite consent agreement. Addressed by providing a consistent format for recording consent and providing a consent receipt for the use and sharing of personal information.   As the  consent receipt is required to be provisioned at point of consent, this addresses multiple privacy principle and privacy legal requirements.  A consistent consent record provides a framework for binding a consent notice to a privacy control, operationally useful to technically address multiple Fair Information Practice Principles and likewise ISO 29100 privacy principles.
+The MVCR is designed to address existing closed consent that exists today, often defined by a binary and indefinite consent agreement. Addressed by providing a consistent format for recording consent and providing a consent receipt for the use and sharing of personal information.   As the  consent receipt is required to be provisioned at point of consent, this addresses multiple privacy principle and privacy legal requirements.  A consistent consent record provides a framework for binding a consent notice to a privacy control, operationally useful to technically address multiple Fair Information Practice Principles and likewise maps to ISO 29100 privacy framework.
 
 Consent for the use of personal information is a precursor to providing consent to Terms and Services.
 
@@ -40,18 +39,18 @@ This document is subject to the [Kantara IPR Policy - Option Patent & Copyright:
 4. Terminology
 5. MVCR Record Format: Section & Fields
 5.1. Header
-* 5.2 PI Controller Data
-* 5.3 Purpose Specification
-* 5.4.	Personally Identifiable Information
+- 5.2 PI Controller Data
+- 5.3 Purpose Specification
+- 5.4.	Personally Identifiable Information
 guidance
-* 5.5.	Information Sharing
-* 5.6.	Scope(s)
+- 5.5.	Information Sharing
+- 5.6.	Scope(s)
 guidance
 6. MVCR Conformance and Compliance
-* 6.1 Global Guidance 
-* 6.2 MINIMUM MVCR Conformance Guidance & Example 
-* 6.3 EXPLICIT MVCR
-*6.4 COMPLIANT MVCR
+- 6.1 Global Guidance 
+- 6.2 MINIMUM MVCR Conformance Guidance & Example 
+- 6.3 EXPLICIT MVCR (TBF)
+- 6.4 COMPLIANT MVCR (TBF) 
 7. Appendix A: ISO Terms - mapping and use in the MVCR
 8. Appendix B: Consent Type -
 9. Appendix C: Purpose Categories (or purpose type)
@@ -272,7 +271,7 @@ The purpose of this section is to provide the PII Subject with information about
 | Termination of Sharing|
 | contract/policy |
 
-### 5.6  Scope(s)   (TBF)
+### 5.6  Scope(s)   
 |  Scope |  scope name | PI Category | PI Purpose |  PI Preference | Permission | Data Type | Example  Data Input | Scope Description | Scope Purpose  | Linked |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | Technical/Legal | withdraw consent |  marketing | 3rd party sharing | YES | {purpose preference string} | data@subject.com, consent id, principal ID, purpose preference, terminate | technical scope | to terminate consent preference | linked to preference in profile |
@@ -317,7 +316,7 @@ This conformance table specifies requirements to fulfill scope as defined.
 
 All conformance profiles culminate, in that the MINIMUM MVCR is used to build the EXPLICIT MVCR, which is used to create a COMPLIANT MVCR, all of which is used to develop SCOPE(s).
 
-The MINIMUM MVCR can be used to create any type of consent record, and without making it compliant
+The MINIMUM MVCR can be used to create any type of consent record as long as it is not for explict compliance. 
 
 ### 6.2  MINIMUM MVCR :
 
