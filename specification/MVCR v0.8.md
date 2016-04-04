@@ -494,7 +494,6 @@ Once consent is provided and parties identified, this consent can be bound to te
     * Repeat to create scope, or enter defined scopes for of following set of fields as many times as necessary identify i.e. for each third party |
     * Scope name, this is the technical action, or the PI category required
 
-
 ### Implementation Guidance
 (TBR: INPUT and Review from JOHN and OLiver)
 * Each purpose MUST link the service name to at least one explicit and specific purpose.
@@ -533,22 +532,17 @@ FIELD CONFORMANCE: EXPLICIT MVCR
 * Psycho/Social/Belief
 * Membership to Union
 * Other
-- Criminal/Justice
 
  (not usable for MINIMUM MVCR) Sharing sensitive personal information, is actively regulated and requires explicit consent by all OECD FIPPs based regulations, and for trade of information and technology between jurisdictions.  Use of this field is subject to regulatory requirements.  (Notes:  This field provides the normative baseline for binding practice to laws and standards within an Open Consent.  This category is specified, but also flexible so that it can expand to authoritative decisions about new categories and the definition of existing category, like the GDPR which requires consent to be both :  “explicit”  and evidenced by “a statement or by a clear affirmative action” ref GDPR - Doc )
 
  (Editors Notes: out-of-scope of the MINIMUM MVCR )
 * field is optional, unless for compliance then it is required and linked to authoritative notice, references, and scopes) - these are further specified by jurisdictional legislation, terminology.  Even so,  there are common sensitive data categories for personal information which are enforceable, listed here;  The listing of a sensitive data category in this field indicates that this receipt links to requirements for binding  compliance claims. TBF post v0.8 draft )
-
 * Sensitive PI Categories  can be further utilized by linking authoritative requirements to the receipt in a way that can be proportionally validated to context.  Providing a context mechanism for trust elevation that can be effectively programed by policy. ( editors note) Which is an inherent requirement for IOT i.e. video surveillance and trust.
-
 * The consent receipt can further be extended with a jurisdictional notice and consent field profile that links to compliance requirements. (See 6.4  Compliant)  (note: can be delegated by the PI Controller or to 3rd party trust frameworks. using the link)
-
 * Note: The use of these features make compliance claims when used
+* Note:  The receipt MUST be selected as explicit consent, as well as determine the functional notice and consent requirements to be compliant.  These can then be used to specify the such the 'other' field MUST NOT be present when the explicit consent type is selected.  Requirements are supplied by jurisdiction and industry and is out-of-scope of the MINIMUM MVCR consent receipt specification.)
 
-Note:  The receipt MUST be selected as explicit consent, as well as determine the functional notice and consent requirements to be compliant.  These can then be used to specify the such the 'other' field MUST NOT be present when the explicit consent type is selected.  Requirements are supplied by jurisdiction and industry and is out-of-scope of the MINIMUM MVCR consent receipt specification.)
-
-## 6.4  compliance UK (example of compliance requirements) (TBF)
+## 6.4  Compliant MVCR 
 
 * All previous requirements + explicit references to requirements and its satisfaction (presented as a X (or UK) profile for compliance)
 * Note example compliant with current UK legislation (not GDPR)
@@ -564,12 +558,14 @@ Table to  map notice compliance requirements to specific consent legislation/pol
 | -- | -- | --| --|  -- | -- | --|
 | medical records | Health | UK | DPA | Register at Data Controller Registry; include criminal records as sensitive data, map PI to data subject,   | notice for use, store Encrypted, log access,   | -- | --|
 
+### 1. UK (example of compliance requirements) (TBF)
 
 FIELD CONFORMANCE: COMPLIANT MVCR
 - MUST -
 - SHOULD -
 - OPTIONAL -
 - MAY -
+
 
 Example,  UK :  "Sensitive personal data" in the UK, is a bit different.
 
