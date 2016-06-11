@@ -215,7 +215,7 @@ Conformance terms
 Information Sharing
 
 
-  ### BASIC MVCR FIELD CONFORMANCE:
+  ### MVCR Mode
 
   ####  MVCR EXAMPLE(s) & Guidance
 
@@ -252,7 +252,7 @@ Information Sharing
   | ------:	| ------	|
   | __Jurisdiction:__ | CA |
   | __Consent Time Stamp:__ | 2016/02/08 12:20:34 EST |
-  | __Collection Method:__ | web form | [http://www.consentreceipt.org](http://www.consentreceipt.org) |
+  | __Collection Method:__ | web form [http://www.consentreceipt.org](http://www.consentreceipt.org) |
   | __Consent ID:__ | C159A448-A69B-44BF-BFCE-6403FB5D06EE |
   | __Principal ID :__ | [new@member.com](mailto:new@member.com) |
   | __Sensitive:__| N |
