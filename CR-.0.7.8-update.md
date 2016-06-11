@@ -248,7 +248,7 @@ Information Sharing
 
   ##### Header Example
 
-  | Field | Contents|
+  | Field | Contents |
   | ------:	| ------	|
   | __Jurisdiction:__ | CA |
   | __Consent Time Stamp:__ | 2016/02/08 12:20:34 EST |
