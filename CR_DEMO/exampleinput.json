@@ -1,0 +1,80 @@
+{
+ "version": "0.8",
+ "jurisdiction": "US",
+ "iat": 1470790094,
+ "moc": "web form",
+ "jti": "56eca54b-46f2-4825-b325-35c7451b59a4",
+ "publicKey": "http://wordpress.dev/?cr_public_key=true",
+ "dataController": {
+   "onBehalf": false,
+   "contact": "Colin Wallis",
+   "company": "Kantara Initiative, Inc.",
+   "address": "401 Edgewater Place, Suite 600, Wakefield, MA, 01880 USA",
+   "email": "privacy-controller@kantarainitiative.org",
+   "phone": "+1 781-623-3094"
+ },
+ "policyUri": "http://kantarainitiative.org/confluence/display/GI/Option+Patent+and+Copyright+(RAND)",
+ "services": [
+   {
+     "serviceName": "Kantara Initiative WG - Information Sharing",
+     "purposes": [
+       {
+         "purpose": "Authority to sign Participation Agreement",
+         "consentType": "Explicit",
+         "purpose_category": [
+           "Affiliation"
+         ],
+         "piiCategory": [
+           "Membership"
+         ],
+         "nonCorePurpose": false,
+         "purposeTermination": "http://kantarainitiative.org/confluence/display/GI/Option+Patent+and+Copyright+(RAND)",
+         "thirdPartyDisclosure": false
+       },
+       {
+         "purpose": "Voting Status",
+         "consentType": "Explicit",
+         "purposeCategory": [
+           "Core Function"
+         ],
+         "piiCategory": [
+           "Membership"
+         ],
+         "nonCorePurpose": true,
+         "purpose_termination": "(when no activity)",
+         "thirdPartyDisclosure": false
+       },
+       {
+         "purpose": "Agree to IPR Policy",
+         "consentType": "Explicit",
+         "purposeCategory": [
+           "Core Function"
+         ],
+         "piiCategory": [
+           "Membership"
+         ],
+         "nonCorePurpose": false,
+         "purposeTermination": "staff@kantarainitiative.org",
+         "thirdPartyDisclosure": false
+       },
+       {
+         "purpose": "Web statistics",
+         "consentType": "Explicit",
+         "purposeCategory": [
+           "Improve Performance"
+         ],
+         "piiCategory": [
+           "Network/Service"
+         ],
+         "nonCorePurpose": false,
+         "purposeTermination": "staff@kantarainitiative.org",
+         "thirdPartyDisclosure": true,
+         "3rdPartyName": "Google"
+       }
+     ]
+   }
+ ],
+ "sub": "cr-testing@berlinco.com",
+ "sensitive": false,
+ "spiCat": []
+}
