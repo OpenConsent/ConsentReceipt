@@ -137,15 +137,17 @@
                     </div>
 
                     <div class="form-group">
-                      <label for="principal" class="col-md-4 control-label">PII Principal</label>
+                      <label for="principal" class="col-md-4 control-label">PII Principal Name</label>
                       <div class="col-md-8 controls">
                         <div class="input-group">
                           <input type="text" class="form-control" name="sub" id="principal" placeholder="Email or address claim" value="cr-testing@berlinco.com">
-                        </div><br>
-                        <div style="margin-bottom: 10px;">
-                          <strong>Acting behalf for </strong>
                         </div>
-                        <div class="row form-group">
+                        <div style="margin: 10px 0;">
+                          <div class="input-group checkbox">
+                            <label><input type="checkbox" id="piionbehalf" value="true" checked name="piiOnBehalf">Acting on behalf of PII Principal</label><br>
+                          </div>
+                        </div>
+                        <div class="row form-group" style="margin-bottom: 0">
                           <div class="form-group">
                             <label class="col-md-4 child-label">Name</label> 
                             <div class="col-md-8">
@@ -159,15 +161,17 @@
                               <input type="text" class="form-control" placeholder="Relationship" value="">
                             </div>
                           </div>
-
-                          <div class="form-group">
-                            <label class="col-md-4 child-label">Contact</label> 
-                            <div class="col-md-8">
-                              <input type="text" class="form-control" placeholder="Contact" value="">
-                            </div>
-                          </div>
                         </div>
 
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="publicKey" class="col-md-4 control-label">PII Principal ID</label>
+                      <div class="col-md-8 controls">
+                        <div class="input-group">
+                          <input type="text" class="form-control" name="principalID" id="principalID" placeholder="Principal ID" value="" >
+                        </div>
                       </div>
                     </div>
 
@@ -247,6 +251,56 @@
 
                     <div class="purpose_list"></div>
 
+                    <div class="form-group">
+                      <label for="purpose" class="col-md-12 control-label">Purpose Termination</label>
+                      <div class="input-group checkbox">
+                        <label><input type="checkbox" id="delete_data_when_termination" value="true" checked name=""> Delete data when purpose termination</label><br>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <div class="input-group checkbox">
+                        <label><input type="checkbox" id="terminate_when_requested" value="true" checked name=""> Terminate when requested</label><br>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label class="col-md-6 child-label">Date of termination</label>
+                      <div class="input-group col-md-6">
+                        <div class="date-picker" id="dateOfTermination"></div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-md-6 child-label">Date of disposal</label>
+                      <div class="input-group col-md-6">
+                        <div class="date-picker" id="dateOfDisposal"></div>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <div class="input-group checkbox">
+                        <label><input type="checkbox" id="same_as_termination" value="true" checked name=""> Same as termination</label><br>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <div class="input-group checkbox">
+                        <label class="col-md-7 control-label"><input type="checkbox" id="terminate_by_law" value="true" checked name=""> Terminate as require by law  </label>
+                        <div class="input-group col-md-5">
+                          <input type="text" class="form-control col-md-12" id="termination_law" placeholder="" value="">
+                        </div>
+                      </div>
+                    </div>
+            
+                    <div class="form-group">
+                      <label class="col-md-4 control-label"></label>
+                      <div class="col-md-8 controls">
+                        <button class="btn btn-primary pull-right" id="addPIICategory">
+                            <span class="glyphicon glyphicon-plus"></span>
+                            Add PII Category for Purpose
+                          </button>
+                      </div>
+                    </div>
+
                     <div id="purpose_template">
                       <div class="purpose">
                         <div class="col-md-12" style="padding-bottom: 5px;">
@@ -286,7 +340,7 @@
                           </div>
                         </div>
                     </div>
-                    </div>
+                  </div>
 
                   </div>
                 </div>
@@ -316,7 +370,8 @@
                         </div><br> -->
 
                         <div id="options" class="col-md-12">
-                          <label>Check your sensitive category: </label>
+                          <div><label>Check your sensitive category: </label> </div>
+                          <small style="font-style: italic">Selecting category of sensitive data is optional-if added- put link to notice for sensitive data, with checkbox for(see privacy policy)</small>
                           <div class="checkbox">
                             <label><input type="checkbox" value="health" name="sensitive_options">Heath</label>
                           </div>
@@ -349,46 +404,76 @@
 
                 <div class="widget">
                   <div class="widget-header">
-                    <h3><span class="red">*</span> Information Sharing</h3>
+                    <h3><span class="red">*</span> Information Sharing/Disclosure</h3>
                   </div>
                   <div class="widget-content well">
                     <div class="form-group">
-                      <label for="sharing" class="col-md-4 control-label">Sharing </label>
-                      <div class="col-md-8 controls">
-                        <div class="input-group">
-                          <input type="hidden" style="width:300px" id="sharing"/>
+                      <div class="input-group checkbox">
+                        <label><input type="checkbox" id="isDisclosurePII" value="true" checked name="is_disclosure_pii"> Check this box if you disclosure PII with third party</label><br>
+                      </div>
+                    </div>
+
+                    <div class="form-group" style="margin-right: 20px">
+                      <button class="btn btn-primary pull-right" id="thirdparty">
+                        <span class="glyphicon glyphicon-plus"></span>
+                        Add 3rd Party Processor
+                      </button>
+                    </div>
+
+                    <div class="row form-group">
+                      <div class="form-group">
+                        <label for="sharing" class="col-md-4 control-label">Sharing/Disclosure </label>
+                        <div class="col-md-8 controls">
+                          <div class="input-group">
+                            <input type="hidden" style="width:300px" id="sharing"/>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="forparty" class="col-md-4 control-label">3rd Party Processor </label>
+                        <div class="col-md-8 controls">
+                          <div class="input-group">
+                            <input type="text" id="forparty" value="3rd Party Name or/3rd Party Category" placeholder="Name Or Type Of 3rd Party" class="form-control">
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="sharing" class="col-md-4 control-label">Purpose Category for Sharing </label>
+                        <div class="col-md-8 controls">
+                          <div class="input-group">
+                            <input type="hidden" id="sharing_purpose"/>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="col-md-4 control-label">PII Category for Sharing </label>
+                        <div class="col-md-8 controls">
+                          <div class="input-group">
+                            <input type="hidden" style="width:300px" id="pii_category"/>
+                          </div>
                         </div>
                       </div>
                     </div>
 
-                    <div class="form-group">
-                      <label for="forparty" class="col-md-4 control-label">Data to </label>
-                      <div class="col-md-8 controls">
-                        <div class="input-group">
-                          <input type="text" id="forparty" value="3rd Party Name or/3rd Party Category" placeholder="Name Or Type Of 3rd Party" class="form-control">
-                        </div>
-                      </div>
-                    </div>
+                    
 
-                    <div class="form-group">
-                      <label for="sharing" class="col-md-4 control-label">For the purpose of </label>
-                      <div class="col-md-8 controls">
-                        <div class="input-group">
-                          <input type="hidden" id="sharing_purpose"/>
-                        </div>
-                      </div>
-                    </div>
+                    
 
                   </div>
                 </div>
 
                 <div class="widget">
                   <div class="widget-header">
-                    <h3><span class="red">*</span> Optional Or In Review</h3>
+                    <h3><span class="red">*</span> What is the text (notices) for the consent options in your form or notice?</h3>
                   </div>
                   <div class="widget-content well">
+                    <p>Type in notice to purpose from the consent request form.</p>
+                    <p>Note: these are normally beside a checkbox<p>
                     <div class="form-group">
-                      <label for="notice" class="col-md-4 control-label">Short Notice Link</label>
+                      <label for="notice" class="col-md-4 control-label">Text of consent notice</label>
                       <div class="col-md-8 controls">
                         <div class="input-group">
                           <input type="text" class="form-control" name="notice" id="notice" value="http://example.com/shortnotice" placeholder="Example: http://example.com/shortnotice"/>
@@ -397,10 +482,10 @@
                     </div>
 
                     <div class="form-group">
-                      <label for="scope" class="col-md-4 control-label">Scope</label>
+                      <label for="scope" class="col-md-4 control-label">Consent Type</label>
                       <div class="col-md-8 controls">
                         <div class="input-group">
-                          <input type="text" class="form-control" name="scopes" id="scope" value="read update" placeholder="What you're allowed to do on the service"/>
+                          <input class="consent_type" type="hidden">
                         </div>
                       </div>
                     </div>
@@ -411,7 +496,7 @@
         
        
     </div>
-    <button id="submit" class="btn btn-primary">Create Receipt &raquo;</button>
+    <button id="submit" class="btn btn-primary">Submit</button>
 </div>
           
         </div>     

@@ -48,6 +48,14 @@ $(document).ready(function() {
 			{id: "mental_health", text: "Mental Health"}, {id: "membership", text: "Membership"},{id: "behavioral", text: "Behavioral"}, {id: "profiling", text: "Profiling"}
 		];
 
+	var listConsentType = [
+		{id: "checkbox", text: "Checkbox"},
+		{id: "text", text: "Text"},
+		{id: "explicit", text: "Explicit"},
+		{id: "implicit", text: "Implicit"},
+		{id: "n/a", text: "N/A"}
+	]
+
 	var createOwn = function(term, data){
 			if($(data).filter(function(){
 				return this.text.localeCompare(term) === 0;
@@ -59,9 +67,10 @@ $(document).ready(function() {
 			};
 		};
 
-	function initDropdown(purposeItem, sensitiveItem){
+	function initDropdown(purposeItem, sensitiveItem, consentTypeItem){
 		purposeItem = purposeItem || $(".purpose_item");
 		sensitiveItem = sensitiveItem || $(".pi_sensitive");
+		consentTypeItem = consentTypeItem || ($(".consent_type"))
 		purposeItem.select2({
 			createSearchChoice: createOwn,
 			placeholder: "Choose or enter your own purpose",
@@ -76,6 +85,12 @@ $(document).ready(function() {
 			multiple: true,
 			data: listSensitive
 		})
+
+		consentTypeItem.select2({
+			placeholder: "Select your consent type",
+			data: listConsentType
+		})
+
 	}
 
 	function getPurposeList(){
